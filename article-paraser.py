@@ -5,7 +5,7 @@ from page_source_downloader import PageDownloader
 class ArticleParaser(object):
     def __init__(self, 
                  article_html = "article_html.html", 
-                 page_url = "https://www.economist.com/leaders/2023/04/05/the-case-for-an-environmentalism-that-builds") -> None:
+                 page_url = "https://www.economist.com/the-world-this-week/2023/04/05/politics") -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
@@ -34,6 +34,10 @@ class ArticleParaser(object):
     
     def parase_article_metadata(self, json_data: dict):
         article_content_parts = json_data["props"]["pageProps"]["content"]
+
+        # with open("articles/" + self.article_json, "w+") as f:
+        #     json.dump(article_content_parts, f)
+
         self.parase_article_cover_image(json_data=article_content_parts)
         self.article_metadata["title"] = article_content_parts["headline"]
         self.article_metadata["subtitle"] = article_content_parts["description"]
@@ -46,8 +50,6 @@ class ArticleParaser(object):
         # new_home_page = {
         #     "today": article_content_parts
         # }
-        # with open("articles/" + self.article_json, "w+") as f:
-        #     json.dump(article_content_parts, f)
         
         
     def parase_article_cover_image(self, json_data: dict):
@@ -68,7 +70,7 @@ class ArticleParaser(object):
             current_para: list[str] = []
             current_para_json: dict = {}
             for child in content["children"]:
-                if child["type"] != "text":
+                if child["type"] == "tag":
                     if len(child["children"]) > 1:
                         subchild_str = ""
                         for subchild in child["children"]:
@@ -78,7 +80,12 @@ class ArticleParaser(object):
                                 subchild_str += subchild["children"][0]["data"]
                         current_para.append(subchild_str)
                     elif len(child["children"]) == 1:
-                        current_para.append(child["children"][0]["data"])
+                        if child["children"][0]["type"] == "tag":
+                            current_para.append(child["children"][0]["children"][0]["data"])
+                        elif child["children"][0]["type"] == "text":
+                            current_para.append(child["children"][0]["data"])
+                        else:
+                            print("Type not handled in this version: ", child["children"][0]["type"])
                 else:
                     current_para.append(child["data"])
             current_para_str = ""
@@ -92,6 +99,13 @@ class ArticleParaser(object):
             elif content["name"] == "h2":
                 current_para_json["role"] = "second"
                 current_para_json["text"] = current_para_str
+            
+            elif content["name"] == "figure":
+                current_para_json["role"] = "image"
+                current_para_json["imageURL"] = content["children"][0]["attribs"]["src"]
+                current_para_json["imageWidth"] = content["children"][0]["attribs"]["width"]
+                current_para_json["imageHeight"] = content["children"][0]["attribs"]["height"]
+                current_para_json["imageDescription"] = ""
             
             article_contents.append(current_para_json)
 
