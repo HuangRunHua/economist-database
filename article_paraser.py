@@ -3,11 +3,12 @@ from bs4 import BeautifulSoup
 from page_source_downloader import PageDownloader
 
 class ArticleParaser(object):
-    def __init__(self, page_url: str) -> None:
+    def __init__(self, page_url: str, date: str) -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
         self.article_metadata = {}
+        self.date = date
 
     def parase_data(self):
 
@@ -41,7 +42,7 @@ class ArticleParaser(object):
 
         self.parase_article_text(json_data=article_content_parts)
 
-        with open("articles/" + self.article_json, "w+") as f:
+        with open("articles/" + self.date + "/" + self.article_json, "w+") as f:
             json.dump(self.article_metadata, f)
         
         

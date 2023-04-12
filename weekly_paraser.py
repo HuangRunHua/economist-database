@@ -10,6 +10,7 @@ class WeeklyParaser(object):
         self.page_url = page_url
         self.weekly_issue_metadata = {}
         self.id = id
+        self.link_prefix = "https://github.com/HuangRunHua/economist-database/raw/main/weekly-json/"
  
     def parase_data(self):
 
