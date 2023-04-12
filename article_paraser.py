@@ -100,7 +100,11 @@ class ArticleParaser(object):
                             current_para.append(subchild_str)
                         elif len(child["children"]) == 1:
                             if child["children"][0]["type"] == "tag":
-                                current_para.append(child["children"][0]["children"][0]["data"])
+                                print(child["children"])
+                                if not "data" in child["children"][0]["children"][0]:
+                                    current_para.append(child["children"][0]["children"][0]["children"][0]["data"])
+                                else:
+                                    current_para.append(child["children"][0]["children"][0]["data"])
                             elif child["children"][0]["type"] == "text":
                                 current_para.append(child["children"][0]["data"])
                             else:

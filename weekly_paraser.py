@@ -67,7 +67,74 @@ class WeeklyParaser(object):
 
 
 if __name__ == "__main__":
-    page_url = "https://www.economist.com/weeklyedition/2023-04-08"
-    tp = WeeklyParaser(page_url=page_url, id="00000000-0000-0000-0000-000000000000")
+
+    page_urls = [
+        {
+            "link": "https://www.economist.com/printedition/2023-01-07",
+            "id": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-01-14",
+            "id": "00000000-0000-0000-0000-000000000001"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-01-21",
+            "id": "00000000-0000-0000-0000-000000000002"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-01-28",
+            "id": "00000000-0000-0000-0000-000000000003"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-02-04",
+            "id": "00000000-0000-0000-0000-000000000004"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-02-11",
+            "id": "00000000-0000-0000-0000-000000000005"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-02-18",
+            "id": "00000000-0000-0000-0000-000000000006"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-02-25",
+            "id": "00000000-0000-0000-0000-000000000007"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-03-04",
+            "id": "00000000-0000-0000-0000-000000000008"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-03-11",
+            "id": "00000000-0000-0000-0000-000000000009"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-03-18",
+            "id": "00000000-0000-0000-0000-000000000010"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-03-25",
+            "id": "00000000-0000-0000-0000-000000000011"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-04-01",
+            "id": "00000000-0000-0000-0000-000000000012"
+        },
+        {
+            "link": "https://www.economist.com/printedition/2023-04-08",
+            "id": "00000000-0000-0000-0000-000000000013"
+        },
+    ]
+
+    page_url = "https://www.economist.com/printedition/2023-01-14"
+    tp = WeeklyParaser(page_url=page_url, id="00000000-0000-0000-0000-000000000001")
     tp.parase_data()
+
+    # for page_url in page_urls:
+    #     print(page_url["link"])
+    #     print("Current Issue: ", page_url["link"])
+    #     print("****************************************")
+    #     tp = WeeklyParaser(page_url=page_url["link"], id=page_url["id"])
+    #     tp.parase_data()
       
