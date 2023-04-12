@@ -4,8 +4,7 @@ from page_source_downloader import PageDownloader
 
 class ArticleParaser(object):
     def __init__(self, 
-                 article_html = "article_html.html", 
-                 page_url = "https://www.economist.com/the-world-this-week/2023/04/05/politics") -> None:
+                 page_url = "https://www.economist.com/briefing/2023/04/05/the-evidence-to-support-medicalised-gender-transitions-in-adolescents-is-worryingly-weak") -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
@@ -18,7 +17,6 @@ class ArticleParaser(object):
         HTMLFile = open("articles/" + self.article_html, "r")
         index = HTMLFile.read()
         S = BeautifulSoup(index, 'lxml')
-        # Tag = S.find("script", {"type": "application/ld+json"})
         Tag = S.find("script", {"id": "__NEXT_DATA__"})
         if len(Tag.contents) == 1:
             all_json_data = json.loads(Tag.next)
@@ -35,8 +33,8 @@ class ArticleParaser(object):
     def parase_article_metadata(self, json_data: dict):
         article_content_parts = json_data["props"]["pageProps"]["content"]
 
-        # with open("articles/" + self.article_json, "w+") as f:
-        #     json.dump(article_content_parts, f)
+        with open("articles/" + self.article_json, "w+") as f:
+            json.dump(article_content_parts, f)
 
         self.parase_article_cover_image(json_data=article_content_parts)
         self.article_metadata["title"] = article_content_parts["headline"]
@@ -112,6 +110,8 @@ class ArticleParaser(object):
         for i in article_contents:
             print(i)
             print("\n")
+
+        self.article_metadata["contents"] = article_contents
 
 
 if __name__ == "__main__":
