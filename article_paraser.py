@@ -17,10 +17,10 @@ class ArticleParaser(object):
         index = HTMLFile.read()
         S = BeautifulSoup(index, 'lxml')
         Tag = S.find("script", {"id": "__NEXT_DATA__"})
-        if len(Tag.contents) == 1:
-            all_json_data = json.loads(Tag.next)
+        if len(Tag.contents) == 1: # type: ignore
+            all_json_data = json.loads(Tag.next) # type: ignore
             self.parase_article_metadata(all_json_data)
-        elif len(Tag.contents) == 0:
+        elif len(Tag.contents) == 0: # type: ignore
             print("No data found in ", self.article_html)
         else:
             print("Find more than one data in ", self.article_html)
@@ -121,8 +121,8 @@ class ArticleParaser(object):
         self.article_metadata["contents"] = article_contents
 
 
-if __name__ == "__main__":
-    page_url = "https://www.economist.com/by-invitation/2023/04/04/the-fed-may-not-get-inflation-down-to-2-says-richard-clarida"
-    tp = ArticleParaser(page_url=page_url)
-    tp.parase_data()
+# if __name__ == "__main__":
+#     page_url = "https://www.economist.com/by-invitation/2023/04/04/the-fed-may-not-get-inflation-down-to-2-says-richard-clarida"
+#     tp = ArticleParaser(page_url=page_url)
+#     tp.parase_data()
       
