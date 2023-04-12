@@ -17,7 +17,7 @@ class ImageDownloader(object):
         else:
             print('Image Couldn\'t be retreived')
 
-if __name__ == "__main__":
-    image_url: str = "https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/media-assets/image/20230401_WBD001.jpg"
-    imagedownloader = ImageDownloader(image_url=image_url)
-    imagedownloader.fetch_image()
+# if __name__ == "__main__":
+#     image_url: str = "https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/media-assets/image/20230401_WBD001.jpg"
+#     imagedownloader = ImageDownloader(image_url=image_url)
+#     imagedownloader.fetch_image()

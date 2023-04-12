@@ -1,4 +1,5 @@
 import json
+import os
 from bs4 import BeautifulSoup
 from page_source_downloader import PageDownloader
 
@@ -6,6 +7,7 @@ class ArticleParaser(object):
     def __init__(self, page_url: str, date: str) -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
+        self.__article_source_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
         self.article_metadata = {}
         self.date = date
@@ -33,6 +35,15 @@ class ArticleParaser(object):
     def parase_article_metadata(self, json_data: dict):
         article_content_parts = json_data["props"]["pageProps"]["content"]
 
+        """
+        Save original JSON file for future usage
+        """
+        if not os.path.exists("DEBUG/" + self.date):
+            os.mkdir("DEBUG/" + self.date)
+
+        with open("DEBUG/" + self.date + "/" + self.__article_source_json, "w+") as f:
+            json.dump(article_content_parts, f)
+
         self.parase_article_cover_image(json_data=article_content_parts)
         self.article_metadata["title"] = article_content_parts["headline"]
         self.article_metadata["subtitle"] = article_content_parts["description"]
@@ -42,20 +53,27 @@ class ArticleParaser(object):
 
         self.parase_article_text(json_data=article_content_parts)
 
+        if not os.path.exists("articles/" + self.date):
+            os.mkdir("articles/" + self.date)
+
         with open("articles/" + self.date + "/" + self.article_json, "w+") as f:
             json.dump(self.article_metadata, f)
+
         
         
     def parase_article_cover_image(self, json_data: dict):
-        cover_image_url = json_data["_metadata"]["imageUrl"]
-        cover_image_height = json_data["_metadata"]["imageHeight"]
-        cover_image_width = json_data["_metadata"]["imageWidth"]
-        cover_image_description = ""
+        if (("imageUrl" in json_data["_metadata"]) and 
+            ("imageHeight" in json_data["_metadata"]) and
+            ("imageWidth" in json_data["_metadata"])):
+            cover_image_url = json_data["_metadata"]["imageUrl"]
+            cover_image_height = json_data["_metadata"]["imageHeight"]
+            cover_image_width = json_data["_metadata"]["imageWidth"]
+            cover_image_description = ""
 
-        self.article_metadata["coverImageURL"] = cover_image_url
-        self.article_metadata["coverImageWidth"] = cover_image_width
-        self.article_metadata["coverImageHeight"] = cover_image_height
-        self.article_metadata["coverImageDescription"] = cover_image_description
+            self.article_metadata["coverImageURL"] = cover_image_url
+            self.article_metadata["coverImageWidth"] = cover_image_width
+            self.article_metadata["coverImageHeight"] = cover_image_height
+            self.article_metadata["coverImageDescription"] = cover_image_description
 
     def parase_article_text(self, json_data: dict):
         contents = json_data["text"]

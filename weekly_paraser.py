@@ -11,6 +11,7 @@ class WeeklyParaser(object):
         self.weekly_issue_metadata = {}
         self.id = id
         self.link_prefix = "https://github.com/HuangRunHua/economist-database/raw/main/weekly-json/"
+        self.date = page_url.split("/")[-1]
  
     def parase_data(self):
 
@@ -44,8 +45,8 @@ class WeeklyParaser(object):
         self.fetch_ori_link_of_articles(json_data=new_home_page_parts)
 
 
-        # with open("weekly-json/" + self.weekly_json, "w+") as f:
-        #     json.dump(new_home_page_parts, f)
+        with open("weekly-json/" + self.weekly_json, "w+") as f:
+            json.dump(self.weekly_issue_metadata, f)
 
     def fetch_ori_link_of_articles(self, json_data: dict):
         articles_parts = json_data["pageProps"]["content"]["hasPart"]["parts"]
@@ -53,9 +54,13 @@ class WeeklyParaser(object):
         for article in articles_parts:
             if "Article" in article["type"]:
                 article_link = article["url"]["canonical"]
-                article_tag = article["print"]["section"]["headline"]
-                # ap = ArticleParaser(page_url=article_link)
-                # ap.parase_data()
+                # article_tag = article["print"]["section"]["headline"]
+                ap = ArticleParaser(page_url=article_link, date=self.date)
+                ap.parase_data()
+
+                articles_links.append(self.link_prefix + self.date + "/" + ap.article_json)
+
+        self.weekly_issue_metadata["articles"] = [{"articleURL": link} for link in articles_links]
 
         
         
