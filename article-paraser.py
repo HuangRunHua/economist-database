@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 from page_source_downloader import PageDownloader
 
 class ArticleParaser(object):
-    def __init__(self, 
-                 page_url = "https://www.economist.com/asia/2023/04/02/global-warming-is-killing-indians-and-pakistanis") -> None:
+    def __init__(self, page_url: str) -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
@@ -119,14 +118,11 @@ class ArticleParaser(object):
             if current_para_json != {}:
                 article_contents.append(current_para_json)
 
-        for i in article_contents:
-            print(i)
-            print("\n")
-
         self.article_metadata["contents"] = article_contents
 
 
 if __name__ == "__main__":
-    tp = ArticleParaser()
+    page_url = "https://www.economist.com/by-invitation/2023/04/04/the-fed-may-not-get-inflation-down-to-2-says-richard-clarida"
+    tp = ArticleParaser(page_url=page_url)
     tp.parase_data()
       

@@ -1,0 +1,65 @@
+{
+    "coverImageURL": "https://www.economist.com/media-assets/image/20230401_BID002.jpg",
+    "coverImageWidth": 1280,
+    "coverImageHeight": 720,
+    "coverImageDescription": "",
+    "title": "The Fed may not get inflation down to 2%, says Richard Clarida",
+    "subtitle": "The former vice-chair of America\u2019s central bank considers the competing goals of economic policy",
+    "hashTag": "By Invitation",
+    "authorName": "The Economist",
+    "publishDate": "2023-04-04T12:44:27Z",
+    "contents": [
+        {
+            "role": "body",
+            "text": "AS THE Federal Reserve and other central banks have raised interest rates to fight inflation, they have increased the cost of borrowing for governments. Yet many central banks operate in countries where governments run large budget deficits even as they are more indebted, relative to GDP, than at any time since the second world war. High debts have understandably led to worries about \u201cfiscal dominance\u201d, the fear that parlous public finances could constrain the ability\u2014or willingness\u2014of the Fed and other central banks to sustain interest rates at the levels required to hit their inflation targets. Recent fragility in American banks, flowing in part from their exposure to interest-rate risk on vast holdings of government debt, has exacerbated the fear that there are unresolvable tensions in American economic policy."
+        },
+        {
+            "role": "body",
+            "text": "Similar contradictions were present as the Fed, led by Paul Volcker, fought inflation in the 1980s. Owing to President Ronald Reagan\u2019s tax cuts and desire to spend more on defence, monetary policy was tight while fiscal policy was loose. The combination pushed up the dollar as foreign investors piled into America\u2019s high-yielding government debt\u2014even though policymakers saw excessive currency appreciation as undesirable. In the end Volcker got his disinflation, Reagan got his defence build-up and foreign investors got their Treasuries. "
+        },
+        {
+            "role": "body",
+            "text": "Today\u2019s disinflation has only just started. Though the White House got the fiscal stimulus it wanted, the Fed has not got the 2% annual inflation rate it wants."
+        },
+        {
+            "role": "body",
+            "text": "The Fed\u2019s struggles to return quickly to 2% have directed attention to the so-called \u201cfiscal theory of the price level\u201d. According to this view, the Fed has played only a minor role in the surge in America\u2019s inflation since the pandemic. The logic is as follows. The huge increase in government debt issued since 2020 to pay for $6trn of pandemic and post-pandemic spending made it impossible for the Fed to get the inflation rate it wanted. Instead, prices adjusted to make the government\u2019s debt sustainable. If investors believed that future taxes would not be raised, nor spending cut, to pay for pandemic spending, the only other way for the government-debt market to clear was for inflation to reduce its real value. The economy got in one burst the inflation necessary to pay off pandemic debts. In turn, that will allow inflation to return to 2%\u2014albeit with prices permanently higher than before the pandemic. "
+        },
+        {
+            "role": "body",
+            "text": "Those who blame the Fed for inflation might respond that the central bank purchased trillions of dollars of Treasury bonds between March 2020 and March 2022. Wasn\u2019t the Fed, not the market, financing the government\u2014and therefore unleashing inflation? Indeed, for a long time quantitative easing (QE) appeared to be a \u201cfree lunch\u201d for the government. The Fed\u2019s purchases were financed by the creation of bank reserves which pay a floating rate of interest very close to those on Treasury bills. At the time QE was happening, these rates were very close to zero. Consider the Fed and the Treasury as a single entity, and the effect of QE was to replace the higher interest payments on the long-maturity bonds the Fed was buying with lower interest payments on the reserves it issued to buy the bonds. "
+        },
+        {
+            "role": "body",
+            "text": "But while QE may have looked like a free lunch when short-term interest rates were close to zero, it did not last. To reduce inflation, the Fed has pushed the short-term interest rate it pays on reserves above the yields on the bonds it bought during previous QE programmes. Whereas in the first decade the Fed remitted hundreds of billions of dollars of QE profits to the Treasury, it has now suspended all such payments. They will remain suspended for as long as it takes to recoup the cumulative shortfall between the earnings on its assets and interest payments on its reserve liabilities. "
+        },
+        {
+            "role": "body",
+            "text": "In other words, QE is not a free lunch. If QE \u201cworks\u201d\u2014something many dispute\u2014it is not by reducing the stock of government debt, but by changing its maturity structure. In doing so it can lower, at least for a time, the interest rate the Treasury pays on long-dated bonds. But it does not make debt disappear, and so does not undermine the fiscal theory of the price level as an explanation for recent inflation."
+        },
+        {
+            "role": "body",
+            "text": "Regardless of the extent to which fiscal policy is to blame for the surge in America\u2019s aggregate demand, it is essential also to factor in aggregate supply. The Fed and other forecasters in 2021 initially got post-pandemic aggregate supply wrong. Broad-based price inflation began to surge in the second half of 2021 when the level of real GDP was running two percentage points below the Congressional Budget Office\u2019s estimate of potential output. Broad-based wage inflation took off when the unemployment rate reached 5%, a percentage point above the Fed\u2019s estimate of the level consistent with its 2% inflation objective. "
+        },
+        {
+            "role": "body",
+            "text": "Because the Fed got aggregate supply wrong, the monetary-policy stance in place when post-pandemic supply constraints began to bite in the second half of 2021 was too loose. As Jerome Powell, the Fed\u2019s chair, has indicated, although the Fed can\u2019t do anything to boost aggregate supply it can curtail aggregate demand to bring it in line with supply. In March 2022 it began to do this, by raising interest rates."
+        },
+        {
+            "role": "body",
+            "text": "I believe that Mr Powell\u2019s Fed, like Volcker\u2019s, will eventually get the inflation rate it wants. But it is likely to be something more like \u201ctwo point something\u201d than \u201ctwo point zero\u201d, even as the Fed aims for the latter in its public forecasts. Monetary policy operates with a delay, and that is likely to be factored in as the Fed decides when to stop tightening monetary policy and, once inflation reaches \u201ctwo point something\u201d, when to cut. "
+        },
+        {
+            "role": "body",
+            "text": "The Fed will keep pursuing price stability until the job is done. But by raising short-term interest rates and keeping them at restrictive levels for some time, the \u201cfixed-for-floating\u201d interest-rate swap embedded in previous QE programmes is likely to remain costly for some time. This will be true not only for the Fed\u2014and hence the Treasury\u2014but also for American commercial banks that hold a lot of long-maturity, low-coupon government bonds. As long as the Fed has to keep rates at restrictive levels to reduce inflation, neither taxpayers nor banks, having placed their bets, can escape the costs of higher interest rates.\u25a0_______________"
+        },
+        {
+            "role": "body",
+            "text": "Richard H. Clarida is the Lowell Harriss Professor of Economics and International Affairs at Columbia University and is Global Economic Adviser with PIMCO. From 2018 to 2022, he served as Vice Chair of the Federal Reserve Board of Governors."
+        },
+        {
+            "role": "body",
+            "text": "For more coverage of the turmoil afflicting financial markets and the global economy, see our recession hub."
+        }
+    ]
+}
