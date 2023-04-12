@@ -4,7 +4,7 @@ from page_source_downloader import PageDownloader
 
 class ArticleParaser(object):
     def __init__(self, 
-                 page_url = "https://www.economist.com/graphic-detail/2023/04/04/a-new-study-of-studies-reignites-controversy-over-mask-mandates") -> None:
+                 page_url = "https://www.economist.com/asia/2023/04/02/global-warming-is-killing-indians-and-pakistanis") -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
@@ -14,7 +14,7 @@ class ArticleParaser(object):
 
         self.save_source_page()
 
-        HTMLFile = open("articles/" + self.article_html, "r")
+        HTMLFile = open("source-html/" + self.article_html, "r")
         index = HTMLFile.read()
         S = BeautifulSoup(index, 'lxml')
         Tag = S.find("script", {"id": "__NEXT_DATA__"})
@@ -27,14 +27,11 @@ class ArticleParaser(object):
             print("Find more than one data in ", self.article_html)
 
     def save_source_page(self):
-        pd = PageDownloader(page_url=self.page_url, save_file_name="articles/" + self.article_html)
+        pd = PageDownloader(page_url=self.page_url, save_file_name="source-html/" + self.article_html)
         pd.fetch_page()
     
     def parase_article_metadata(self, json_data: dict):
         article_content_parts = json_data["props"]["pageProps"]["content"]
-
-        # with open("articles/" + self.article_json, "w+") as f:
-        #     json.dump(article_content_parts, f)
 
         self.parase_article_cover_image(json_data=article_content_parts)
         self.article_metadata["title"] = article_content_parts["headline"]
@@ -45,9 +42,8 @@ class ArticleParaser(object):
 
         self.parase_article_text(json_data=article_content_parts)
 
-        # new_home_page = {
-        #     "today": article_content_parts
-        # }
+        with open("articles/" + self.article_json, "w+") as f:
+            json.dump(self.article_metadata, f)
         
         
     def parase_article_cover_image(self, json_data: dict):
