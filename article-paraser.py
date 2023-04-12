@@ -4,7 +4,7 @@ from page_source_downloader import PageDownloader
 
 class ArticleParaser(object):
     def __init__(self, 
-                 page_url = "https://www.economist.com/briefing/2023/04/05/the-evidence-to-support-medicalised-gender-transitions-in-adolescents-is-worryingly-weak") -> None:
+                 page_url = "https://www.economist.com/graphic-detail/2023/04/04/a-new-study-of-studies-reignites-controversy-over-mask-mandates") -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
@@ -33,8 +33,8 @@ class ArticleParaser(object):
     def parase_article_metadata(self, json_data: dict):
         article_content_parts = json_data["props"]["pageProps"]["content"]
 
-        with open("articles/" + self.article_json, "w+") as f:
-            json.dump(article_content_parts, f)
+        # with open("articles/" + self.article_json, "w+") as f:
+        #     json.dump(article_content_parts, f)
 
         self.parase_article_cover_image(json_data=article_content_parts)
         self.article_metadata["title"] = article_content_parts["headline"]
@@ -51,10 +51,10 @@ class ArticleParaser(object):
         
         
     def parase_article_cover_image(self, json_data: dict):
-        cover_image_url = json_data["image"]["main"]["url"]["canonical"]
-        cover_image_height = json_data["image"]["main"]["height"]
-        cover_image_width = json_data["image"]["main"]["width"]
-        cover_image_description = json_data["image"]["main"]["description"]
+        cover_image_url = json_data["_metadata"]["imageUrl"]
+        cover_image_height = json_data["_metadata"]["imageHeight"]
+        cover_image_width = json_data["_metadata"]["imageWidth"]
+        cover_image_description = ""
 
         self.article_metadata["coverImageURL"] = cover_image_url
         self.article_metadata["coverImageWidth"] = cover_image_width
@@ -69,21 +69,28 @@ class ArticleParaser(object):
             current_para_json: dict = {}
             for child in content["children"]:
                 if child["type"] == "tag":
-                    if len(child["children"]) > 1:
-                        subchild_str = ""
-                        for subchild in child["children"]:
-                            if subchild["type"] == "text":
-                                subchild_str += subchild["data"]
+                    if child["name"] == "figure":
+                        current_para_json["role"] = "image"
+                        current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
+                        current_para_json["imageWidth"] = content["children"][0]["children"][0]["attribs"]["width"]
+                        current_para_json["imageHeight"] = content["children"][0]["children"][0]["attribs"]["height"]
+                        current_para_json["imageDescription"] = ""
+                    else:
+                        if len(child["children"]) > 1:
+                            subchild_str = ""
+                            for subchild in child["children"]:
+                                if subchild["type"] == "text":
+                                    subchild_str += subchild["data"]
+                                else:
+                                    subchild_str += subchild["children"][0]["data"]
+                            current_para.append(subchild_str)
+                        elif len(child["children"]) == 1:
+                            if child["children"][0]["type"] == "tag":
+                                current_para.append(child["children"][0]["children"][0]["data"])
+                            elif child["children"][0]["type"] == "text":
+                                current_para.append(child["children"][0]["data"])
                             else:
-                                subchild_str += subchild["children"][0]["data"]
-                        current_para.append(subchild_str)
-                    elif len(child["children"]) == 1:
-                        if child["children"][0]["type"] == "tag":
-                            current_para.append(child["children"][0]["children"][0]["data"])
-                        elif child["children"][0]["type"] == "text":
-                            current_para.append(child["children"][0]["data"])
-                        else:
-                            print("Type not handled in this version: ", child["children"][0]["type"])
+                                print("Type not handled in this version: ", child["children"][0]["type"])
                 else:
                     current_para.append(child["data"])
             current_para_str = ""
@@ -99,13 +106,22 @@ class ArticleParaser(object):
                 current_para_json["text"] = current_para_str
             
             elif content["name"] == "figure":
-                current_para_json["role"] = "image"
-                current_para_json["imageURL"] = content["children"][0]["attribs"]["src"]
-                current_para_json["imageWidth"] = content["children"][0]["attribs"]["width"]
-                current_para_json["imageHeight"] = content["children"][0]["attribs"]["height"]
-                current_para_json["imageDescription"] = ""
+                if content["children"][0]["name"] == "figure":
+                    current_para_json["role"] = "image"
+                    current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
+                    current_para_json["imageWidth"] = content["children"][0]["children"][0]["attribs"]["width"]
+                    current_para_json["imageHeight"] = content["children"][0]["children"][0]["attribs"]["height"]
+                elif content["children"][0]["name"] == "img":
+                    current_para_json["role"] = "image"
+                    current_para_json["imageURL"] = content["children"][0]["attribs"]["src"]
+                    current_para_json["imageWidth"] = content["children"][0]["attribs"]["width"]
+                    current_para_json["imageHeight"] = content["children"][0]["attribs"]["height"]
+                    current_para_json["imageDescription"] = ""
+                else:
+                    print("Name not handled in this version: ", content["children"][0]["name"])
             
-            article_contents.append(current_para_json)
+            if current_para_json != {}:
+                article_contents.append(current_para_json)
 
         for i in article_contents:
             print(i)
