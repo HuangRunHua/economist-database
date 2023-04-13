@@ -1,4 +1,3 @@
-from image_analyzer import ImageAnalyzer
 import os
 import glob
 import json
