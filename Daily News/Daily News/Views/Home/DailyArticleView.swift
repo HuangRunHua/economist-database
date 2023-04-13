@@ -16,7 +16,11 @@ struct DailyArticleView: View {
     var currentArticle: Article
     
     var coverImageURL: URL? {
-        return URL(string: self.currentArticle.coverImageURL)
+        if let coverImageURL = self.currentArticle.coverImageURL {
+            return URL(string: coverImageURL)
+        } else {
+            return nil
+        }
     }
     
     @EnvironmentObject var dailyArticleModelData: DailyArticleModelData
@@ -85,19 +89,21 @@ struct DailyArticleView: View {
             .padding(.bottom, 25)
             
             VStack {
-                AsyncImage(url: self.coverImageURL) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.bottom)
-                    case .empty, .failure:
-                        Rectangle()
-                            .aspectRatio(self.currentArticle.coverImageWidth/self.currentArticle.coverImageHeight, contentMode: .fit)
-                            .foregroundColor(.secondary)
-                    @unknown default:
-                        EmptyView()
+                if let coverImageURL = self.coverImageURL {
+                    AsyncImage(url: self.coverImageURL) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.bottom)
+                        case .empty, .failure:
+                            Rectangle()
+                                .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
+                                .foregroundColor(.secondary)
+                        @unknown default:
+                            EmptyView()
+                        }
                     }
                 }
                 

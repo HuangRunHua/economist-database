@@ -12,7 +12,11 @@ struct ArticleContentRow: View {
     var currentArticle: Article
     
     var coverImageURL: URL? {
-        return URL(string: self.currentArticle.coverImageURL)
+        if let coverImageURL = self.currentArticle.coverImageURL {
+            return URL(string: coverImageURL)
+        } else {
+            return nil
+        }
     }
     
     @State private var width: CGFloat? = nil

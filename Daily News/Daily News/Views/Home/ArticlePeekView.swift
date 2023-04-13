@@ -12,27 +12,33 @@ struct ArticlePeekView: View {
     var currentArticle: Article
     
     var coverImageURL: URL? {
-        return URL(string: self.currentArticle.coverImageURL)
+        if let coverImageURL = self.currentArticle.coverImageURL {
+            return URL(string: coverImageURL)
+        } else {
+            return nil
+        }
     }
     
     @State private var width: CGFloat? = nil
     
     var body: some View {
         VStack {
-            AsyncImage(url: self.coverImageURL) { phase in
-                switch phase {
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(7)
-                case .empty, .failure:
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .aspectRatio(self.currentArticle.coverImageWidth/self.currentArticle.coverImageHeight, contentMode: .fit)
-                        .cornerRadius(7)
-                @unknown default:
-                    EmptyView()
+            if let coverImageURL = self.coverImageURL {
+                AsyncImage(url: coverImageURL) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(7)
+                    case .empty, .failure:
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
+                            .cornerRadius(7)
+                    @unknown default:
+                        EmptyView()
+                    }
                 }
             }
             HStack {

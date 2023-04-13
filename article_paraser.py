@@ -89,8 +89,8 @@ class ArticleParaser(object):
                     if child["name"] == "figure":
                         current_para_json["role"] = "image"
                         current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
-                        current_para_json["imageWidth"] = content["children"][0]["children"][0]["attribs"]["width"]
-                        current_para_json["imageHeight"] = content["children"][0]["children"][0]["attribs"]["height"]
+                        current_para_json["imageWidth"] = float(content["children"][0]["children"][0]["attribs"]["width"])
+                        current_para_json["imageHeight"] = float(content["children"][0]["children"][0]["attribs"]["height"])
                         current_para_json["imageDescription"] = ""
                     else:
                         if len(child["children"]) > 1:
@@ -129,13 +129,13 @@ class ArticleParaser(object):
                 if content["children"][0]["name"] == "figure":
                     current_para_json["role"] = "image"
                     current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
-                    current_para_json["imageWidth"] = content["children"][0]["children"][0]["attribs"]["width"]
-                    current_para_json["imageHeight"] = content["children"][0]["children"][0]["attribs"]["height"]
+                    current_para_json["imageWidth"] = float(content["children"][0]["children"][0]["attribs"]["width"])
+                    current_para_json["imageHeight"] = float(content["children"][0]["children"][0]["attribs"]["height"])
                 elif content["children"][0]["name"] == "img":
                     current_para_json["role"] = "image"
                     current_para_json["imageURL"] = content["children"][0]["attribs"]["src"]
-                    current_para_json["imageWidth"] = content["children"][0]["attribs"]["width"]
-                    current_para_json["imageHeight"] = content["children"][0]["attribs"]["height"]
+                    current_para_json["imageWidth"] = float(content["children"][0]["attribs"]["width"])
+                    current_para_json["imageHeight"] = float(content["children"][0]["attribs"]["height"])
                     current_para_json["imageDescription"] = ""
                 else:
                     print("Name not handled in this version: ", content["children"][0]["name"])

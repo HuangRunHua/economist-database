@@ -21,7 +21,11 @@ struct ArticleView: View {
     var currentArticle: Article
     
     var coverImageURL: URL? {
-        return URL(string: self.currentArticle.coverImageURL)
+        if let coverImageURL = self.currentArticle.coverImageURL {
+            return URL(string: coverImageURL)
+        } else {
+            return nil
+        }
     }
     
     @EnvironmentObject var modelData: ModelData
@@ -99,7 +103,7 @@ struct ArticleView: View {
                             .padding(.bottom)
                     case .empty, .failure:
                         Rectangle()
-                            .aspectRatio(self.currentArticle.coverImageWidth/self.currentArticle.coverImageHeight, contentMode: .fit)
+                            .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
                             .foregroundColor(.secondary)
                     @unknown default:
                         EmptyView()
