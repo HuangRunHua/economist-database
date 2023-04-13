@@ -10,7 +10,7 @@ class WeeklyParaser(object):
         self.page_url = page_url
         self.weekly_issue_metadata = {}
         self.id = id
-        self.link_prefix = "https://github.com/HuangRunHua/economist-database/raw/main/weekly-json/"
+        self.link_prefix = "https://github.com/HuangRunHua/economist-database/raw/main/articles/"
         self.date = page_url.split("/")[-1]
  
     def parase_data(self):
@@ -127,8 +127,8 @@ if __name__ == "__main__":
         },
     ]
 
-    page_url = "https://www.economist.com/printedition/2023-01-14"
-    tp = WeeklyParaser(page_url=page_url, id="00000000-0000-0000-0000-000000000001")
+    # page_url = "https://www.economist.com/printedition/2023-01-14"
+    tp = WeeklyParaser(page_url=page_urls[0]["link"], id=page_urls[0]["id"])
     tp.parase_data()
 
     # for page_url in page_urls:
