@@ -90,7 +90,7 @@ struct DailyArticleView: View {
             
             VStack {
                 if let coverImageURL = self.coverImageURL {
-                    AsyncImage(url: self.coverImageURL) { phase in
+                    AsyncImage(url: coverImageURL) { phase in
                         switch phase {
                         case .success(let image):
                             image
