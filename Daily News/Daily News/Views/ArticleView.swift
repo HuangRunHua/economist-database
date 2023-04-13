@@ -110,7 +110,7 @@ struct ArticleView: View {
                     }
                 }
                 
-                Text(self.currentArticle.coverImageDescription)
+                Text(self.currentArticle.coverImageDescription ?? "")
                     .font(Font.custom("Georgia", size: CGFloat(15 + fontSize)))
                     .foregroundColor(.gray)
                     .padding([.bottom])

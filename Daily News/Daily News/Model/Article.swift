@@ -19,6 +19,6 @@ struct Article: Identifiable, Codable {
     var coverImageHeight: Double?
     var hashTag: String
     var authorName: String
-    var coverImageDescription: String
+    var coverImageDescription: String?
     var publishDate: String
 }

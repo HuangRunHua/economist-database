@@ -110,7 +110,6 @@ final class DailyArticleModelData: ObservableObject, Decodable {
     func fetchLatestMagazine() {
         self.latestMagazine = []
         for magazineURL in self.latestMagazineURL {
-            print(magazineURL)
             _fetchLatestMagazine(urlString: magazineURL.magazineURL)
         }
         self.latestMagazine = self.latestMagazine
@@ -131,7 +130,6 @@ final class DailyArticleModelData: ObservableObject, Decodable {
             if let data = data {
                 DispatchQueue.main.async {
                     if let latest = self._parseMagazineJsonData(data: data) {
-                        print(latest)
                         self.latestMagazine.append(latest)
                     } else {
                         print("No current magazine found")

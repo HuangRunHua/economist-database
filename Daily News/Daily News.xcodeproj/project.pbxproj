@@ -13,7 +13,6 @@
 		A90F852E28E3580300DDA5E0 /* ArticleConetntsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F852D28E3580300DDA5E0 /* ArticleConetntsList.swift */; };
 		A90F853128E3622000DDA5E0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F853028E3622000DDA5E0 /* ColorExtensions.swift */; };
 		A90F853328E3F0D100DDA5E0 /* ArticleContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */; };
-		A91878E9293635520015E00E /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91878E8293635520015E00E /* LinkView.swift */; };
 		A91878ED29363BF90015E00E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91878EC29363BF90015E00E /* SafariView.swift */; };
 		A9291BE928E2C328007F5F77 /* article.json in Resources */ = {isa = PBXBuildFile; fileRef = A9291BE828E2C328007F5F77 /* article.json */; };
 		A9291BF428E301F3007F5F77 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9291BF328E301F3007F5F77 /* TranslationView.swift */; };
@@ -39,7 +38,6 @@
 		A90F852D28E3580300DDA5E0 /* ArticleConetntsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleConetntsList.swift; sourceTree = "<group>"; };
 		A90F853028E3622000DDA5E0 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentRow.swift; sourceTree = "<group>"; };
-		A91878E8293635520015E00E /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 		A91878EC29363BF90015E00E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		A9291BE828E2C328007F5F77 /* article.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = article.json; sourceTree = "<group>"; };
 		A9291BF328E301F3007F5F77 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */,
 				A93DFF1628E1F59400FC5BAE /* ArticleView.swift */,
 				A91878EC29363BF90015E00E /* SafariView.swift */,
-				A91878E8293635520015E00E /* LinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,7 +252,6 @@
 				A96A15F12937ADAA003BCDD5 /* DailyArticleView.swift in Sources */,
 				A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */,
 				A93DFF1728E1F59400FC5BAE /* ArticleView.swift in Sources */,
-				A91878E9293635520015E00E /* LinkView.swift in Sources */,
 				A96A15ED2937A9F2003BCDD5 /* TestView.swift in Sources */,
 				A93DFF2B28E1F6DD00FC5BAE /* ModelData.swift in Sources */,
 				A93DFF1528E1F59400FC5BAE /* Daily_NewsApp.swift in Sources */,
@@ -404,7 +400,7 @@
 				DEVELOPMENT_TEAM = YRB62S584T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "纽约客";
+				INFOPLIST_KEY_CFBundleDisplayName = Economist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -449,7 +445,7 @@
 				DEVELOPMENT_TEAM = YRB62S584T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "纽约客";
+				INFOPLIST_KEY_CFBundleDisplayName = Economist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
