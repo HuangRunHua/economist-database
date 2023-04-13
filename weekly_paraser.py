@@ -60,7 +60,12 @@ class WeeklyParaser(object):
 
                 articles_links.append(self.link_prefix + self.date + "/" + ap.article_json)
 
-        self.weekly_issue_metadata["articles"] = [{"articleURL": link} for link in articles_links]
+        self.weekly_issue_metadata["articles"] = [
+            {
+                "id": id,
+                "articleURL": link
+            } for id, link in zip(range(len(articles_links)), articles_links)
+        ]
 
         
         
@@ -128,7 +133,7 @@ if __name__ == "__main__":
     ]
 
     # page_url = "https://www.economist.com/printedition/2023-01-14"
-    tp = WeeklyParaser(page_url=page_urls[7]["link"], id=page_urls[7]["id"])
+    tp = WeeklyParaser(page_url=page_urls[0]["link"], id=page_urls[0]["id"])
     tp.parase_data()
 
     # for page_url in page_urls:
