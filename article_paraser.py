@@ -33,31 +33,34 @@ class ArticleParaser(object):
         pd.fetch_page()
     
     def parase_article_metadata(self, json_data: dict):
-        article_content_parts = json_data["props"]["pageProps"]["content"]
+        if "content" in json_data["props"]["pageProps"]:
+            article_content_parts = json_data["props"]["pageProps"]["content"]
 
-        """
-        Save original JSON file for future usage
-        """
-        if not os.path.exists("DEBUG/" + self.date):
-            os.mkdir("DEBUG/" + self.date)
+            """
+            Save original JSON file for future usage
+            """
+            if not os.path.exists("DEBUG/" + self.date):
+                os.mkdir("DEBUG/" + self.date)
 
-        with open("DEBUG/" + self.date + "/" + self.__article_source_json, "w+") as f:
-            json.dump(article_content_parts, f)
+            with open("DEBUG/" + self.date + "/" + self.__article_source_json, "w+") as f:
+                json.dump(article_content_parts, f)
 
-        self.parase_article_cover_image(json_data=article_content_parts)
-        self.article_metadata["title"] = article_content_parts["headline"]
-        self.article_metadata["subtitle"] = article_content_parts["description"]
-        self.article_metadata["hashTag"] = article_content_parts["_metadata"]["section"]
-        self.article_metadata["authorName"] = article_content_parts["_metadata"]["author"][0] if len(article_content_parts["_metadata"]["author"]) == 1 else article_content_parts["_metadata"]["author"][0]+" et al"
-        self.article_metadata["publishDate"] = article_content_parts["_metadata"]["datePublished"]
+            self.parase_article_cover_image(json_data=article_content_parts)
+            self.article_metadata["title"] = article_content_parts["headline"]
+            self.article_metadata["subtitle"] = article_content_parts["description"]
+            self.article_metadata["hashTag"] = article_content_parts["_metadata"]["section"]
+            self.article_metadata["authorName"] = article_content_parts["_metadata"]["author"][0] if len(article_content_parts["_metadata"]["author"]) == 1 else article_content_parts["_metadata"]["author"][0]+" et al"
+            self.article_metadata["publishDate"] = article_content_parts["_metadata"]["datePublished"]
 
-        self.parase_article_text(json_data=article_content_parts)
+            self.parase_article_text(json_data=article_content_parts)
 
-        if not os.path.exists("articles/" + self.date):
-            os.mkdir("articles/" + self.date)
+            if not os.path.exists("articles/" + self.date):
+                os.mkdir("articles/" + self.date)
 
-        with open("articles/" + self.date + "/" + self.article_json, "w+") as f:
-            json.dump(self.article_metadata, f)
+            with open("articles/" + self.date + "/" + self.article_json, "w+") as f:
+                json.dump(self.article_metadata, f)
+        else:
+            print("Article not parased: ", self.article_html)
 
         
         
@@ -100,7 +103,6 @@ class ArticleParaser(object):
                             current_para.append(subchild_str)
                         elif len(child["children"]) == 1:
                             if child["children"][0]["type"] == "tag":
-                                print(child["children"])
                                 if not "data" in child["children"][0]["children"][0]:
                                     current_para.append(child["children"][0]["children"][0]["children"][0]["data"])
                                 else:
