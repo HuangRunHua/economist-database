@@ -128,7 +128,7 @@ if __name__ == "__main__":
     ]
 
     # page_url = "https://www.economist.com/printedition/2023-01-14"
-    tp = WeeklyParaser(page_url=page_urls[3]["link"], id=page_urls[3]["id"])
+    tp = WeeklyParaser(page_url=page_urls[4]["link"], id=page_urls[4]["id"])
     tp.parase_data()
 
     # for page_url in page_urls:
