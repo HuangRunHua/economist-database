@@ -1,5 +1,6 @@
 import requests
 import shutil
+from PIL import Image
 
 class ImageDownloader(object):
     def __init__(self, image_url: str) -> None:
@@ -14,8 +15,12 @@ class ImageDownloader(object):
                 shutil.copyfileobj(r.raw, f)
         
             print('Image sucessfully Downloaded: ', self.filename)
+            im = Image.open(self.filename)
+            width, height = im.size
+            return (width, height)
         else:
             print('Image Couldn\'t be retreived')
+            return (0,0)
 
 # if __name__ == "__main__":
 #     image_url: str = "https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/media-assets/image/20230401_WBD001.jpg"
