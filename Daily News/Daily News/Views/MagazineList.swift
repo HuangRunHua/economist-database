@@ -26,6 +26,10 @@ struct MagazineList: View {
         return modelData.magazines.sorted(by: { $0.id > $1.id })
     }
     
+    var latestArticlesList: [Article] {
+        return modelData.latestArticles.sorted(by: { $0.id < $1.id })
+    }
+    
     /// 最新一期的杂志
     var latestMagazine: [Magazine] {
         return modelData.latestMagazine
@@ -37,10 +41,6 @@ struct MagazineList: View {
     
     var latestMagazineURL: [LatestMagazineURL] {
         return modelData.latestMagazineURL
-    }
-    
-    var dailyArticleMagazineURL: [LatestMagazineURL] {
-        return dailyArticleModelData.latestMagazineURL
     }
     
     private let gridItemLayout = [GridItem(.flexible())]
