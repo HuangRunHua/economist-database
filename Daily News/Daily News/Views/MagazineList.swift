@@ -89,7 +89,7 @@ extension MagazineList {
         } else {
             ScrollView(showsIndicators: false) {
                 VStack {
-                    ForEach(self.modelData.latestArticles) { article in
+                    ForEach(self.latestArticlesList) { article in
                         NavigationLink {
                             ArticleView(currentArticle: article)
                                 .environmentObject(modelData)

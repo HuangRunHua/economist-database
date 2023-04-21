@@ -51,7 +51,7 @@ struct ArticleConetntsList: View {
             if modelData.articles.isEmpty {
                 ProgressView()
             } else {
-                ForEach(modelData.articles) { article in
+                ForEach(modelData.articles.sorted(by: { $0.id < $1.id })) { article in
                     NavigationLink {
                         ArticleView(currentArticle: article)
                             .environmentObject(modelData)
@@ -74,7 +74,6 @@ struct ArticleConetntsList: View {
             modelData.selectedMagazine = self.magazine
             modelData.fetchAllArticles()
         }
-//        .interactiveDismissDisabled()
         
     }
 }
@@ -89,7 +88,8 @@ struct ArticleConetntsList_Previews: PreviewProvider {
                 coverImageWidth: 555,
                 coverImageHeight: 688,
                 articles: [
-                    ArticleURL(id: 0, articleURL: "https://github.com/HuangRunHua/the-new-yorker-database/raw/main/database/2022-11-14/eposide/emma-thompsons-third-act.json")
+                    ArticleURL(id: 0, articleURL: "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-01-07/who-is-andrew-tate-the-misogynist-hero-to-millions-of-young-men.json"),
+                    ArticleURL(id: 1, articleURL: "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-01-07/pele-went-from-poverty-to-football-superstardom.json")
                 ],
                 date: "Oct 3rh 2022"))
         .environmentObject(ModelData())
