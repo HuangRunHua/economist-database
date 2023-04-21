@@ -11,10 +11,6 @@ struct MagazineCoverRow: View {
     
     var magazine: Magazine
     
-//    var coverImageURL: URL? {
-//        return URL(string: self.magazine.coverImageURL)
-//    }
-    
     @State private var coverImageURL: URL? = nil
     
     var body: some View {

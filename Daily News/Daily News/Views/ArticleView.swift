@@ -90,8 +90,8 @@ struct ArticleView: View {
                     .foregroundColor(.gray)
                 Spacer()
             }
-            .padding([.leading, .trailing, .top])
-            .padding(.bottom, 25)
+            .padding([.leading, .trailing])
+            .padding([.bottom, .top], 7)
             
             VStack {
                 AsyncImage(url: self.coverImageURL) { phase in
@@ -99,29 +99,34 @@ struct ArticleView: View {
                     case .success(let image):
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.bottom)
+                            .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
+                            .padding(.bottom, 7)
                     case .empty, .failure:
                         Rectangle()
                             .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
                             .foregroundColor(.secondary)
+                            .padding(.bottom,7)
                     @unknown default:
                         EmptyView()
                     }
                 }
                 
-                Text(self.currentArticle.coverImageDescription ?? "")
-                    .font(Font.custom("Georgia", size: CGFloat(15 + fontSize)))
-                    .foregroundColor(.gray)
-                    .padding([.bottom])
-                    .padding([.leading, .trailing], 7)
-                    .contextMenu(ContextMenu(menuItems: {
-                        Button("Translate", action: {
-                            if self.currentArticle.coverImageDescription != "" {
-                                self.translateText = self.currentArticle.coverImageDescription
-                            }
-                        })
-                    }))
+                if let imageDescription = self.currentArticle.coverImageDescription {
+                    if imageDescription != " " && imageDescription != "" {
+                        Text(imageDescription)
+                            .font(Font.custom("Georgia", size: CGFloat(15 + fontSize)))
+                            .foregroundColor(.gray)
+                            .padding([.bottom])
+                            .padding([.leading, .trailing], 7)
+                            .contextMenu(ContextMenu(menuItems: {
+                                Button("Translate", action: {
+                                    if self.currentArticle.coverImageDescription != "" {
+                                        self.translateText = self.currentArticle.coverImageDescription
+                                    }
+                                })
+                            }))
+                    }
+                }
             }
             
             ForEach(self.currentArticle.contents) { content in
@@ -159,11 +164,6 @@ struct ArticleView: View {
                 }
             }
         }
-//        .sheet(isPresented: $showLinkContent) {
-//            if let selectedLink = self.selectedLink {
-//                SafariView(url: selectedLink)
-//            }
-//        }
     }
 }
 
@@ -221,28 +221,32 @@ extension ArticleView {
                     case .success(let image):
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
                     case .empty, .failure:
                         Rectangle()
-                            .aspectRatio((content.imageWidth ?? 1)/(content.imageHeight  ?? 1), contentMode: .fit)
+                            .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
                             .foregroundColor(.secondary)
-                            .ignoresSafeArea()
                     @unknown default:
                         EmptyView()
                     }
                 }
-                Text(content.imageDescription ?? "")
-                    .font(Font.custom("Georgia", size: CGFloat(15 + fontSize)))
-                    .foregroundColor(.gray)
-                    .padding([.bottom])
-                    .padding([.leading, .trailing], 7)
-                    .contextMenu(ContextMenu(menuItems: {
-                        Button("Translate", action: {
-                            if let imageDescription = content.imageDescription {
-                                self.translateText = imageDescription
-                            }
-                        })
-                    }))
+                if let contentImageDescription = content.imageDescription {
+                    if contentImageDescription != " " && contentImageDescription != "" {
+                        Text(contentImageDescription)
+                            .font(Font.custom("Georgia", size: CGFloat(15 + fontSize)))
+                            .foregroundColor(.gray)
+                            .padding([.bottom])
+                            .padding([.leading, .trailing], 7)
+                            .contextMenu(ContextMenu(menuItems: {
+                                Button("Translate", action: {
+                                    if let imageDescription = content.imageDescription {
+                                        self.translateText = imageDescription
+                                    }
+                                })
+                            }))
+                    }
+                }
+                
             }
         case .head:
             HStack {
@@ -276,17 +280,6 @@ extension ArticleView {
             .frame(maxWidth: self.maxWidth)
         case .link:
             EmptyView()
-//            if let resourcelink = content.link {
-//                if let url = URL(string: resourcelink) {
-//                    LinkView(previewURL: url)
-//                        .aspectRatio(contentMode: .fit)
-//                        .padding()
-//                        .onTapGesture {
-//                            self.selectedLink = url
-//                            self.showLinkContent = true
-//                        }
-//                }
-//            }
         }
     }
     

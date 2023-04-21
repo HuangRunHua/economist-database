@@ -57,7 +57,7 @@ struct ArticleContentRow: View {
                 }
                 Divider()
                 HStack {
-                    Text(currentArticle.authorName)
+                    Text(currentArticle.hashTag)
                         .foregroundColor(.gray)
                         .fontWeight(.semibold)
                     Spacer()
