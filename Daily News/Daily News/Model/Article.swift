@@ -8,9 +8,7 @@
 import Foundation
 
 struct Article: Identifiable, Codable {
-    var id: UUID {
-        return UUID()
-    }
+    var id: Int
     var title: String
     var subtitle: String
     var coverImageURL: String?

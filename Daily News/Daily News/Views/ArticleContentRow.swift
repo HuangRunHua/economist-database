@@ -84,6 +84,6 @@ struct ArticleContentRow: View {
 struct ArticleContentRow_Previews: PreviewProvider {
     static var previews: some View {
         ArticleContentRow(currentArticle: Article(
-            title: "When Migrants Become Political Pawns Clothing", subtitle: "Governor DeSantis appeared to be attempting to troll people whose magnanimity, he seemed to believe, is inversely proportional to the extent to which a given problem has an impact on their own lives.", coverImageURL: "https://media.newyorker.com/photos/635abe1ccd95e0b0aea28cec/4:3/w_560,c_limit/221107_r41294.jpg", contents: [], coverImageWidth: 500, coverImageHeight: 500, hashTag: "Comment", authorName: "author name", coverImageDescription: "cover image description", publishDate: "publish date"))
+            id: 0, title: "When Migrants Become Political Pawns Clothing", subtitle: "Governor DeSantis appeared to be attempting to troll people whose magnanimity, he seemed to believe, is inversely proportional to the extent to which a given problem has an impact on their own lives.", coverImageURL: "https://media.newyorker.com/photos/635abe1ccd95e0b0aea28cec/4:3/w_560,c_limit/221107_r41294.jpg", contents: [], coverImageWidth: 500, coverImageHeight: 500, hashTag: "Comment", authorName: "author name", coverImageDescription: "cover image description", publishDate: "publish date"))
     }
 }
