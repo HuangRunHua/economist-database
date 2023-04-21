@@ -4,13 +4,14 @@ from bs4 import BeautifulSoup
 from page_source_downloader import PageDownloader
 
 class ArticleParaser(object):
-    def __init__(self, page_url: str, date: str) -> None:
+    def __init__(self, page_url: str, date: str, id: int) -> None:
         self.article_html = page_url.split("/")[-1] + ".html"
         self.article_json = page_url.split("/")[-1] + ".json"
         self.__article_source_json = page_url.split("/")[-1] + ".json"
         self.page_url = page_url
         self.article_metadata = {}
         self.date = date
+        self.article_id = id
 
     def parase_data(self):
 
@@ -53,6 +54,8 @@ class ArticleParaser(object):
             self.article_metadata["publishDate"] = article_content_parts["_metadata"]["datePublished"]
 
             self.parase_article_text(json_data=article_content_parts)
+
+            self.article_metadata["id"] = self.article_id
 
             if not os.path.exists("articles/" + self.date):
                 os.mkdir("articles/" + self.date)

@@ -44,10 +44,6 @@ class AddID(object):
 
         self.fetch_ori_link_of_articles(json_data=new_home_page_parts)
 
-
-        with open("weekly-json/" + self.weekly_json, "w+") as f:
-            json.dump(self.weekly_issue_metadata, f)
-
     def fetch_ori_link_of_articles(self, json_data: dict):
         articles_parts = json_data["pageProps"]["content"]["hasPart"]["parts"]
         for article, id in zip(articles_parts, range(len(articles_parts))):

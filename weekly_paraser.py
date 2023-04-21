@@ -51,11 +51,11 @@ class WeeklyParaser(object):
     def fetch_ori_link_of_articles(self, json_data: dict):
         articles_parts = json_data["pageProps"]["content"]["hasPart"]["parts"]
         articles_links: list[str] = []
-        for article in articles_parts:
+        for article, article_id in zip(articles_parts, range(len(articles_parts))):
             if "Article" in article["type"]:
                 article_link = article["url"]["canonical"]
                 # article_tag = article["print"]["section"]["headline"]
-                ap = ArticleParaser(page_url=article_link, date=self.date)
+                ap = ArticleParaser(page_url=article_link, date=self.date, id=article_id)
                 ap.parase_data()
 
                 articles_links.append(self.link_prefix + self.date + "/" + ap.article_json)
