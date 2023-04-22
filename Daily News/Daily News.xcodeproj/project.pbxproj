@@ -11,7 +11,7 @@
 		A90F852A28E3463C00DDA5E0 /* MagazineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F852928E3463C00DDA5E0 /* MagazineList.swift */; };
 		A90F852C28E350CD00DDA5E0 /* MagazineCoverRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F852B28E350CD00DDA5E0 /* MagazineCoverRow.swift */; };
 		A90F852E28E3580300DDA5E0 /* ArticleConetntsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F852D28E3580300DDA5E0 /* ArticleConetntsList.swift */; };
-		A90F853128E3622000DDA5E0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F853028E3622000DDA5E0 /* ColorExtensions.swift */; };
+		A90F853128E3622000DDA5E0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F853028E3622000DDA5E0 /* Extensions.swift */; };
 		A90F853328E3F0D100DDA5E0 /* ArticleContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */; };
 		A91878ED29363BF90015E00E /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91878EC29363BF90015E00E /* SafariView.swift */; };
 		A9291BE928E2C328007F5F77 /* article.json in Resources */ = {isa = PBXBuildFile; fileRef = A9291BE828E2C328007F5F77 /* article.json */; };
@@ -27,6 +27,9 @@
 		A93DFF2B28E1F6DD00FC5BAE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */; };
 		A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */; };
 		A96A15EF2937AA73003BCDD5 /* DailyArticleModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EE2937AA73003BCDD5 /* DailyArticleModelData.swift */; };
+		A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */; };
+		A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */; };
+		A9AC8E9D29F3B57B00B06412 /* DictionaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +37,7 @@
 		A90F852928E3463C00DDA5E0 /* MagazineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineList.swift; sourceTree = "<group>"; };
 		A90F852B28E350CD00DDA5E0 /* MagazineCoverRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineCoverRow.swift; sourceTree = "<group>"; };
 		A90F852D28E3580300DDA5E0 /* ArticleConetntsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleConetntsList.swift; sourceTree = "<group>"; };
-		A90F853028E3622000DDA5E0 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		A90F853028E3622000DDA5E0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentRow.swift; sourceTree = "<group>"; };
 		A91878EC29363BF90015E00E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		A9291BE828E2C328007F5F77 /* article.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = article.json; sourceTree = "<group>"; };
@@ -52,6 +55,10 @@
 		A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePeekView.swift; sourceTree = "<group>"; };
 		A96A15EE2937AA73003BCDD5 /* DailyArticleModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyArticleModelData.swift; sourceTree = "<group>"; };
+		A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTextModifier.swift; sourceTree = "<group>"; };
+		A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySearchViewController.swift; sourceTree = "<group>"; };
+		A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryText.swift; sourceTree = "<group>"; };
+		A9AC8E9E29F3B59A00B06412 /* Daily-News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Daily-News-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +89,7 @@
 		A90F852F28E3621400DDA5E0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A90F853028E3622000DDA5E0 /* ColorExtensions.swift */,
+				A90F853028E3622000DDA5E0 /* Extensions.swift */,
 				A9299F212923BEF000A88CF0 /* UIDeviceExtension.swift */,
 				A9299F1E2922607B00A88CF0 /* CollectSize */,
 			);
@@ -117,10 +124,12 @@
 		A93DFF1328E1F59400FC5BAE /* Daily News */ = {
 			isa = PBXGroup;
 			children = (
+				A9AC8E9E29F3B59A00B06412 /* Daily-News-Info.plist */,
 				A93DFF1428E1F59400FC5BAE /* Daily_NewsApp.swift */,
 				A93DFF2528E1F5C100FC5BAE /* Model */,
 				A90F852828E3462A00DDA5E0 /* Views */,
 				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
+				A9AC8E9729F3B56A00B06412 /* DictionaryView */,
 				A90F852F28E3621400DDA5E0 /* Extensions */,
 				A9291BE828E2C328007F5F77 /* article.json */,
 				A93DFF1828E1F59400FC5BAE /* Assets.xcassets */,
@@ -163,6 +172,16 @@
 				A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A9AC8E9729F3B56A00B06412 /* DictionaryView */ = {
+			isa = PBXGroup;
+			children = (
+				A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */,
+				A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */,
+				A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */,
+			);
+			path = DictionaryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9299F1D2922606500A88CF0 /* CollectSizePreference.swift in Sources */,
-				A90F853128E3622000DDA5E0 /* ColorExtensions.swift in Sources */,
+				A90F853128E3622000DDA5E0 /* Extensions.swift in Sources */,
 				A9291BF428E301F3007F5F77 /* TranslationView.swift in Sources */,
 				A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */,
 				A93DFF1728E1F59400FC5BAE /* ArticleView.swift in Sources */,
@@ -255,7 +274,10 @@
 				A90F852C28E350CD00DDA5E0 /* MagazineCoverRow.swift in Sources */,
 				A91878ED29363BF90015E00E /* SafariView.swift in Sources */,
 				A9299F222923BEF000A88CF0 /* UIDeviceExtension.swift in Sources */,
+				A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */,
 				A90F852728E3424900DDA5E0 /* Database.swift in Sources */,
+				A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */,
+				A9AC8E9D29F3B57B00B06412 /* DictionaryText.swift in Sources */,
 				A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +414,7 @@
 				DEVELOPMENT_TEAM = YRB62S584T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Daily-News-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Economist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -437,6 +460,7 @@
 				DEVELOPMENT_TEAM = YRB62S584T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Daily-News-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Economist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
