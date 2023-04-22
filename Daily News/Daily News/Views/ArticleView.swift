@@ -32,15 +32,20 @@ struct ArticleView: View {
     
     private let maxWidth: CGFloat = 800
     
+    @State private var showingSheet = false
+    @State private var selectedWord: String = ""
+    
     var body: some View {
         
         ScrollView {
             VStack(alignment: .leading, spacing: 30) {
                 VStack(alignment: .leading, spacing: 7) {
                     HStack {
-                        Text(self.currentArticle.hashTag.uppercased())
-                            .font(Font.custom("Georgia", size: 15))
-                            .foregroundColor(.hashtagColor)
+//                        Text(self.currentArticle.hashTag.uppercased())
+                        DictionaryText(self.currentArticle.hashTag, color: .hashtagColor)
+                            .modifier(DictionaryTextModifier())
+                            .font(Font.custom("Georgia", size: 17))
+//                            .foregroundColor(.hashtagColor)
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
                                 Button("Translate", action: {
@@ -50,7 +55,9 @@ struct ArticleView: View {
                         Spacer()
                     }
                     HStack {
-                        Text(self.currentArticle.title)
+//                        Text(self.currentArticle.title)
+                        DictionaryText(self.currentArticle.title)
+                            .modifier(DictionaryTextModifier())
                             .font(Font.custom("Georgia", size: 30))
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
@@ -63,7 +70,9 @@ struct ArticleView: View {
                 }
                 if self.currentArticle.subtitle != "" {
                     HStack {
-                        Text(self.currentArticle.subtitle)
+//                        Text(self.currentArticle.subtitle)
+                        DictionaryText(self.currentArticle.subtitle)
+                            .modifier(DictionaryTextModifier())
                             .font(Font.custom("Georgia", size: 20))
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
@@ -164,6 +173,28 @@ struct ArticleView: View {
                 }
             }
         }
+        .onOpenURL { url in
+            if let selectedWord = self.parseURL(url: url) {
+                self.selectedWord = selectedWord
+                if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: selectedWord) {
+                    self.showingSheet.toggle()
+                }
+            }
+        }
+        .sheet(isPresented: $showingSheet) {
+            DictionarySearchViewController(word: self.selectedWord)
+                //.presentationDetents([.medium, .large])
+        }
+    }
+    
+    private func parseURL(url: URL) -> String? {
+        let string = url.absoluteString
+        if let keyword = string.split(separator: "//").last {
+            if keyword != "" {
+                return String(keyword)
+            }
+        }
+        return nil
     }
 }
 
@@ -182,7 +213,9 @@ extension ArticleView {
         switch content.contentRole {
         case .quote:
             HStack {
-                Text(content.text ?? "")
+//                Text(content.text ?? "")
+                DictionaryText(content.text ?? "")
+                    .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
                     .foregroundColor(.gray)
                     .padding([.leading, .trailing])
@@ -201,7 +234,9 @@ extension ArticleView {
             
         case .body:
             HStack {
-                Text(content.text ?? "")
+//                Text(content.text ?? "")
+                DictionaryText(content.text ?? "")
+                    .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
                     .textSelection(.enabled)
                     .lineSpacing(7)
@@ -250,7 +285,9 @@ extension ArticleView {
             }
         case .head:
             HStack {
-                Text(content.text ?? "")
+//                Text(content.text ?? "")
+                DictionaryText(content.text ?? "")
+                    .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(22 + fontSize)))
                     .fontWeight(.bold)
                     .textSelection(.enabled)
@@ -265,7 +302,9 @@ extension ArticleView {
             .frame(maxWidth: self.maxWidth)
         case .second:
             HStack {
-                Text(content.text ?? "")
+//                Text(content.text ?? "")
+                DictionaryText(content.text ?? "")
+                    .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(20 + fontSize)))
                     .fontWeight(.bold)
                     .textSelection(.enabled)
