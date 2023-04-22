@@ -9,9 +9,11 @@ import SwiftUI
 
 struct DictionaryText: View {
     var text: String
+    var color: Color
         
-    init(_ text: String) {
+    init(_ text: String, color: Color = Color.dictionaryTextColor) {
         self.text = text
+        self.color = color
     }
     
     var body: some View {
