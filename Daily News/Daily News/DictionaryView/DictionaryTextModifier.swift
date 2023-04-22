@@ -9,19 +9,19 @@ import SwiftUI
 
 protocol TextModifier {
     associatedtype Body : View
-    func body(text: DictionaryText) -> Self.Body
+    func body(text: DictionaryText, color: Color) -> Self.Body
 }
 
 extension DictionaryText {
     func modifier<M>(_ modifier: M) -> some View where M: TextModifier {
-        modifier.body(text: self)
+        modifier.body(text: self, color: color)
     }
 }
 
 
 struct DictionaryTextModifier: TextModifier {
 
-    func body(text: DictionaryText) -> some View {
+    func body(text: DictionaryText, color: Color) -> some View {
         let words = text.text.split(separator: " ")
         var output: Text = Text("")
         for word in words {
@@ -31,10 +31,10 @@ struct DictionaryTextModifier: TextModifier {
                     let specialLetter: [String] = ["\"", "'", "“", "”", "’", "—"]
                     if String(word).pureWord.contains(where: { specialLetter.contains( String($0) ) }) {
                         $0.link = URL(string: "dictionarytext://" + String(word).letters)
-                        $0.foregroundColor = .dictionaryTextColor
+                        $0.foregroundColor = color
                     } else {
                         $0.link = URL(string: "dictionarytext://" + String(word).pureWord)
-                        $0.foregroundColor = .dictionaryTextColor
+                        $0.foregroundColor = color
                     }
                     
                 }
