@@ -31,13 +31,11 @@ struct DictionaryTextModifier: TextModifier {
                     let specialLetter: [String] = ["\"", "'", "“", "”", "’", "—"]
                     if String(word).pureWord.contains(where: { specialLetter.contains( String($0) ) }) {
                         $0.link = URL(string: "dictionarytext://" + String(word).letters)
-                        $0.foregroundColor = color
                     } else {
                         $0.link = URL(string: "dictionarytext://" + String(word).pureWord)
-                        $0.foregroundColor = color
                     }
-                    
                 }
+                $0.foregroundColor = color
             } + Text(" ")
         }
         return output

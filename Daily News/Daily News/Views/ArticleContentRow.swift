@@ -37,21 +37,23 @@ struct ArticleContentRow: View {
                         Spacer()
                     }
                     Spacer()
-                    AsyncImage(url: self.coverImageURL) { phase in
-                        switch phase {
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 130, height: 130)
-                                .cornerRadius(7)
-                        case .empty, .failure:
-                            Rectangle()
-                                .foregroundColor(.gray)
-                                .frame(width: 130, height: 130)
-                                .cornerRadius(7)
-                        @unknown default:
-                            EmptyView()
+                    if let imageURL = self.coverImageURL {
+                        AsyncImage(url: imageURL) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 130, height: 130)
+                                    .cornerRadius(7)
+                            case .empty, .failure:
+                                Rectangle()
+                                    .foregroundColor(.gray)
+                                    .frame(width: 130, height: 130)
+                                    .cornerRadius(7)
+                            @unknown default:
+                                EmptyView()
+                            }
                         }
                     }
                 }

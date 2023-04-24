@@ -103,20 +103,22 @@ struct ArticleView: View {
             .padding([.bottom, .top], 7)
             
             VStack {
-                AsyncImage(url: self.coverImageURL) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
-                            .padding(.bottom, 7)
-                    case .empty, .failure:
-                        Rectangle()
-                            .aspectRatio(self.currentArticle.coverImageWidth!/self.currentArticle.coverImageHeight!, contentMode: .fit)
-                            .foregroundColor(.secondary)
-                            .padding(.bottom,7)
-                    @unknown default:
-                        EmptyView()
+                if let imageURL = self.coverImageURL, let coverImageWidth = self.currentArticle.coverImageWidth, let coverImageHeight = self.currentArticle.coverImageHeight {
+                    AsyncImage(url: imageURL) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
+                                .padding(.bottom, 7)
+                        case .empty, .failure:
+                            Rectangle()
+                                .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
+                                .foregroundColor(.secondary)
+                                .padding(.bottom,7)
+                        @unknown default:
+                            EmptyView()
+                        }
                     }
                 }
                 
