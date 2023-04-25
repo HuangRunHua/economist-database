@@ -26,8 +26,6 @@ But in academia, researchers are trying to refine and improve llms themselves, a
 
 Dr Liang notes that today’s llms, which are based on the so-called “transformer” architecture developed by Google, have a limited “context window”—akin to short-term memory. Doubling the length of the window increases the computational load fourfold. That limits how fast they can improve. Many researchers are working on post-transformer architectures that can support far bigger context windows—an approach that has been dubbed “long learning” (as opposed to “deep learning”).
 
--->https://www.youtube.com/watch?v=ANn9ibNo9SQ
-
 ## Hello Dave, you’re looking well today
 Meanwhile, other researchers are looking to extend the capabilities of “diffusion” models. These power generative-ai models, such as Stable Diffusion, that can produce high-quality images from short text prompts (such as “An Economist cover on banking in the style of Dali”). Images are continuous, whereas text consists of discrete words. But it is possible to apply diffusion to text, says Dr Liang, which might provide another way to improve llms.
 
