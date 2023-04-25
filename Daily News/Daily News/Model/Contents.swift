@@ -28,6 +28,7 @@ struct Content: Identifiable, Codable {
         case head = "head"
         case second = "second"
         case link = "link"
+        case video = "video"
     }
     
     var contentRole: Role {

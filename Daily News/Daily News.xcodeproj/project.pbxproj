@@ -25,6 +25,8 @@
 		A93DFF2728E1F5CF00FC5BAE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2628E1F5CF00FC5BAE /* Article.swift */; };
 		A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2828E1F62A00FC5BAE /* Contents.swift */; };
 		A93DFF2B28E1F6DD00FC5BAE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */; };
+		A956E89229F7EDEB00D9D729 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */; };
+		A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */; };
 		A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */; };
 		A96A15EF2937AA73003BCDD5 /* DailyArticleModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EE2937AA73003BCDD5 /* DailyArticleModelData.swift */; };
 		A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */; };
@@ -53,6 +55,8 @@
 		A93DFF2628E1F5CF00FC5BAE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A93DFF2828E1F62A00FC5BAE /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
+		A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoView.swift; sourceTree = "<group>"; };
 		A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePeekView.swift; sourceTree = "<group>"; };
 		A96A15EE2937AA73003BCDD5 /* DailyArticleModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyArticleModelData.swift; sourceTree = "<group>"; };
 		A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTextModifier.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				A93DFF2528E1F5C100FC5BAE /* Model */,
 				A90F852828E3462A00DDA5E0 /* Views */,
 				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
+				A956E89029F7EDDB00D9D729 /* YouTubeView */,
 				A9AC8E9729F3B56A00B06412 /* DictionaryView */,
 				A90F852F28E3621400DDA5E0 /* Extensions */,
 				A9291BE828E2C328007F5F77 /* article.json */,
@@ -164,6 +169,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A956E89029F7EDDB00D9D729 /* YouTubeView */ = {
+			isa = PBXGroup;
+			children = (
+				A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */,
+				A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */,
+			);
+			path = YouTubeView;
 			sourceTree = "<group>";
 		};
 		A96A15E929379A12003BCDD5 /* Home */ = {
@@ -268,6 +282,7 @@
 				A93DFF1528E1F59400FC5BAE /* Daily_NewsApp.swift in Sources */,
 				A90F853328E3F0D100DDA5E0 /* ArticleContentRow.swift in Sources */,
 				A93DFF2728E1F5CF00FC5BAE /* Article.swift in Sources */,
+				A956E89229F7EDEB00D9D729 /* YouTubeVideo.swift in Sources */,
 				A90F852A28E3463C00DDA5E0 /* MagazineList.swift in Sources */,
 				A90F852E28E3580300DDA5E0 /* ArticleConetntsList.swift in Sources */,
 				A96A15EF2937AA73003BCDD5 /* DailyArticleModelData.swift in Sources */,
@@ -278,6 +293,7 @@
 				A90F852728E3424900DDA5E0 /* Database.swift in Sources */,
 				A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */,
 				A9AC8E9D29F3B57B00B06412 /* DictionaryText.swift in Sources */,
+				A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */,
 				A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

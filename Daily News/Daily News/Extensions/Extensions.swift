@@ -14,6 +14,7 @@ extension Color {
     static let cardColor = Color("cardColor")
     static let tabColor = Color("tabColor")
     static let dictionaryTextColor = Color("dictionaryTextColor")
+    static let boundColor = Color("boundColor")
 }
 
 extension Text {

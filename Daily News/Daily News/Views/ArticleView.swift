@@ -236,7 +236,6 @@ extension ArticleView {
             
         case .body:
             HStack {
-//                Text(content.text ?? "")
                 DictionaryText(content.text ?? "")
                     .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
@@ -287,7 +286,6 @@ extension ArticleView {
             }
         case .head:
             HStack {
-//                Text(content.text ?? "")
                 DictionaryText(content.text ?? "")
                     .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(22 + fontSize)))
@@ -304,7 +302,6 @@ extension ArticleView {
             .frame(maxWidth: self.maxWidth)
         case .second:
             HStack {
-//                Text(content.text ?? "")
                 DictionaryText(content.text ?? "")
                     .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(20 + fontSize)))
@@ -320,6 +317,8 @@ extension ArticleView {
             }
             .frame(maxWidth: self.maxWidth)
         case .link:
+            EmptyView()
+        case .video:
             EmptyView()
         }
     }
