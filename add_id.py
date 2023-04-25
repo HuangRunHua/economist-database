@@ -141,9 +141,9 @@ if __name__ == "__main__":
         }
     ]
 
-    # aid = AddID(page_url=page_urls[1]["link"], id=page_urls[1]["id"])
-    # aid.parase_data()
+    aid = AddID(page_url=page_urls[-1]["link"], id=page_urls[-1]["id"])
+    aid.parase_data()
     
-    for page_url in page_urls:
-        aid = AddID(page_url=page_url["link"], id=page_url["id"])
-        aid.parase_data()
+    # for page_url in page_urls:
+    #     aid = AddID(page_url=page_url["link"], id=page_url["id"])
+    #     aid.parase_data()
