@@ -40,6 +40,8 @@ The eu is taking a tougher line. Its proposed law categorises different uses of 
 
 But others say an even sterner approach is needed. Governments should treat ai like medicines, with a dedicated regulator, strict testing and pre-approval before public release. China is doing some of this, requiring firms to register ai products and undergo a security review before release. But safety may be less of a motive than politics: a key requirement is that ais’ output reflects the “core value of socialism”.
 
+-->https://www.youtube.com/watch?v=ANn9ibNo9SQ
+
 What to do? The light-touch approach is unlikely to be enough. If ai is as important a technology as cars, planes and medicines—and there is good reason to believe that it is—then, like them, it will need new rules. Accordingly, the eu’s model is closest to the mark, though its classification system is overwrought and a principles-based approach would be more flexible. Compelling disclosure about how systems are trained, how they operate and how they are monitored, and requiring inspections, would be comparable to similar rules in other industries.
 
 This could allow for tighter regulation over time, if needed. A dedicated regulator may then seem appropriate; so too may intergovernmental treaties, similar to those that govern nuclear weapons, should plausible evidence emerge of existential risk. To monitor that risk, governments could form a body modelled on cern, a particle-physics laboratory, that could also study ai safety and ethics—areas where companies lack incentives to invest as much as society might wish.

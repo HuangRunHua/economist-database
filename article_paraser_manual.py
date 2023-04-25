@@ -97,6 +97,9 @@ class MagazineGenerator(object):
             elif content[0:2] == "->":
                 parsed_content["role"] = "link"
                 parsed_content["link"] = content[2:]
+            elif content[0:3] == "-->":
+                parsed_content["role"] = "video"
+                parsed_content["link"] = content[3:]
             else:
                 parsed_content["role"] = "body"
                 parsed_content["text"] = content
