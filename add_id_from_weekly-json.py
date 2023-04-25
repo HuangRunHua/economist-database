@@ -1,22 +1,21 @@
 import json
-from bs4 import BeautifulSoup
-from page_source_downloader import PageDownloader
-from article_paraser import ArticleParaser
+
+
+"""
+经济学人官网的文章排版可能会随时间变化
+因此在后期添加id的时候使用add-id.py可能导致id重复的问题.
+为解决这个问题,通过保存在weekly-json内的文件来添加id
+"""
 
 class AddID(object):
     def __init__(self, page_url: str, id: str) -> None:
-        self.weekly_html = page_url.split("/")[-1] + ".html"
         self.weekly_json = page_url.split("/")[-1] + ".json"
-        self.page_url = page_url
-        self.weekly_issue_metadata = {}
-        self.id = id
         self.link_prefix = "https://github.com/HuangRunHua/economist-database/raw/main/articles/"
         self.date = page_url.split("/")[-1]
 
     def fetch_ori_link_of_articles(self):
-        with open("weekly-json/2023-04-22.json") as f:
+        with open("weekly-json/" + self.weekly_json) as f:
             magazine = json.load(f)
-
             for article in magazine["articles"]:
                 article_link = article["articleURL"]
                 aidtj = AddIDToJSON(page_url=article_link, date=self.date, article_id=article["id"])
