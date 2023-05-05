@@ -26,7 +26,6 @@ struct ArticleContentRow: View {
             RoundedRectangle(cornerRadius: 7)
                 .frame(width: self.width)
                 .foregroundColor(.cardColor)
-//                .shadow(radius: 3)
             VStack {
                 HStack(alignment: .top, spacing: 7) {
                     VStack(alignment: .leading) {
@@ -64,8 +63,9 @@ struct ArticleContentRow: View {
                         .fontWeight(.semibold)
                     Spacer()
                 }
+                .padding(.bottom, 10)
             }
-            .padding()
+            .padding([.leading, .trailing, .top])
             .background(
                 GeometryReader { proxy in
                     Color.clear

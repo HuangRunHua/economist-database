@@ -62,8 +62,9 @@ struct DailyBriefRow: View {
                         .fontWeight(.semibold)
                     Spacer()
                 }
+                .padding(.bottom, 10)
             }
-            .padding()
+            .padding([.leading, .trailing, .top])
             .background(
                 GeometryReader { proxy in
                     Color.clear

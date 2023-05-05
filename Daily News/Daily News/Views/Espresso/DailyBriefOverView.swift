@@ -75,7 +75,7 @@ struct DailyBriefOverView: View {
                     Spacer()
                 }
                 .padding(.leading)
-                .padding([.bottom, .trailing], 7)
+                .padding([.bottom, .trailing], 10)
             }
             .background(Color.cardColor)
         }
