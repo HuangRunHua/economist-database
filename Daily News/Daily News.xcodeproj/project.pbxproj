@@ -18,6 +18,12 @@
 		A9291BF428E301F3007F5F77 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9291BF328E301F3007F5F77 /* TranslationView.swift */; };
 		A9299F1D2922606500A88CF0 /* CollectSizePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9299F1C2922606500A88CF0 /* CollectSizePreference.swift */; };
 		A9299F222923BEF000A88CF0 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9299F212923BEF000A88CF0 /* UIDeviceExtension.swift */; };
+		A931F2612A0521D300974C6B /* DailyBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F25B2A0521D200974C6B /* DailyBrief.swift */; };
+		A931F2622A0521D300974C6B /* DailyBriefRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F25C2A0521D200974C6B /* DailyBriefRow.swift */; };
+		A931F2632A0521D300974C6B /* DailyBriefArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F25D2A0521D200974C6B /* DailyBriefArticleView.swift */; };
+		A931F2642A0521D300974C6B /* DailyBriefList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F25E2A0521D300974C6B /* DailyBriefList.swift */; };
+		A931F2652A0521D300974C6B /* DailyBriefOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F25F2A0521D300974C6B /* DailyBriefOverView.swift */; };
+		A931F26F2A05230E00974C6B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A931F26E2A05230E00974C6B /* SwiftSoup */; };
 		A93DFF1528E1F59400FC5BAE /* Daily_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF1428E1F59400FC5BAE /* Daily_NewsApp.swift */; };
 		A93DFF1728E1F59400FC5BAE /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF1628E1F59400FC5BAE /* ArticleView.swift */; };
 		A93DFF1928E1F59400FC5BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93DFF1828E1F59400FC5BAE /* Assets.xcassets */; };
@@ -46,6 +52,12 @@
 		A9291BF328E301F3007F5F77 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		A9299F1C2922606500A88CF0 /* CollectSizePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectSizePreference.swift; sourceTree = "<group>"; };
 		A9299F212923BEF000A88CF0 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		A931F25B2A0521D200974C6B /* DailyBrief.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBrief.swift; sourceTree = "<group>"; };
+		A931F25C2A0521D200974C6B /* DailyBriefRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBriefRow.swift; sourceTree = "<group>"; };
+		A931F25D2A0521D200974C6B /* DailyBriefArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBriefArticleView.swift; sourceTree = "<group>"; };
+		A931F25E2A0521D300974C6B /* DailyBriefList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBriefList.swift; sourceTree = "<group>"; };
+		A931F25F2A0521D300974C6B /* DailyBriefOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBriefOverView.swift; sourceTree = "<group>"; };
+		A931F26D2A0522E700974C6B /* SwiftSoup-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwiftSoup-master"; path = "../../../SwiftSoup-master"; sourceTree = "<group>"; };
 		A93DFF1128E1F59400FC5BAE /* Daily News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93DFF1428E1F59400FC5BAE /* Daily_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_NewsApp.swift; sourceTree = "<group>"; };
 		A93DFF1628E1F59400FC5BAE /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A931F26F2A05230E00974C6B /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +93,16 @@
 			isa = PBXGroup;
 			children = (
 				A90F852928E3463C00DDA5E0 /* MagazineList.swift */,
+				A956E89029F7EDDB00D9D729 /* YouTubeView */,
+				A9AC8E9729F3B56A00B06412 /* DictionaryView */,
 				A96A15E929379A12003BCDD5 /* Home */,
 				A90F852B28E350CD00DDA5E0 /* MagazineCoverRow.swift */,
 				A90F852D28E3580300DDA5E0 /* ArticleConetntsList.swift */,
 				A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */,
 				A93DFF1628E1F59400FC5BAE /* ArticleView.swift */,
 				A91878EC29363BF90015E00E /* SafariView.swift */,
+				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
+				A931F25A2A0521AE00974C6B /* Espresso */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,9 +125,30 @@
 			path = CollectSize;
 			sourceTree = "<group>";
 		};
+		A931F25A2A0521AE00974C6B /* Espresso */ = {
+			isa = PBXGroup;
+			children = (
+				A931F25B2A0521D200974C6B /* DailyBrief.swift */,
+				A931F25D2A0521D200974C6B /* DailyBriefArticleView.swift */,
+				A931F25E2A0521D300974C6B /* DailyBriefList.swift */,
+				A931F25F2A0521D300974C6B /* DailyBriefOverView.swift */,
+				A931F25C2A0521D200974C6B /* DailyBriefRow.swift */,
+			);
+			path = Espresso;
+			sourceTree = "<group>";
+		};
+		A931F26A2A05226900974C6B /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A931F26D2A0522E700974C6B /* SwiftSoup-master */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		A93DFF0828E1F59300FC5BAE = {
 			isa = PBXGroup;
 			children = (
+				A931F26A2A05226900974C6B /* Packages */,
 				A93DFF1328E1F59400FC5BAE /* Daily News */,
 				A93DFF1228E1F59400FC5BAE /* Products */,
 				A95169172938DB72008D1393 /* Frameworks */,
@@ -132,9 +170,6 @@
 				A93DFF1428E1F59400FC5BAE /* Daily_NewsApp.swift */,
 				A93DFF2528E1F5C100FC5BAE /* Model */,
 				A90F852828E3462A00DDA5E0 /* Views */,
-				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
-				A956E89029F7EDDB00D9D729 /* YouTubeView */,
-				A9AC8E9729F3B56A00B06412 /* DictionaryView */,
 				A90F852F28E3621400DDA5E0 /* Extensions */,
 				A9291BE828E2C328007F5F77 /* article.json */,
 				A93DFF1828E1F59400FC5BAE /* Assets.xcassets */,
@@ -215,6 +250,7 @@
 			);
 			name = "Daily News";
 			packageProductDependencies = (
+				A931F26E2A05230E00974C6B /* SwiftSoup */,
 			);
 			productName = "Daily News";
 			productReference = A93DFF1128E1F59400FC5BAE /* Daily News.app */;
@@ -288,12 +324,17 @@
 				A96A15EF2937AA73003BCDD5 /* DailyArticleModelData.swift in Sources */,
 				A90F852C28E350CD00DDA5E0 /* MagazineCoverRow.swift in Sources */,
 				A91878ED29363BF90015E00E /* SafariView.swift in Sources */,
+				A931F2632A0521D300974C6B /* DailyBriefArticleView.swift in Sources */,
 				A9299F222923BEF000A88CF0 /* UIDeviceExtension.swift in Sources */,
+				A931F2612A0521D300974C6B /* DailyBrief.swift in Sources */,
+				A931F2622A0521D300974C6B /* DailyBriefRow.swift in Sources */,
 				A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */,
 				A90F852728E3424900DDA5E0 /* Database.swift in Sources */,
 				A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */,
 				A9AC8E9D29F3B57B00B06412 /* DictionaryText.swift in Sources */,
 				A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */,
+				A931F2642A0521D300974C6B /* DailyBriefList.swift in Sources */,
+				A931F2652A0521D300974C6B /* DailyBriefOverView.swift in Sources */,
 				A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,9 +463,9 @@
 				CODE_SIGN_ENTITLEMENTS = "Daily News/Daily_News.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily News/Preview Content\"";
 				DEVELOPMENT_TEAM = YRB62S584T;
@@ -447,7 +488,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daily-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -468,9 +509,9 @@
 				CODE_SIGN_ENTITLEMENTS = "Daily News/Daily_News.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily News/Preview Content\"";
 				DEVELOPMENT_TEAM = YRB62S584T;
@@ -493,7 +534,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daily-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -528,6 +569,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A931F26E2A05230E00974C6B /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A93DFF0928E1F59300FC5BAE /* Project object */;
 }

@@ -23,7 +23,7 @@ struct YouTubeVideoView: View {
                 .frame(maxWidth: .infinity)
                 .overlay(
                     RoundedRectangle(cornerRadius: 0)
-                        .stroke(Color.boundColor, lineWidth: 2)
+                        .stroke(Color.boundingColor, lineWidth: 2)
                 )
                 .cornerRadius(0)
             } else {

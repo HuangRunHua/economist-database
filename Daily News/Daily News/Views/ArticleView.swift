@@ -41,11 +41,9 @@ struct ArticleView: View {
             VStack(alignment: .leading, spacing: 30) {
                 VStack(alignment: .leading, spacing: 7) {
                     HStack {
-//                        Text(self.currentArticle.hashTag.uppercased())
                         DictionaryText(self.currentArticle.hashTag, color: .hashtagColor)
                             .modifier(DictionaryTextModifier())
                             .font(Font.custom("Georgia", size: 17))
-//                            .foregroundColor(.hashtagColor)
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
                                 Button("Translate", action: {
@@ -55,7 +53,6 @@ struct ArticleView: View {
                         Spacer()
                     }
                     HStack {
-//                        Text(self.currentArticle.title)
                         DictionaryText(self.currentArticle.title)
                             .modifier(DictionaryTextModifier())
                             .font(Font.custom("Georgia", size: 30))
@@ -70,7 +67,6 @@ struct ArticleView: View {
                 }
                 if self.currentArticle.subtitle != "" {
                     HStack {
-//                        Text(self.currentArticle.subtitle)
                         DictionaryText(self.currentArticle.subtitle)
                             .modifier(DictionaryTextModifier())
                             .font(Font.custom("Georgia", size: 20))
@@ -178,14 +174,17 @@ struct ArticleView: View {
         .onOpenURL { url in
             if let selectedWord = self.parseURL(url: url) {
                 self.selectedWord = selectedWord
-                if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: selectedWord) {
-                    self.showingSheet.toggle()
-                }
             }
         }
+        .onChange(of: self.selectedWord, perform: { newValue in
+            if self.selectedWord != "" {
+                self.showingSheet.toggle()
+            }
+        })
         .sheet(isPresented: $showingSheet) {
-            DictionarySearchViewController(word: self.selectedWord)
-                //.presentationDetents([.medium, .large])
+            if self.selectedWord != "" {
+                DictionarySearchViewController(word: self.selectedWord)
+            }
         }
     }
     
