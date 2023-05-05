@@ -127,13 +127,17 @@ struct DailyBriefArticleView: View {
         .onOpenURL { url in
             if let selectedWord = self.parseURL(url: url) {
                 self.selectedWord = selectedWord
-                if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: selectedWord) {
-                    self.showingSheet.toggle()
-                }
             }
         }
+        .onChange(of: self.selectedWord, perform: { newValue in
+            if self.selectedWord != "" {
+                self.showingSheet.toggle()
+            }
+        })
         .sheet(isPresented: $showingSheet) {
-            DictionarySearchViewController(word: self.selectedWord)
+            if self.selectedWord != "" {
+                DictionarySearchViewController(word: self.selectedWord)
+            }
         }
     }
     
@@ -165,7 +169,7 @@ struct DailyBriefArticleView_Previews: PreviewProvider {
 extension DailyBriefArticleView {
     @ViewBuilder
     private func transmitToView(_ content: String) -> some View {
-        HStack {            
+        HStack {
             DictionaryText(content)
                 .modifier(DictionaryTextModifier())
                 .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))

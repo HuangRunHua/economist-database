@@ -178,7 +178,7 @@ extension MagazineList {
                             }
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(alignment: .bottom, spacing: 14) {
-                                    ForEach(magazines.prefix(8), id: \.identityID) { magazine in
+                                    ForEach(magazines.prefix(5), id: \.identityID) { magazine in
                                         NavigationLink {
                                             ArticleConetntsList(magazine: magazine)
                                                 .environmentObject(modelData)
@@ -225,13 +225,13 @@ extension MagazineList {
 
                         }
                     }
-                    .refreshable {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                            self.startLoad()
-                            self.modelData.fetchAllMagazines()
-                            self.modelData.fetchLatestMagazine()
-                        }
-                    }
+//                    .refreshable {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+////                            self.startLoad()
+//                            self.modelData.fetchAllMagazines()
+////                            self.modelData.fetchLatestMagazine()
+//                        }
+//                    }
                 }
             }
         }
