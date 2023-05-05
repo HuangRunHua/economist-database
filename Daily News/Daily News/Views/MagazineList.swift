@@ -13,6 +13,10 @@ struct MagazineList: View {
     
     private let latestMagazineJSONURL: String = "https://github.com/HuangRunHua/economist-database/raw/main/latest.json"
     
+    private let urlString: String = "https://www.economist.com/the-world-in-brief"
+
+    @State private var dailyBriefs: [DailyBrief] = []
+    
     @EnvironmentObject var modelData: ModelData
     @EnvironmentObject var dailyArticleModelData: DailyArticleModelData
     
@@ -89,6 +93,18 @@ extension MagazineList {
         } else {
             ScrollView(showsIndicators: false) {
                 VStack {
+                    
+                    NavigationLink {
+                        DailyBriefList(dailyBriefs: dailyBriefs)
+                    } label: {
+                        if !dailyBriefs.isEmpty {
+                            DailyBriefOverView(dailyBriefImagePath: dailyBriefs[1].imageURL)
+                                .padding(.bottom, 3.5)
+                                .padding(.top, 3.5)
+                                .padding([.leading, .trailing], 7)
+                        }
+                    }
+                    
                     ForEach(self.latestArticlesList) { article in
                         NavigationLink {
                             ArticleView(currentArticle: article)
@@ -189,7 +205,6 @@ extension MagazineList {
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
                     }
-                    
                     .listStyle(.plain)
                     .navigationTitle("")
                     .navigationBarTitleDisplayMode(.large)
@@ -212,6 +227,7 @@ extension MagazineList {
                     }
                     .refreshable {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            self.startLoad()
                             self.modelData.fetchAllMagazines()
                             self.modelData.fetchLatestMagazine()
                         }
@@ -224,6 +240,7 @@ extension MagazineList {
         .navigationViewStyle(.stack)
         #endif
         .onAppear {
+            self.startLoad()
             self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
             self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
             self.modelData.fetchLatestMagazine()
@@ -243,6 +260,33 @@ extension MagazineList {
                 self.modelData.fetchLatestArticles()
             }
         }
+    }
+}
+
+
+extension MagazineList {
+    func startLoad() {
+        self.dailyBriefs.removeAll()
+        let url = URL(string: self.urlString)!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error = \(error.localizedDescription)")
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                if let responseCode = (response as? HTTPURLResponse)?.statusCode {
+                    print("Bad response = \(responseCode)")
+                }
+                return
+            }
+            if let data = data, let string = String(data: data, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    self.dailyBriefs =  BriefParser.fetchJSON(sourcePageString: string)
+                }
+            }
+        }
+        task.resume()
     }
 }
 

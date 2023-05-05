@@ -1,18 +1,17 @@
 //
-//  ArticleContentRow.swift
-//  Daily News
+//  DailyBriefRow.swift
+//  the-world-in-brief
 //
-//  Created by Huang Runhua on 2022/9/28.
+//  Created by Huang Runhua on 5/5/23.
 //
 
 import SwiftUI
 
-struct ArticleContentRow: View {
-    
-    var currentArticle: Article
-    
+struct DailyBriefRow: View {
+    var currentBrief: DailyBrief
+        
     var coverImageURL: URL? {
-        if let coverImageURL = self.currentArticle.coverImageURL {
+        if let coverImageURL = self.currentBrief.imageURL {
             return URL(string: coverImageURL)
         } else {
             return nil
@@ -26,11 +25,10 @@ struct ArticleContentRow: View {
             RoundedRectangle(cornerRadius: 7)
                 .frame(width: self.width)
                 .foregroundColor(.cardColor)
-//                .shadow(radius: 3)
             VStack {
                 HStack(alignment: .top, spacing: 7) {
                     VStack(alignment: .leading) {
-                        Text(currentArticle.title)
+                        Text(currentBrief.headline ?? "The world in brief")
                             .font(Font.custom("Georgia", size: 20))
                             .multilineTextAlignment(.leading)
                             .foregroundColor(.defaultFontColor)
@@ -59,7 +57,7 @@ struct ArticleContentRow: View {
                 }
                 Divider()
                 HStack {
-                    Text(currentArticle.hashTag)
+                    Text("The Economist Espresso")
                         .foregroundColor(.gray)
                         .fontWeight(.semibold)
                     Spacer()
@@ -87,9 +85,8 @@ struct ArticleContentRow: View {
     }
 }
 
-struct ArticleContentRow_Previews: PreviewProvider {
+struct DailyBriefRow_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleContentRow(currentArticle: Article(
-            id: 0, title: "When Migrants Become Political Pawns Clothing", subtitle: "Governor DeSantis appeared to be attempting to troll people whose magnanimity, he seemed to believe, is inversely proportional to the extent to which a given problem has an impact on their own lives.", coverImageURL: "https://media.newyorker.com/photos/635abe1ccd95e0b0aea28cec/4:3/w_560,c_limit/221107_r41294.jpg", contents: [], coverImageWidth: 500, coverImageHeight: 500, hashTag: "Comment", authorName: "author name", coverImageDescription: "cover image description", publishDate: "publish date"))
+        DailyBriefRow(currentBrief: DailyBrief(id: 0, headline: "Peace remains elusive in Sudan", imageURL: "https://cdn.espresso.economist.com/files/public/images/20230506_dap323.jpg", contents: []))
     }
 }
