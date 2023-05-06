@@ -25,6 +25,8 @@
 		A931F2652A0521D300974C6B /* DailyBriefOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F25F2A0521D300974C6B /* DailyBriefOverView.swift */; };
 		A931F26F2A05230E00974C6B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A931F26E2A05230E00974C6B /* SwiftSoup */; };
 		A931F2712A05EA8600974C6B /* DailyBriefModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931F2702A05EA8600974C6B /* DailyBriefModelData.swift */; };
+		A931F2742A060ACE00974C6B /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = A931F2732A060ACE00974C6B /* Nuke */; };
+		A931F2762A060B5300974C6B /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = A931F2752A060B5300974C6B /* NukeUI */; };
 		A93DFF1528E1F59400FC5BAE /* Daily_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF1428E1F59400FC5BAE /* Daily_NewsApp.swift */; };
 		A93DFF1728E1F59400FC5BAE /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF1628E1F59400FC5BAE /* ArticleView.swift */; };
 		A93DFF1928E1F59400FC5BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93DFF1828E1F59400FC5BAE /* Assets.xcassets */; };
@@ -60,6 +62,7 @@
 		A931F25F2A0521D300974C6B /* DailyBriefOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBriefOverView.swift; sourceTree = "<group>"; };
 		A931F26D2A0522E700974C6B /* SwiftSoup-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwiftSoup-master"; path = "../../../SwiftSoup-master"; sourceTree = "<group>"; };
 		A931F2702A05EA8600974C6B /* DailyBriefModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBriefModelData.swift; sourceTree = "<group>"; };
+		A931F2722A060AC300974C6B /* Nuke-main */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Nuke-main"; path = "../../Nuke-main"; sourceTree = "<group>"; };
 		A93DFF1128E1F59400FC5BAE /* Daily News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93DFF1428E1F59400FC5BAE /* Daily_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_NewsApp.swift; sourceTree = "<group>"; };
 		A93DFF1628E1F59400FC5BAE /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
@@ -84,7 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A931F2762A060B5300974C6B /* NukeUI in Frameworks */,
 				A931F26F2A05230E00974C6B /* SwiftSoup in Frameworks */,
+				A931F2742A060ACE00974C6B /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				A931F26D2A0522E700974C6B /* SwiftSoup-master */,
+				A931F2722A060AC300974C6B /* Nuke-main */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			name = "Daily News";
 			packageProductDependencies = (
 				A931F26E2A05230E00974C6B /* SwiftSoup */,
+				A931F2732A060ACE00974C6B /* Nuke */,
+				A931F2752A060B5300974C6B /* NukeUI */,
 			);
 			productName = "Daily News";
 			productReference = A93DFF1128E1F59400FC5BAE /* Daily News.app */;
@@ -469,7 +477,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily News/Preview Content\"";
 				DEVELOPMENT_TEAM = YRB62S584T;
@@ -492,7 +500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daily-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -515,7 +523,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily News/Preview Content\"";
 				DEVELOPMENT_TEAM = YRB62S584T;
@@ -538,7 +546,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daily-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -578,6 +586,14 @@
 		A931F26E2A05230E00974C6B /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftSoup;
+		};
+		A931F2732A060ACE00974C6B /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Nuke;
+		};
+		A931F2752A060B5300974C6B /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

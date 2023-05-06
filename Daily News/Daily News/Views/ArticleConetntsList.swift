@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct ArticleConetntsList: View {
     
@@ -15,24 +16,32 @@ struct ArticleConetntsList: View {
         return URL(string: self.magazine.coverImageURL)
     }
     
+    var articles: [Article] {
+        return modelData.articles.sorted(by: { $0.id < $1.id })
+    }
+    
+    @State private var loadArticleSuccessfully: Bool = false
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                AsyncImage(url: self.coverImageURL) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
+                LazyImage(url: self.coverImageURL, content: { phase in
+                    switch phase.result {
+                    case .success:
+                        phase.image?
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .shadow(radius: 7, x: 0, y: 5)
-                    case .empty, .failure:
+                    case .failure:
                         Rectangle()
                             .aspectRatio(self.magazine.coverImageWidth/self.magazine.coverImageHeight, contentMode: .fit)
                             .foregroundColor(.secondary)
-                    @unknown default:
-                        EmptyView()
+                    case .none, .some:
+                        Rectangle()
+                            .aspectRatio(self.magazine.coverImageWidth/self.magazine.coverImageHeight, contentMode: .fit)
+                            .foregroundColor(.secondary)
                     }
-                }
+                })
                 .cornerRadius(7)
                 .padding(.bottom)
                 .padding([.leading, .trailing], 1)
@@ -51,7 +60,7 @@ struct ArticleConetntsList: View {
             if modelData.articles.isEmpty {
                 ProgressView()
             } else {
-                ForEach(modelData.articles.sorted(by: { $0.id < $1.id })) { article in
+                ForEach(articles) { article in
                     NavigationLink {
                         ArticleView(currentArticle: article)
                             .environmentObject(modelData)
@@ -71,8 +80,13 @@ struct ArticleConetntsList: View {
             }
         }
         .onAppear {
-            modelData.selectedMagazine = self.magazine
-            modelData.fetchAllArticles()
+            if !self.loadArticleSuccessfully {
+                modelData.selectedMagazine = self.magazine
+                modelData.fetchAllArticles()
+            }
+        }
+        .onChange(of: self.articles.count) { newValue in
+            self.loadArticleSuccessfully = newValue > 0 ? true: false
         }
         
     }

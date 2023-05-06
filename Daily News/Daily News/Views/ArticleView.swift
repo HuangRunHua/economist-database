@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct ArticleView: View {
     
@@ -100,22 +101,26 @@ struct ArticleView: View {
             
             VStack {
                 if let imageURL = self.coverImageURL, let coverImageWidth = self.currentArticle.coverImageWidth, let coverImageHeight = self.currentArticle.coverImageHeight {
-                    AsyncImage(url: imageURL) { phase in
-                        switch phase {
-                        case .success(let image):
-                            image
+                    
+                    LazyImage(url: imageURL, content: { phase in
+                        switch phase.result {
+                        case .success:
+                            phase.image?
                                 .resizable()
                                 .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
                                 .padding(.bottom, 7)
-                        case .empty, .failure:
+                        case .failure:
                             Rectangle()
                                 .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
                                 .foregroundColor(.secondary)
                                 .padding(.bottom,7)
-                        @unknown default:
-                            EmptyView()
+                        case .none, .some:
+                            Rectangle()
+                                .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
+                                .foregroundColor(.secondary)
+                                .padding(.bottom,7)
                         }
-                    }
+                    })
                 }
                 
                 if let imageDescription = self.currentArticle.coverImageDescription {
@@ -259,20 +264,22 @@ extension ArticleView {
             
         case .image:
             VStack {
-                AsyncImage(url: URL(string: content.imageURL ?? "")) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
+                LazyImage(url: URL(string: content.imageURL ?? ""), content: { phase in
+                    switch phase.result {
+                    case .success:
+                        phase.image?
                             .resizable()
                             .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
-                    case .empty, .failure:
+                    case .failure:
                         Rectangle()
                             .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
                             .foregroundColor(.secondary)
-                    @unknown default:
-                        EmptyView()
+                    case .none, .some:
+                        Rectangle()
+                            .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
+                            .foregroundColor(.secondary)
                     }
-                }
+                })
                 if let contentImageDescription = content.imageDescription {
                     if contentImageDescription != " " && contentImageDescription != "" {
                         Text(contentImageDescription)

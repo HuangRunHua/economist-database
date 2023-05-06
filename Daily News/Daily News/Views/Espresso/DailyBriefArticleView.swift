@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct DailyBriefArticleView: View {
     
@@ -70,22 +71,25 @@ struct DailyBriefArticleView: View {
             
             VStack {
                 if let imageURL = self.coverImageURL {
-                    AsyncImage(url: imageURL) { phase in
-                        switch phase {
-                        case .success(let image):
-                            image
+                    LazyImage(url: imageURL, content: { phase in
+                        switch phase.result {
+                        case .success:
+                            phase.image?
                                 .resizable()
                                 .aspectRatio(1, contentMode: .fit)
                                 .padding(.bottom, 7)
-                        case .empty, .failure:
+                        case .failure:
                             Rectangle()
                                 .aspectRatio(1, contentMode: .fit)
                                 .foregroundColor(.secondary)
                                 .padding(.bottom,7)
-                        @unknown default:
-                            EmptyView()
+                        case .none, .some:
+                            Rectangle()
+                                .aspectRatio(1, contentMode: .fit)
+                                .foregroundColor(.secondary)
+                                .padding(.bottom,7)
                         }
-                    }
+                    })
                 }
             }
             
@@ -159,13 +163,16 @@ struct DailyBriefArticleView_Previews: PreviewProvider {
 //            "Neither of the armed factions which have been battling since April 15th has shown willingness to cede ground. The national army, led by General Abdel Fattah al-Burhan, believes it will soon regain control of Khartoum, Sudan’s capital and site of much of the fighting. It has more troops, heavier weaponry and can count on military support from Egypt."
 //        ]))
         
-        DailyBriefArticleView(dailyBrief: DailyBrief(id: 0, contents: [
-            DailyBriefArticleFormat(role: "body", body: "Volodymyr Zelensky, Ukraine’s president, gave a speech at the International Criminal Court in The Hague during an unannounced visit to the Netherlands. Mr Zelensky accused Russia of committing more than 6,000 war crimes in April alone. In March the ICC issued an arrest warrant for Russia’s president on war crimes charges. Meanwhile, Russia accused America of planning a drone attack on the Kremlin and said that Ukraine had acted on American orders. Both governments have denied these claims. The allegations came after Russia launched strikes on Ukrainian cities."),
-            DailyBriefArticleFormat(role: "body", body: "Four members of the Proud Boys, an American far-right group, were convicted of seditious conspiracy for their role in the Capitol riot on January 6th 2021. A jury in Washington said that the men, including the group’s former leader, Enrique Tarrio, had planned the riot to keep Donald Trump in power. It is the last of three sedition cases against key figures involved in the riot.")]))
+        DailyBriefArticleView(dailyBrief: DailyBrief(id: 0, contents:
+            [DailyBriefArticleFormat(role: "body", body: "Volodymyr Zelensky, Ukraine’s president, gave a speech at the International Criminal Court in The Hague during an unannounced visit to the Netherlands. Mr Zelensky accused Russia of committing more than 6,000 war crimes in April alone. In March the ICC issued an arrest warrant for Russia’s president on war crimes charges. Meanwhile, Russia accused America of planning a drone attack on the Kremlin and said that Ukraine had acted on American orders. Both governments have denied these claims. The allegations came after Russia launched strikes on Ukrainian cities."),
+             DailyBriefArticleFormat(role: "body", body: "Four members of the Proud Boys, an American far-right group, were convicted of seditious conspiracy for their role in the Capitol riot on January 6th 2021. A jury in Washington said that the men, including the group’s former leader, Enrique Tarrio, had planned the riot to keep Donald Trump in power. It is the last of three sedition cases against key figures involved in the riot."),
+             DailyBriefArticleFormat(role: "image", imageURL: "https://cdn.espresso.economist.com/files/public/images/XwordGrid_11_656_16.jpg")
+            ]))
     }
 }
 
 extension DailyBriefArticleView {
+    @MainActor
     @ViewBuilder
     private func transmitToView(_ content: DailyBriefArticleFormat) -> some View {
         
@@ -186,21 +193,18 @@ extension DailyBriefArticleView {
             }
             .frame(maxWidth: self.maxWidth)
         case .image:
-            AsyncImage(url: URL(string: content.imageURL ?? "")) { phase in
-                switch phase {
-                case .success(let image):
-                    image
+            LazyImage(url: URL(string: content.imageURL ?? ""), content: { phase in
+                switch phase.result {
+                case .success:
+                    phase.image?
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                case .empty, .failure:
+                case .failure:
                     EmptyView()
-//                    Rectangle()
-//                        .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
-//                        .foregroundColor(.secondary)
-                @unknown default:
+                case .none, .some:
                     EmptyView()
                 }
-            }
+            })
         }
     }
     

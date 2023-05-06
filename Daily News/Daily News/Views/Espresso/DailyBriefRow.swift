@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct DailyBriefRow: View {
     var currentBrief: DailyBrief
@@ -36,23 +37,27 @@ struct DailyBriefRow: View {
                     }
                     Spacer()
                     if let imageURL = self.coverImageURL {
-                        AsyncImage(url: imageURL) { phase in
-                            switch phase {
-                            case .success(let image):
-                                image
+                        
+                        LazyImage(url: imageURL, content: { phase in
+                            switch phase.result {
+                            case .success:
+                                phase.image?
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 130, height: 130)
                                     .cornerRadius(7)
-                            case .empty, .failure:
+                            case .failure:
                                 Rectangle()
                                     .foregroundColor(.gray)
                                     .frame(width: 130, height: 130)
                                     .cornerRadius(7)
-                            @unknown default:
-                                EmptyView()
+                            case .none, .some:
+                                Rectangle()
+                                    .foregroundColor(.gray)
+                                    .frame(width: 130, height: 130)
+                                    .cornerRadius(7)
                             }
-                        }
+                        })
                     }
                 }
                 Divider()

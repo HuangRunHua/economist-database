@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import NukeUI
+import Nuke
 
 struct MagazineCoverRow: View {
     
@@ -15,20 +17,24 @@ struct MagazineCoverRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 1) {
-            AsyncImage(url: self.coverImageURL) { phase in
-                switch phase {
-                case .success(let image):
-                    image
+
+            LazyImage(url: self.coverImageURL, content: { phase in
+                switch phase.result {
+                case .success:
+                    phase.image?
                         .resizable()
                         .aspectRatio(self.magazine.coverImageWidth/self.magazine.coverImageHeight, contentMode: .fit)
-                case .empty, .failure:
+                case .failure:
                     Rectangle()
                         .aspectRatio(self.magazine.coverImageWidth/self.magazine.coverImageHeight, contentMode: .fit)
                         .foregroundColor(.secondary)
-                @unknown default:
-                    EmptyView()
+                case .none, .some:
+                    Rectangle()
+                        .aspectRatio(self.magazine.coverImageWidth/self.magazine.coverImageHeight, contentMode: .fit)
+                        .foregroundColor(.secondary)
                 }
-            }
+            })
+            .priority(.normal)
             .cornerRadius(7)
             .shadow(radius: 7)
             .padding([.top, .bottom])
