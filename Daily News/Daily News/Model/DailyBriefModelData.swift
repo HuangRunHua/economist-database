@@ -27,7 +27,6 @@ final class DailyBriefModelData: ObservableObject {
             }
             if let data = data, let string = String(data: data, encoding: .utf8) {
                 DispatchQueue.main.async {
-                    print(string)
                     self.dailyBriefs = BriefParser.fetchJSON(sourcePageString: string)
                 }
             }
