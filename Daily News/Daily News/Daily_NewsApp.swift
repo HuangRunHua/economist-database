@@ -11,12 +11,14 @@ import SwiftUI
 struct Daily_NewsApp: App {
     @StateObject private var modelData = ModelData()
     @StateObject private var dailyArticleModelData = DailyArticleModelData()
+    @StateObject private var dailyBriefModelData = DailyBriefModelData()
     
     var body: some Scene {
         WindowGroup {
             MagazineList()
                 .environmentObject(modelData)
                 .environmentObject(dailyArticleModelData)
+                .environmentObject(dailyBriefModelData)
         }
     }
 }

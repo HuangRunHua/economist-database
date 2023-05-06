@@ -13,14 +13,17 @@ struct MagazineList: View {
     
     private let latestMagazineJSONURL: String = "https://github.com/HuangRunHua/economist-database/raw/main/latest.json"
     
-    private let urlString: String = "https://www.economist.com/the-world-in-brief"
-
-    @State private var dailyBriefs: [DailyBrief] = []
+    private let dailyBriefURLString: String = "https://www.economist.com/the-world-in-brief"
     
     @EnvironmentObject var modelData: ModelData
     @EnvironmentObject var dailyArticleModelData: DailyArticleModelData
+    @EnvironmentObject var dailyBriefModelData: DailyBriefModelData
     
     @Environment(\.colorScheme) var colorScheme
+    
+    var dailyBriefs: [DailyBrief] {
+        return dailyBriefModelData.dailyBriefs
+    }
     
     var magazineURLs: [MagazineURL] {
         return modelData.magazineURLs
@@ -72,6 +75,7 @@ struct MagazineList_Previews: PreviewProvider {
         MagazineList()
             .environmentObject(ModelData())
             .environmentObject(DailyArticleModelData())
+            .environmentObject(DailyBriefModelData())
     }
 }
 
@@ -240,7 +244,7 @@ extension MagazineList {
         .navigationViewStyle(.stack)
         #endif
         .onAppear {
-            self.startLoad()
+            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
             self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
             self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
             self.modelData.fetchLatestMagazine()
@@ -260,34 +264,6 @@ extension MagazineList {
                 self.modelData.fetchLatestArticles()
             }
         }
-    }
-}
-
-
-extension MagazineList {
-    func startLoad() {
-        self.dailyBriefs.removeAll()
-        let url = URL(string: self.urlString)!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Error = \(error.localizedDescription)")
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse,
-                (200...299).contains(httpResponse.statusCode) else {
-                if let responseCode = (response as? HTTPURLResponse)?.statusCode {
-                    print("Bad response = \(responseCode)")
-                }
-                return
-            }
-            if let data = data, let string = String(data: data, encoding: .utf8) {
-                DispatchQueue.main.async {
-                    print(string)
-                    self.dailyBriefs = BriefParser.fetchJSON(sourcePageString: string)
-                }
-            }
-        }
-        task.resume()
     }
 }
 
