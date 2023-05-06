@@ -19,6 +19,7 @@ struct Daily_NewsApp: App {
                 .environmentObject(modelData)
                 .environmentObject(dailyArticleModelData)
                 .environmentObject(dailyBriefModelData)
+//            ImageDetailView(imagePath: "https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/media-assets/image/20230506_LDD001.jpg")
         }
     }
 }
