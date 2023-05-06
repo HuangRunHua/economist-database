@@ -227,9 +227,9 @@ extension MagazineList {
                     }
 //                    .refreshable {
 //                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-////                            self.startLoad()
+//                            self.startLoad()
 //                            self.modelData.fetchAllMagazines()
-////                            self.modelData.fetchLatestMagazine()
+//                            self.modelData.fetchLatestMagazine()
 //                        }
 //                    }
                 }
@@ -282,7 +282,8 @@ extension MagazineList {
             }
             if let data = data, let string = String(data: data, encoding: .utf8) {
                 DispatchQueue.main.async {
-                    self.dailyBriefs =  BriefParser.fetchJSON(sourcePageString: string)
+                    print(string)
+                    self.dailyBriefs = BriefParser.fetchJSON(sourcePageString: string)
                 }
             }
         }
