@@ -35,6 +35,8 @@ struct ArticleView: View {
     
     @State private var showingSheet = false
     @State private var selectedWord: String = ""
+    @State private var showDetailImage: Bool = false
+    @State private var detailImageURL: URL? = nil
     
     var body: some View {
         
@@ -109,6 +111,9 @@ struct ArticleView: View {
                                 .resizable()
                                 .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
                                 .padding(.bottom, 7)
+                                .onTapGesture {
+                                    self.detailImageURL = imageURL
+                                }
                         case .failure:
                             Rectangle()
                                 .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
@@ -186,10 +191,24 @@ struct ArticleView: View {
                 self.showingSheet.toggle()
             }
         })
-        .sheet(isPresented: $showingSheet) {
+        .onChange(of: self.detailImageURL, perform: { newValue in
+            if self.detailImageURL != nil {
+                self.showDetailImage.toggle()
+            }
+        })
+        .sheet(isPresented: $showingSheet, onDismiss: {
+            self.selectedWord = ""
+        }) {
             if self.selectedWord != "" {
                 DictionarySearchViewController(word: self.selectedWord)
             }
+        }
+        .fullScreenCover(isPresented: $showDetailImage, onDismiss: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.detailImageURL = nil
+            }
+        }) {
+            ImageDetailView(imageURL: self.$detailImageURL)
         }
     }
     
@@ -270,6 +289,9 @@ extension ArticleView {
                         phase.image?
                             .resizable()
                             .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
+                            .onTapGesture {
+                                self.detailImageURL = URL(string: content.imageURL ?? "")
+                            }
                     case .failure:
                         Rectangle()
                             .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)

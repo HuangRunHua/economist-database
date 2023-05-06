@@ -10,39 +10,14 @@ import NukeUI
 
 struct ImageDetailView: View {
     
-    var imagePath: String?
+    @Binding var imageURL: URL?
     
-    var imageURL: URL? {
-        if let imagePath {
-            return URL(string: imagePath)
-        }
-        return nil
-    }
-    
-    @GestureState private var magnifyBy = 1.0
-    
-    @State private var originalScaleRate: CGFloat = 1.0
-    @State private var scaleRate: CGFloat = 1.0
-    
-    @State private var zoomScale: CGFloat = 1
-    @State private var previousZoomScale: CGFloat = 1
-    private let minZoomScale: CGFloat = 1
-    private let maxZoomScale: CGFloat = 3
-
-//    var magnification: some Gesture {
-//        MagnificationGesture()
-//            .onChanged { newValue in
-//                self.scaleRate = newValue
-//            }
-//            .onEnded { _ in
-//                originalScaleRate = (originalScaleRate * scaleRate) <= 1 ? 1: originalScaleRate * scaleRate
-//                scaleRate = 1.0
-//            }
-//    }
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        GeometryReader { proxy in
-            ScrollView([.horizontal, .vertical], showsIndicators: false) {
+        
+        NavigationView(content: {
+            ZoomableScrollView {
                 if let imageURL = self.imageURL {
                     LazyImage(url: imageURL, content: { phase in
                         switch phase.result {
@@ -50,10 +25,6 @@ struct ImageDetailView: View {
                             phase.image?
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .onTapGesture(count: 2, perform: onImageDoubleTapped)
-//                                .gesture(zoomGesture)
-                                .frame(width: proxy.size.width * max(minZoomScale, zoomScale))
-                                .frame(maxHeight: .infinity)
                         case .failure:
                             EmptyView()
                         case .none, .some:
@@ -62,60 +33,75 @@ struct ImageDetailView: View {
                     })
                 }
             }
-        }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                }
+            }
+        })
+        .navigationBarTitleDisplayMode(.inline)
+        .interactiveDismissDisabled()
+        
     }
 }
 
 struct ImageDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageDetailView(imagePath: "https://cdn.espresso.economist.com/files/public/images/20230506_dap322_0.jpg")
+        ImageDetailView(imageURL: .constant(URL(string: "https://cdn.espresso.economist.com/files/public/images/20230506_dap322_0.jpg")))
     }
 }
 
 
-extension ImageDetailView {
-    /// Resets the zoom scale back to 1 – the photo scale at 1x zoom
-    func resetImageState() {
-        withAnimation(.default) {
-            zoomScale = 1
-        }
+struct ZoomableScrollView<Content: View>: UIViewRepresentable {
+    private var content: Content
+
+    init(@ViewBuilder content: () -> Content) {
+       self.content = content()
     }
 
-    /// On double tap
-    func onImageDoubleTapped() {
-        /// Zoom the photo to 5x scale if the photo isn't zoomed in
-        if zoomScale == 1 {
-            withAnimation(.default) {
-                zoomScale = 3
-            }
-        } else {
-            /// Otherwise, reset the photo zoom to 1x
-            resetImageState()
-        }
+    func makeUIView(context: Context) -> UIScrollView {
+        // set up the UIScrollView
+        let scrollView = UIScrollView()
+        scrollView.delegate = context.coordinator  // for viewForZooming(in:)
+        scrollView.maximumZoomScale = 20
+        scrollView.minimumZoomScale = 1
+        scrollView.bouncesZoom = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+
+        // create a UIHostingController to hold our SwiftUI content
+        let hostedView = context.coordinator.hostingController.view!
+        hostedView.translatesAutoresizingMaskIntoConstraints = true
+        hostedView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        hostedView.frame = scrollView.bounds
+        scrollView.addSubview(hostedView)
+
+        return scrollView
     }
 
-    func onZoomGestureStarted(value: MagnificationGesture.Value) {
-        withAnimation(.default) {
-            let delta = value / previousZoomScale
-            previousZoomScale = value
-            let zoomDelta = zoomScale * delta
-            var minMaxScale = max(minZoomScale, zoomDelta)
-            minMaxScale = min(maxZoomScale, minMaxScale)
-        }
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(hostingController: UIHostingController(rootView: self.content))
     }
 
-    func onZoomGestureEnded(value: MagnificationGesture.Value) {
-        previousZoomScale = 1
-        if zoomScale <= 1 {
-            resetImageState()
-        } else if zoomScale > 3 {
-            zoomScale = 3
-        }
+    func updateUIView(_ uiView: UIScrollView, context: Context) {
+        // update the hosting controller's SwiftUI content
+        context.coordinator.hostingController.rootView = self.content
+        assert(context.coordinator.hostingController.view.superview == uiView)
     }
 
-    var zoomGesture: some Gesture {
-        MagnificationGesture()
-            .onChanged(onZoomGestureStarted)
-            .onEnded(onZoomGestureEnded)
+    // MARK: - Coordinator
+
+    class Coordinator: NSObject, UIScrollViewDelegate {
+        var hostingController: UIHostingController<Content>
+
+        init(hostingController: UIHostingController<Content>) {
+            self.hostingController = hostingController
+        }
+
+        func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+            return hostingController.view
+        }
     }
 }
