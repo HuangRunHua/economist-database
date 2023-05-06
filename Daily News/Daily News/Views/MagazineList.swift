@@ -96,7 +96,7 @@ extension MagazineList {
             }
         } else {
             ScrollView(showsIndicators: false) {
-                VStack {
+                LazyVStack {
                     
                     NavigationLink {
                         DailyBriefList(dailyBriefs: dailyBriefs)
@@ -244,10 +244,12 @@ extension MagazineList {
         .navigationViewStyle(.stack)
         #endif
         .onAppear {
-            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
-            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
-            self.modelData.fetchLatestMagazine()
+            DispatchQueue.main.async {
+                self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
+                self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
+                self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
+                self.modelData.fetchLatestMagazine()
+            }
         }
         .onChange(of: magazineURLs.count) { newValue in
             if newValue > 0 {

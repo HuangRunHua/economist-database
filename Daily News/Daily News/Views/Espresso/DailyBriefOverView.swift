@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NukeUI
 
 struct DailyBriefOverView: View {
     var dailyBriefImagePath: String?
@@ -23,26 +24,32 @@ struct DailyBriefOverView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             if let imageURL = self.coverImageURL {
-                AsyncImage(url: imageURL) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
+                
+                LazyImage(url: imageURL, content: { phase in
+                    switch phase.result {
+                    case .success:
+                        phase.image?
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
                             .frame(width: self.width, height: self.width)
                             .cornerRadius(7)
                             .shadow(radius: 5)
-                    case .empty, .failure:
+                    case .failure:
                         Rectangle()
                             .aspectRatio(1, contentMode: .fit)
                             .frame(width: self.width, height: self.width)
                             .foregroundColor(.gray)
                             .cornerRadius(7)
                             .shadow(radius: 5)
-                    @unknown default:
-                        EmptyView()
+                    case .none, .some:
+                        Rectangle()
+                            .frame(width: self.width, height: self.width)
+                            .foregroundColor(.gray)
+                            .cornerRadius(7)
+                            .shadow(radius: 5)
                     }
-                }
+                })
+                .priority(.normal)
             }
             
             VStack {
