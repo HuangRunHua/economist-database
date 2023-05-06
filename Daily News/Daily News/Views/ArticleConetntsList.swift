@@ -57,7 +57,7 @@ struct ArticleConetntsList: View {
             }
             .padding([.bottom])
             
-            if modelData.articles.isEmpty {
+            if modelData.articles.count != self.magazine.articles.count {
                 ProgressView()
             } else {
                 ForEach(articles) { article in
