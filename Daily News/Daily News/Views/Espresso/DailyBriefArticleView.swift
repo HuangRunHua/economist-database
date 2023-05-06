@@ -89,7 +89,7 @@ struct DailyBriefArticleView: View {
                 }
             }
             
-            ForEach(self.dailyBrief.contents, id: \.count) { content in
+            ForEach(self.dailyBrief.contents, id: \.id) { content in
                 VStack(alignment: .leading) {
                     self.transmitToView(content)
                 }
@@ -160,29 +160,48 @@ struct DailyBriefArticleView_Previews: PreviewProvider {
 //        ]))
         
         DailyBriefArticleView(dailyBrief: DailyBrief(id: 0, contents: [
-            "Sudan’s latest “ceasefire” was meant to begin overnight on Thursday. Brokered by Salva Kiir, the president of South Sudan, a neighbouring country, it is supposed to last seven days. That would be the longest truce yet and could even lead to peace talks in Juba, the South Sudanese capital. But Sudan’s beleaguered civilians are probably not holding their breath.",
-            "Neither of the armed factions which have been battling since April 15th has shown willingness to cede ground. The national army, led by General Abdel Fattah al-Burhan, believes it will soon regain control of Khartoum, Sudan’s capital and site of much of the fighting. It has more troops, heavier weaponry and can count on military support from Egypt."
-        ]))
+            DailyBriefArticleFormat(role: "body", body: "Volodymyr Zelensky, Ukraine’s president, gave a speech at the International Criminal Court in The Hague during an unannounced visit to the Netherlands. Mr Zelensky accused Russia of committing more than 6,000 war crimes in April alone. In March the ICC issued an arrest warrant for Russia’s president on war crimes charges. Meanwhile, Russia accused America of planning a drone attack on the Kremlin and said that Ukraine had acted on American orders. Both governments have denied these claims. The allegations came after Russia launched strikes on Ukrainian cities."),
+            DailyBriefArticleFormat(role: "body", body: "Four members of the Proud Boys, an American far-right group, were convicted of seditious conspiracy for their role in the Capitol riot on January 6th 2021. A jury in Washington said that the men, including the group’s former leader, Enrique Tarrio, had planned the riot to keep Donald Trump in power. It is the last of three sedition cases against key figures involved in the riot.")]))
     }
 }
 
 extension DailyBriefArticleView {
     @ViewBuilder
-    private func transmitToView(_ content: String) -> some View {
-        HStack {
-            DictionaryText(content)
-                .modifier(DictionaryTextModifier())
-                .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
-                .textSelection(.enabled)
-                .lineSpacing(7)
-                .contextMenu(ContextMenu(menuItems: {
-                    Button("Translate", action: {
-                        self.translateText = content
-                    })
-                }))
-            Spacer()
+    private func transmitToView(_ content: DailyBriefArticleFormat) -> some View {
+        
+        switch content.contentRole {
+        case .body:
+            HStack {
+                DictionaryText(content.body ?? "")
+                    .modifier(DictionaryTextModifier())
+                    .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
+                    .textSelection(.enabled)
+                    .lineSpacing(7)
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button("Translate", action: {
+                            self.translateText = content.body
+                        })
+                    }))
+                Spacer()
+            }
+            .frame(maxWidth: self.maxWidth)
+        case .image:
+            AsyncImage(url: URL(string: content.imageURL ?? "")) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                case .empty, .failure:
+                    EmptyView()
+//                    Rectangle()
+//                        .aspectRatio((content.imageWidth!)/(content.imageHeight!), contentMode: .fit)
+//                        .foregroundColor(.secondary)
+                @unknown default:
+                    EmptyView()
+                }
+            }
         }
-        .frame(maxWidth: self.maxWidth)
     }
     
 }
