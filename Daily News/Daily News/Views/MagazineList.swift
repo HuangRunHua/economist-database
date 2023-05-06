@@ -232,7 +232,7 @@ extension MagazineList {
                     }
 //                    .refreshable {
 //                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-//                            self.startLoad()
+//                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
 //                            self.modelData.fetchAllMagazines()
 //                            self.modelData.fetchLatestMagazine()
 //                        }
