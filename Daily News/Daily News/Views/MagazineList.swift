@@ -58,6 +58,7 @@ struct MagazineList: View {
     
     private let thumbnailWidth: CGFloat = 50
     private let thumbnailCornerRadius: CGFloat = 5
+    private let maxMagazinesShow: Int = 5
     
     enum Tab: Int {
         case latest, daily
@@ -165,7 +166,7 @@ extension MagazineList {
     @ViewBuilder
     private var latestTabView: some View {
         NavigationView {
-            if magazines.isEmpty {
+            if magazines.count < self.maxMagazinesShow {
                 VStack(spacing: 0) {
                     Spacer()
                     ProgressView()
@@ -182,7 +183,7 @@ extension MagazineList {
                             }
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(alignment: .bottom, spacing: 14) {
-                                    ForEach(magazines.prefix(5), id: \.identityID) { magazine in
+                                    ForEach(magazines.prefix(self.maxMagazinesShow), id: \.identityID) { magazine in
                                         NavigationLink {
                                             ArticleConetntsList(magazine: magazine)
                                                 .environmentObject(modelData)
