@@ -230,29 +230,29 @@ extension MagazineList {
 
                         }
                     }
-                    .refreshable {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                            self.dailyBriefModelData.dailyBriefs.removeAll()
-                            self.modelData.article = nil
-                            self.modelData.magazineURLs.removeAll()
-                            self.modelData.magazines.removeAll()
-                            self.modelData.magazine = nil
-                            self.modelData.articles.removeAll()
-                            self.modelData.selectedMagazine = nil
-                            self.modelData.selectedArticle = nil
-                            self.modelData.latestMagazineURL.removeAll()
-                            self.modelData.latestMagazine.removeAll()
-                            self.modelData.latestArticles.removeAll()
-                            
+//                    .refreshable {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+//                            self.dailyBriefModelData.dailyBriefs.removeAll()
+//                            self.modelData.article = nil
+//                            self.modelData.magazineURLs.removeAll()
+//                            self.modelData.magazines.removeAll()
+//                            self.modelData.magazine = nil
+//                            self.modelData.articles.removeAll()
+//                            self.modelData.selectedMagazine = nil
+//                            self.modelData.selectedArticle = nil
+//                            self.modelData.latestMagazineURL.removeAll()
+//                            self.modelData.latestMagazine.removeAll()
+//                            self.modelData.latestArticles.removeAll()
+//                            
+////                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
+////                            self.modelData.fetchAllMagazines()
+////                            self.modelData.fetchLatestMagazine()
 //                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-//                            self.modelData.fetchAllMagazines()
+//                            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
+//                            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
 //                            self.modelData.fetchLatestMagazine()
-                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-                            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
-                            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
-                            self.modelData.fetchLatestMagazine()
-                        }
-                    }
+//                        }
+//                    }
                 }
             }
         }
