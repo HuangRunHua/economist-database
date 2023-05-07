@@ -89,7 +89,7 @@ extension MagazineList {
     
     @ViewBuilder
     private var latestArticles: some View {
-        if self.modelData.latestArticles.isEmpty {
+        if self.modelData.latestArticles.isEmpty || self.modelData.latestArticles.count != self.latestMagazine.first?.articles.count {
             HStack {
                 Spacer()
                 ProgressView()
@@ -230,13 +230,29 @@ extension MagazineList {
 
                         }
                     }
-//                    .refreshable {
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    .refreshable {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            self.dailyBriefModelData.dailyBriefs.removeAll()
+                            self.modelData.article = nil
+                            self.modelData.magazineURLs.removeAll()
+                            self.modelData.magazines.removeAll()
+                            self.modelData.magazine = nil
+                            self.modelData.articles.removeAll()
+                            self.modelData.selectedMagazine = nil
+                            self.modelData.selectedArticle = nil
+                            self.modelData.latestMagazineURL.removeAll()
+                            self.modelData.latestMagazine.removeAll()
+                            self.modelData.latestArticles.removeAll()
+                            
 //                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
 //                            self.modelData.fetchAllMagazines()
 //                            self.modelData.fetchLatestMagazine()
-//                        }
-//                    }
+                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
+                            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
+                            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
+                            self.modelData.fetchLatestMagazine()
+                        }
+                    }
                 }
             }
         }
