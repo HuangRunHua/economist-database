@@ -64,6 +64,10 @@ struct DailyBriefArticleView: View {
                             .font(Font.custom("Georgia", size: 30))
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
+                                Button("Copy", action: {
+                                    let pasteboard = UIPasteboard.general
+                                    pasteboard.string = self.dailyBrief.headline
+                                })
                                 Button("Translate", action: {
                                     self.translateText = self.dailyBrief.headline
                                 })
@@ -235,6 +239,10 @@ extension DailyBriefArticleView {
                     .textSelection(.enabled)
                     .lineSpacing(7)
                     .contextMenu(ContextMenu(menuItems: {
+                        Button("Copy", action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = content.body
+                        })
                         Button("Translate", action: {
                             self.translateText = content.body
                         })

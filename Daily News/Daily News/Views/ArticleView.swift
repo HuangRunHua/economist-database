@@ -53,6 +53,10 @@ struct ArticleView: View {
                             .font(Font.custom("Georgia", size: 17))
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
+                                Button("Copy", action: {
+                                    let pasteboard = UIPasteboard.general
+                                    pasteboard.string = self.currentArticle.hashTag
+                                })
                                 Button("Translate", action: {
                                     self.translateText = self.currentArticle.hashTag
                                 })
@@ -65,6 +69,10 @@ struct ArticleView: View {
                             .font(Font.custom("Georgia", size: 30))
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
+                                Button("Copy", action: {
+                                    let pasteboard = UIPasteboard.general
+                                    pasteboard.string = self.currentArticle.title
+                                })
                                 Button("Translate", action: {
                                     self.translateText = self.currentArticle.title
                                 })
@@ -79,6 +87,10 @@ struct ArticleView: View {
                             .font(Font.custom("Georgia", size: 20))
                             .textSelection(.enabled)
                             .contextMenu(ContextMenu(menuItems: {
+                                Button("Copy", action: {
+                                    let pasteboard = UIPasteboard.general
+                                    pasteboard.string = self.currentArticle.subtitle
+                                })
                                 Button("Translate", action: {
                                     self.translateText = self.currentArticle.subtitle
                                 })
@@ -288,6 +300,10 @@ extension ArticleView {
                     .textSelection(.enabled)
                     .lineSpacing(7)
                     .contextMenu(ContextMenu(menuItems: {
+                        Button("Copy", action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = content.text
+                        })
                         Button("Translate", action: {
                             self.translateText = content.text ?? ""
                         })
@@ -305,6 +321,10 @@ extension ArticleView {
                     .textSelection(.enabled)
                     .lineSpacing(7)
                     .contextMenu(ContextMenu(menuItems: {
+                        Button("Copy", action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = content.text
+                        })
                         Button("Translate", action: {
                             self.translateText = content.text ?? ""
                         })
@@ -361,6 +381,10 @@ extension ArticleView {
                     .textSelection(.enabled)
                     .lineSpacing(7)
                     .contextMenu(ContextMenu(menuItems: {
+                        Button("Copy", action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = content.text
+                        })
                         Button("Translate", action: {
                             self.translateText = content.text ?? ""
                         })
@@ -377,6 +401,10 @@ extension ArticleView {
                     .textSelection(.enabled)
                     .lineSpacing(7)
                     .contextMenu(ContextMenu(menuItems: {
+                        Button("Copy", action: {
+                            let pasteboard = UIPasteboard.general
+                            pasteboard.string = content.text
+                        })
                         Button("Translate", action: {
                             self.translateText = content.text ?? ""
                         })
