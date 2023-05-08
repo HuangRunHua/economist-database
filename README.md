@@ -12,7 +12,7 @@ The data acquisition of The Economist magazine is realized by `Python`, and the 
 
 ## How to Use
 
-If you want to use the app, you must have **an iPhone with system iOS 15.0+**, **contact me and I will give you TestFlight link**. 
+If you want to use the app, you must have **an iPhone with system iOS 16.0+**, **contact me and I will give you TestFlight link**. 
 
 **I will update the database every Friday or Saturday**. If you find that the magazine in the app is not updated, please exit the app in the background and reopen it.
 
