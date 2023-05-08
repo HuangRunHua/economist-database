@@ -37,7 +37,7 @@
 		A93DFF2B28E1F6DD00FC5BAE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */; };
 		A955CCAB2A08CA0D00EF133D /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAA2A08CA0D00EF133D /* AppIcon.swift */; };
 		A955CCAD2A08CAAF00EF133D /* ChangeAppIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAC2A08CAAF00EF133D /* ChangeAppIconViewModel.swift */; };
-		A955CCAF2A08CAE400EF133D /* ChangeAppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAE2A08CAE400EF133D /* ChangeAppIconView.swift */; };
+		A955CCAF2A08CAE400EF133D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAE2A08CAE400EF133D /* SettingView.swift */; };
 		A956E89229F7EDEB00D9D729 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */; };
 		A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */; };
 		A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */; };
@@ -79,7 +79,7 @@
 		A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		A955CCAA2A08CA0D00EF133D /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		A955CCAC2A08CAAF00EF133D /* ChangeAppIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewModel.swift; sourceTree = "<group>"; };
-		A955CCAE2A08CAE400EF133D /* ChangeAppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconView.swift; sourceTree = "<group>"; };
+		A955CCAE2A08CAE400EF133D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
 		A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoView.swift; sourceTree = "<group>"; };
 		A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePeekView.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				A91878EC29363BF90015E00E /* SafariView.swift */,
 				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
 				A931F2772A06363300974C6B /* ImageDetailView.swift */,
-				A955CCAE2A08CAE400EF133D /* ChangeAppIconView.swift */,
+				A955CCAE2A08CAE400EF133D /* SettingView.swift */,
 				A931F25A2A0521AE00974C6B /* Espresso */,
 			);
 			path = Views;
@@ -361,7 +361,7 @@
 				A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */,
 				A931F2642A0521D300974C6B /* DailyBriefList.swift in Sources */,
 				A931F2782A06363300974C6B /* ImageDetailView.swift in Sources */,
-				A955CCAF2A08CAE400EF133D /* ChangeAppIconView.swift in Sources */,
+				A955CCAF2A08CAE400EF133D /* SettingView.swift in Sources */,
 				A931F2652A0521D300974C6B /* DailyBriefOverView.swift in Sources */,
 				A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */,
 			);
@@ -487,8 +487,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-news";
+				"ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES[sdk=*]" = "AppIcon-economist";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Daily News/Daily_News.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
@@ -534,8 +536,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-news";
+				"ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES[sdk=*]" = "AppIcon-economist";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Daily News/Daily_News.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";

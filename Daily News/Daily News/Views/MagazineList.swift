@@ -18,6 +18,7 @@ struct MagazineList: View {
     @EnvironmentObject var modelData: ModelData
     @EnvironmentObject var dailyArticleModelData: DailyArticleModelData
     @EnvironmentObject var dailyBriefModelData: DailyBriefModelData
+    @EnvironmentObject var changeAppIconViewModel: ChangeAppIconViewModel
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -55,6 +56,7 @@ struct MagazineList: View {
     private let lanscapeGridItemLayout = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
     
     @State private var showMagazineContents: Bool = false
+    @State private var showSettingView: Bool = false
     
     private let thumbnailWidth: CGFloat = 50
     private let thumbnailCornerRadius: CGFloat = 5
@@ -229,30 +231,38 @@ extension MagazineList {
                             }
 
                         }
-                    }
-                    .refreshable {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                            self.dailyBriefModelData.dailyBriefs.removeAll()
-                            self.modelData.article = nil
-                            self.modelData.magazineURLs.removeAll()
-                            self.modelData.magazines.removeAll()
-                            self.modelData.magazine = nil
-                            self.modelData.articles.removeAll()
-                            self.modelData.selectedMagazine = nil
-                            self.modelData.selectedArticle = nil
-                            self.modelData.latestMagazineURL.removeAll()
-                            self.modelData.latestMagazine.removeAll()
-                            self.modelData.latestArticles.removeAll()
-                            
-//                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-//                            self.modelData.fetchAllMagazines()
-//                            self.modelData.fetchLatestMagazine()
-                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-                            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
-                            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
-                            self.modelData.fetchLatestMagazine()
+                        
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                self.showSettingView.toggle()
+                            } label: {
+                                Image(systemName: "gear")
+                            }
                         }
                     }
+//                    .refreshable {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+//                            self.dailyBriefModelData.dailyBriefs.removeAll()
+//                            self.modelData.article = nil
+//                            self.modelData.magazineURLs.removeAll()
+//                            self.modelData.magazines.removeAll()
+//                            self.modelData.magazine = nil
+//                            self.modelData.articles.removeAll()
+//                            self.modelData.selectedMagazine = nil
+//                            self.modelData.selectedArticle = nil
+//                            self.modelData.latestMagazineURL.removeAll()
+//                            self.modelData.latestMagazine.removeAll()
+//                            self.modelData.latestArticles.removeAll()
+//
+////                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
+////                            self.modelData.fetchAllMagazines()
+////                            self.modelData.fetchLatestMagazine()
+//                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
+//                            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
+//                            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
+//                            self.modelData.fetchLatestMagazine()
+//                        }
+//                    }
                 }
             }
         }
@@ -282,6 +292,10 @@ extension MagazineList {
             if newValue > 0 {
                 self.modelData.fetchLatestArticles()
             }
+        }
+        .sheet(isPresented: $showSettingView) {
+            SettingView()
+                .environmentObject(changeAppIconViewModel)
         }
     }
 }
