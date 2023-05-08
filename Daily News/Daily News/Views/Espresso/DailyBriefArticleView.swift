@@ -139,7 +139,7 @@ struct DailyBriefArticleView: View {
             
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    exportPDF {
+                    exportPDF(title: self.dailyBrief.headline ?? "The world in brief") {
                         self
                     } completion: { status, url in
                         if let url = url, status {

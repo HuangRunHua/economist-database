@@ -187,7 +187,7 @@ struct ArticleView: View {
             
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    exportPDF {
+                    exportPDF(title: self.currentArticle.title) {
                         self
                     } completion: { status, url in
                         if let url = url, status {

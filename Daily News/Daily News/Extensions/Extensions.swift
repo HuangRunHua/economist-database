@@ -77,9 +77,9 @@ extension View {
         return scrollView
     }
     
-    func exportPDF<Content: View>(@ViewBuilder content: @escaping ()->Content, completion: @escaping (Bool, URL?)->()) {
+    func exportPDF<Content: View>(title: String, @ViewBuilder content: @escaping ()->Content, completion: @escaping (Bool, URL?)->()) {
         let documentDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        let outputFileURL = documentDirectory.appendingPathComponent("ARTICLE\(UUID().uuidString).pdf")
+        let outputFileURL = documentDirectory.appendingPathComponent(title + ".pdf")
         let pdfView = convertToScrollView {
             content()
         }
