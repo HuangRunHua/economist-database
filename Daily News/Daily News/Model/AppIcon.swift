@@ -9,7 +9,7 @@ import SwiftUI
 
 enum AppIcon: String, CaseIterable, Identifiable {
     case primary = "AppIcon"
-    case applenews = "AppIcon-news"
+    case applenews = "AppIcon-applenews"
     case economist = "AppIcon-economist"
 
     var id: String { rawValue }
