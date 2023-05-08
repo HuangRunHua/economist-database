@@ -42,6 +42,7 @@
 		A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */; };
 		A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */; };
 		A96A15EF2937AA73003BCDD5 /* DailyArticleModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EE2937AA73003BCDD5 /* DailyArticleModelData.swift */; };
+		A98E2CF12A0920CE002EB4F0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E2CF02A0920CE002EB4F0 /* ShareSheet.swift */; };
 		A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */; };
 		A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */; };
 		A9AC8E9D29F3B57B00B06412 /* DictionaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */; };
@@ -84,6 +85,7 @@
 		A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoView.swift; sourceTree = "<group>"; };
 		A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePeekView.swift; sourceTree = "<group>"; };
 		A96A15EE2937AA73003BCDD5 /* DailyArticleModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyArticleModelData.swift; sourceTree = "<group>"; };
+		A98E2CF02A0920CE002EB4F0 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTextModifier.swift; sourceTree = "<group>"; };
 		A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySearchViewController.swift; sourceTree = "<group>"; };
 		A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryText.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A90F852D28E3580300DDA5E0 /* ArticleConetntsList.swift */,
 				A90F853228E3F0D100DDA5E0 /* ArticleContentRow.swift */,
 				A93DFF1628E1F59400FC5BAE /* ArticleView.swift */,
+				A98E2CF02A0920CE002EB4F0 /* ShareSheet.swift */,
 				A91878EC29363BF90015E00E /* SafariView.swift */,
 				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
 				A931F2772A06363300974C6B /* ImageDetailView.swift */,
@@ -342,6 +345,7 @@
 				A90F853328E3F0D100DDA5E0 /* ArticleContentRow.swift in Sources */,
 				A93DFF2728E1F5CF00FC5BAE /* Article.swift in Sources */,
 				A956E89229F7EDEB00D9D729 /* YouTubeVideo.swift in Sources */,
+				A98E2CF12A0920CE002EB4F0 /* ShareSheet.swift in Sources */,
 				A931F2712A05EA8600974C6B /* DailyBriefModelData.swift in Sources */,
 				A90F852A28E3463C00DDA5E0 /* MagazineList.swift in Sources */,
 				A90F852E28E3580300DDA5E0 /* ArticleConetntsList.swift in Sources */,
