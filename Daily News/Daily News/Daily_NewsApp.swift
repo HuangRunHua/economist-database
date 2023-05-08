@@ -12,14 +12,17 @@ struct Daily_NewsApp: App {
     @StateObject private var modelData = ModelData()
     @StateObject private var dailyArticleModelData = DailyArticleModelData()
     @StateObject private var dailyBriefModelData = DailyBriefModelData()
+    @StateObject var viewModel = ChangeAppIconViewModel()
     
     var body: some Scene {
         WindowGroup {
-            MagazineList()
-                .environmentObject(modelData)
-                .environmentObject(dailyArticleModelData)
-                .environmentObject(dailyBriefModelData)
-//            ImageDetailView(imagePath: "https://www.economist.com/cdn-cgi/image/width=1424,quality=80,format=auto/media-assets/image/20230506_LDD001.jpg")
+//            MagazineList()
+//                .environmentObject(modelData)
+//                .environmentObject(dailyArticleModelData)
+//                .environmentObject(dailyBriefModelData)
+            
+            ChangeAppIconView()
+                .environmentObject(viewModel)
         }
     }
 }

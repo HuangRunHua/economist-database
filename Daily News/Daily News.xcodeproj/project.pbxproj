@@ -35,6 +35,9 @@
 		A93DFF2728E1F5CF00FC5BAE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2628E1F5CF00FC5BAE /* Article.swift */; };
 		A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2828E1F62A00FC5BAE /* Contents.swift */; };
 		A93DFF2B28E1F6DD00FC5BAE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */; };
+		A955CCAB2A08CA0D00EF133D /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAA2A08CA0D00EF133D /* AppIcon.swift */; };
+		A955CCAD2A08CAAF00EF133D /* ChangeAppIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAC2A08CAAF00EF133D /* ChangeAppIconViewModel.swift */; };
+		A955CCAF2A08CAE400EF133D /* ChangeAppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955CCAE2A08CAE400EF133D /* ChangeAppIconView.swift */; };
 		A956E89229F7EDEB00D9D729 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */; };
 		A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */; };
 		A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */; };
@@ -74,6 +77,9 @@
 		A93DFF2628E1F5CF00FC5BAE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A93DFF2828E1F62A00FC5BAE /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		A955CCAA2A08CA0D00EF133D /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		A955CCAC2A08CAAF00EF133D /* ChangeAppIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewModel.swift; sourceTree = "<group>"; };
+		A955CCAE2A08CAE400EF133D /* ChangeAppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconView.swift; sourceTree = "<group>"; };
 		A956E89129F7EDEB00D9D729 /* YouTubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
 		A956E89329F7EE0100D9D729 /* YouTubeVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoView.swift; sourceTree = "<group>"; };
 		A96A15EA29379A4A003BCDD5 /* ArticlePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePeekView.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				A91878EC29363BF90015E00E /* SafariView.swift */,
 				A9291BF328E301F3007F5F77 /* TranslationView.swift */,
 				A931F2772A06363300974C6B /* ImageDetailView.swift */,
+				A955CCAE2A08CAE400EF133D /* ChangeAppIconView.swift */,
 				A931F25A2A0521AE00974C6B /* Espresso */,
 			);
 			path = Views;
@@ -202,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				A93DFF2628E1F5CF00FC5BAE /* Article.swift */,
+				A955CCAA2A08CA0D00EF133D /* AppIcon.swift */,
+				A955CCAC2A08CAAF00EF133D /* ChangeAppIconViewModel.swift */,
 				A90F852628E3424900DDA5E0 /* Database.swift */,
 				A93DFF2828E1F62A00FC5BAE /* Contents.swift */,
 				A93DFF2A28E1F6DD00FC5BAE /* ModelData.swift */,
@@ -338,11 +347,13 @@
 				A90F852E28E3580300DDA5E0 /* ArticleConetntsList.swift in Sources */,
 				A96A15EF2937AA73003BCDD5 /* DailyArticleModelData.swift in Sources */,
 				A90F852C28E350CD00DDA5E0 /* MagazineCoverRow.swift in Sources */,
+				A955CCAD2A08CAAF00EF133D /* ChangeAppIconViewModel.swift in Sources */,
 				A91878ED29363BF90015E00E /* SafariView.swift in Sources */,
 				A931F2632A0521D300974C6B /* DailyBriefArticleView.swift in Sources */,
 				A9299F222923BEF000A88CF0 /* UIDeviceExtension.swift in Sources */,
 				A931F2612A0521D300974C6B /* DailyBrief.swift in Sources */,
 				A931F2622A0521D300974C6B /* DailyBriefRow.swift in Sources */,
+				A955CCAB2A08CA0D00EF133D /* AppIcon.swift in Sources */,
 				A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */,
 				A90F852728E3424900DDA5E0 /* Database.swift in Sources */,
 				A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */,
@@ -350,6 +361,7 @@
 				A956E89429F7EE0100D9D729 /* YouTubeVideoView.swift in Sources */,
 				A931F2642A0521D300974C6B /* DailyBriefList.swift in Sources */,
 				A931F2782A06363300974C6B /* ImageDetailView.swift in Sources */,
+				A955CCAF2A08CAE400EF133D /* ChangeAppIconView.swift in Sources */,
 				A931F2652A0521D300974C6B /* DailyBriefOverView.swift in Sources */,
 				A93DFF2928E1F62A00FC5BAE /* Contents.swift in Sources */,
 			);
@@ -474,6 +486,7 @@
 		A93DFF2128E1F59400FC5BAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-news";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Daily News/Daily_News.entitlements";
@@ -520,6 +533,7 @@
 		A93DFF2228E1F59400FC5BAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-news";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Daily News/Daily_News.entitlements";
