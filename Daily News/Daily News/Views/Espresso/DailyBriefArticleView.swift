@@ -36,6 +36,10 @@ struct DailyBriefArticleView: View {
     @State private var showDetailImage: Bool = false
     @State private var detailImageURL: URL? = nil
     
+    // MARK: PDF Share
+    @State private var pdfURL: URL?
+    @State private var showShareSheet: Bool = false
+    
     var body: some View {
         
         ScrollView {
@@ -132,6 +136,24 @@ struct DailyBriefArticleView: View {
                     Image(systemName: "textformat.size")
                 }
             }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    exportPDF {
+                        self
+                    } completion: { status, url in
+                        if let url = url, status {
+                            self.pdfURL = url
+                            self.showShareSheet.toggle()
+                        } else {
+                            print("Failed to render PDF")
+                        }
+                    }
+
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
         }
         .onOpenURL { url in
             if let selectedWord = self.parseURL(url: url) {
@@ -161,6 +183,15 @@ struct DailyBriefArticleView: View {
             }
         }) {
             ImageDetailView(imageURL: self.$detailImageURL)
+        }
+        .sheet(isPresented: Binding(
+            get: { showShareSheet },
+            set: { showShareSheet = $0 })) {
+            pdfURL = nil
+        } content: {
+            if let pdfURL {
+                ShareSheet(urls: [pdfURL])
+            }
         }
     }
     
