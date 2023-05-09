@@ -125,7 +125,7 @@ extension MagazineList {
                     }
                     
                     if UIDevice.isIPad {
-                        if orientation.isLandscape {
+                        if self.orientation.isLandscape {
                             LazyVGrid(columns: lanscapeGridItemLayoutiPad) {
                                 ForEach(self.latestArticlesList) { article in
                                     NavigationLink {

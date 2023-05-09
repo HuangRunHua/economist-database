@@ -67,6 +67,18 @@ struct DailyBriefList: View {
             orientation = newOrientation
             self.articleContentID = UUID()
         }
+        .overlay {
+            GeometryReader { geo in
+                Color.clear
+                    .onAppear {
+                        if geo.size.width > geo.size.height {
+                            self.orientation = .landscapeLeft
+                        } else {
+                            self.orientation = .portrait
+                        }
+                    }
+            }
+        }
     }
 }
 
