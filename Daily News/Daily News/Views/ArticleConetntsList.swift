@@ -21,6 +21,8 @@ struct ArticleConetntsList: View {
     }
     
     @State private var loadArticleSuccessfully: Bool = false
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -74,6 +76,8 @@ struct ArticleConetntsList: View {
                                 .font(Font.custom("Georgia", size: 17))
                                 .foregroundColor(.gray)
                         }
+                        .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
+                        .id(self.articleContentID)
                         .padding()
                     }
                 }
@@ -87,6 +91,9 @@ struct ArticleConetntsList: View {
         }
         .onChange(of: self.articles.count) { newValue in
             self.loadArticleSuccessfully = newValue > 0 ? true: false
+        }
+        .onRotate { _ in
+            self.articleContentID = UUID()
         }
         
     }
