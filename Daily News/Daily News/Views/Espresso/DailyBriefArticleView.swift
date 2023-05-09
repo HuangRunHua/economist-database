@@ -39,10 +39,12 @@ struct DailyBriefArticleView: View {
     // MARK: PDF Share
     @State private var pdfURL: URL?
     @State private var showShareSheet: Bool = false
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
     
     var body: some View {
         
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 30) {
                 VStack(alignment: .leading, spacing: 7) {
                     HStack {
@@ -77,7 +79,10 @@ struct DailyBriefArticleView: View {
                 }
             }
             .multilineTextAlignment(.leading)
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
+            .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
             .padding()
+            .id(self.articleContentID)
             
             VStack {
                 if let imageURL = self.coverImageURL {
@@ -105,14 +110,19 @@ struct DailyBriefArticleView: View {
                     })
                 }
             }
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
+            .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
+            .id(self.articleContentID)
             
             ForEach(self.dailyBrief.contents, id: \.id) { content in
                 VStack(alignment: .leading) {
                     self.transmitToView(content)
                 }
             }
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
             .padding([.leading, .trailing])
             .padding(.bottom, 12)
+            .id(self.articleContentID)
         }
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -196,6 +206,9 @@ struct DailyBriefArticleView: View {
             if let pdfURL {
                 ShareSheet(urls: [pdfURL])
             }
+        }
+        .onRotate { _ in
+            self.articleContentID = UUID()
         }
     }
     

@@ -22,6 +22,8 @@ struct ArticleView: View {
     // MARK: PDF Share
     @State private var pdfURL: URL?
     @State private var showShareSheet: Bool = false
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
     
     var currentArticle: Article
     
@@ -100,7 +102,10 @@ struct ArticleView: View {
                 }
             }
             .multilineTextAlignment(.leading)
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
+            .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
             .padding()
+            .id(self.articleContentID)
             
             Divider()
             
@@ -114,6 +119,9 @@ struct ArticleView: View {
                     .foregroundColor(.gray)
                 Spacer()
             }
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
+            .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
+            .id(self.articleContentID)
             .padding([.leading, .trailing])
             .padding([.bottom, .top], 7)
             
@@ -161,14 +169,21 @@ struct ArticleView: View {
                     }
                 }
             }
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
+            .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
+            .id(self.articleContentID)
             
             ForEach(self.currentArticle.contents) { content in
                 VStack(alignment: .leading) {
                     self.transmitToView(content)
                 }
             }
+            .frame(maxWidth: UIDevice.isIPad ? UIScreen.main.bounds.width/1.3: .infinity)
             .padding([.leading, .trailing])
             .padding(.bottom, 12)
+            .id(self.articleContentID)
+            
+            
         }
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -254,6 +269,9 @@ struct ArticleView: View {
                 ShareSheet(urls: [pdfURL])
             }
         }
+        .onRotate { _ in
+            self.articleContentID = UUID()
+        }
     }
     
     private func parseURL(url: URL) -> String? {
@@ -274,7 +292,12 @@ struct ArticleView_Previews: PreviewProvider {
             title: "A Murder Roils the Cycling World",
             subtitle: "In gravel racing—the sport’s hottest category—the killing has exposed a lot of dirt.",
             coverImageURL: "https://www.economist.com/img/b/1424/801/90/media-assets/image/20221126_EUD000.jpg",
-            contents: [Content(role: "video", link: "https://www.youtube.com/watch?v=aZ-FipkmTMg")],
+            contents: [
+                ArticleContent(role: "video", link: "https://www.youtube.com/watch?v=aZ-FipkmTMg"),
+                ArticleContent(role: "body", text: "The political point-scoring also misses a bigger and more enduring problem. America’s budget deficit is set to balloon as its population ages, the cost of handouts swells and the government’s interest bill rises. We estimate that deficits could reach around 7% of gdp a year by the end of this decade—shortfalls America has not seen outside of wars and economic slumps. Worryingly, no one has a sensible plan to shrink them."),
+                ArticleContent(role: "head", text: "Bust budgets"),
+                ArticleContent(role: "body", text: "Governments elsewhere face similar pressures—and appear just as oblivious. Those in Europe are locked in a silly debate about how to tweak debt rules, at a time when the European Central Bank is indirectly propping up the finances of its weakest members. China’s official debt figures purport to be healthy even as the central government prepares to bail out a province. Governments are stuck in a fiscal fantasyland, and they must find a way out before disaster strikes."),
+            ],
             coverImageWidth: 500,
             coverImageHeight: 500,
             hashTag: "A Reporter at Large",
@@ -286,7 +309,7 @@ struct ArticleView_Previews: PreviewProvider {
 
 extension ArticleView {
     @ViewBuilder
-    private func transmitToView(_ content: Content) -> some View {
+    private func transmitToView(_ content: ArticleContent) -> some View {
         
         switch content.contentRole {
         case .quote:
@@ -329,7 +352,7 @@ extension ArticleView {
                             self.translateText = content.text ?? ""
                         })
                     }))
-                Spacer()
+                    Spacer()
             }
             .frame(maxWidth: self.maxWidth)
             
@@ -421,4 +444,25 @@ extension ArticleView {
         }
     }
     
+}
+
+
+struct DeviceRotationViewModifier: ViewModifier {
+    
+    let action: (UIDeviceOrientation) -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear()
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                action(UIDevice.current.orientation)
+            }
+    }
+}
+
+// A View wrapper to make the modifier easier to use
+extension View {
+    func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
+        self.modifier(DeviceRotationViewModifier(action: action))
+    }
 }
