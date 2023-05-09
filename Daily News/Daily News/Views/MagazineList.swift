@@ -54,6 +54,7 @@ struct MagazineList: View {
     private let gridItemLayout = [GridItem(.flexible())]
     
     private let lanscapeGridItemLayout = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
+    private let lanscapeGridItemLayoutiPadMagazine = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
     
     private let portraitGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
     private let lanscapeGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
@@ -168,17 +169,32 @@ extension MagazineList {
     
     @ViewBuilder
     private var magazineListRow: some View {
-        LazyVGrid(columns: lanscapeGridItemLayout) {
-            ForEach(magazines, id: \.identityID) { magazine in
-                NavigationLink {
-                    ArticleConetntsList(magazine: magazine)
-                        .environmentObject(modelData)
-                } label: {
-                    MagazineCoverRow(magazine: magazine)
+        if UIDevice.isIPad {
+            LazyVGrid(columns: lanscapeGridItemLayoutiPadMagazine) {
+                ForEach(magazines, id: \.identityID) { magazine in
+                    NavigationLink {
+                        ArticleConetntsList(magazine: magazine)
+                            .environmentObject(modelData)
+                    } label: {
+                        MagazineCoverRow(magazine: magazine)
+                    }
                 }
             }
+            .padding([.leading, .trailing, .bottom])
+        } else {
+            LazyVGrid(columns: lanscapeGridItemLayout) {
+                ForEach(magazines, id: \.identityID) { magazine in
+                    NavigationLink {
+                        ArticleConetntsList(magazine: magazine)
+                            .environmentObject(modelData)
+                    } label: {
+                        MagazineCoverRow(magazine: magazine)
+                    }
+                }
+            }
+            .padding([.leading, .trailing, .bottom])
         }
-        .padding([.leading, .trailing, .bottom])
+        
     }
     
     @ViewBuilder

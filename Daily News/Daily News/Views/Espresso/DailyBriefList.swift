@@ -11,20 +11,62 @@ struct DailyBriefList: View {
     
     let dailyBriefs: [DailyBrief]
     
+    private let portraitGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    private let lanscapeGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
+    @State private var orientation: UIDeviceOrientation = .portrait
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack {
-                ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
-                    NavigationLink {
-                        DailyBriefArticleView(dailyBrief: dailyBrief)
-                    } label: {
-                        DailyBriefRow(currentBrief: dailyBrief)
+            
+            if UIDevice.isIPad {
+                if orientation.isLandscape {
+                    LazyVGrid(columns: lanscapeGridItemLayoutiPad) {
+                        ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                            NavigationLink {
+                                DailyBriefArticleView(dailyBrief: dailyBrief)
+                            } label: {
+                                DailyBriefRow(currentBrief: dailyBrief)
+                                    .frame(width: UIScreen.main.bounds.width/3-14)
+                                    .id(self.articleContentID)
+                            }
+                        }
+                    }
+                } else {
+                    LazyVGrid(columns: portraitGridItemLayoutiPad) {
+                        ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                            NavigationLink {
+                                DailyBriefArticleView(dailyBrief: dailyBrief)
+                            } label: {
+                                DailyBriefRow(currentBrief: dailyBrief)
+                                    .frame(width: UIScreen.main.bounds.width/2-14)
+                                    .id(self.articleContentID)
+                            }
+                        }
+                    }
+                }
+            } else {
+                VStack {
+                    ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                        NavigationLink {
+                            DailyBriefArticleView(dailyBrief: dailyBrief)
+                        } label: {
+                            DailyBriefRow(currentBrief: dailyBrief)
+                        }
                     }
                 }
             }
+            
+            
         }
         .padding([.leading, .trailing])
         .navigationTitle("The world in brief")
+        .onRotate { newOrientation in
+            orientation = newOrientation
+            self.articleContentID = UUID()
+        }
     }
 }
 
