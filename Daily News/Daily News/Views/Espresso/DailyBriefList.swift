@@ -16,67 +16,56 @@ struct DailyBriefList: View {
     
     // MARK: For Orientation
     @State private var articleContentID: UUID = UUID()
-    @State private var orientation: UIDeviceOrientation = .portrait
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            
-            if UIDevice.isIPad {
-                if orientation.isLandscape {
-                    LazyVGrid(columns: lanscapeGridItemLayoutiPad) {
-                        ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
-                            NavigationLink {
-                                DailyBriefArticleView(dailyBrief: dailyBrief)
-                            } label: {
-                                DailyBriefRow(currentBrief: dailyBrief)
-                                    .frame(width: UIScreen.main.bounds.width/3-14)
-                                    .id(self.articleContentID)
+        GeometryReader { geo in
+            ScrollView(showsIndicators: false) {
+                
+                if UIDevice.isIPad {
+                    if geo.size.width*1.5 < geo.size.height {
+                        VStack {
+                            ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                                NavigationLink {
+                                    DailyBriefArticleView(dailyBrief: dailyBrief)
+                                } label: {
+                                    DailyBriefRow(currentBrief: dailyBrief)
+                                        .id(self.articleContentID)
+                                        .frame(width: geo.size.width-21)
+                                }
+                            }
+                        }
+                    } else {
+                        LazyVGrid(columns: geo.size.width > geo.size.height ? lanscapeGridItemLayoutiPad: portraitGridItemLayoutiPad) {
+                            ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                                NavigationLink {
+                                    DailyBriefArticleView(dailyBrief: dailyBrief)
+                                } label: {
+                                    DailyBriefRow(currentBrief: dailyBrief)
+                                        .frame(width: geo.size.width > geo.size.height ? geo.size.width/3-14: geo.size.width/2-14)
+                                        .id(self.articleContentID)
+                                }
                             }
                         }
                     }
                 } else {
-                    LazyVGrid(columns: portraitGridItemLayoutiPad) {
+                    VStack {
                         ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
                             NavigationLink {
                                 DailyBriefArticleView(dailyBrief: dailyBrief)
                             } label: {
                                 DailyBriefRow(currentBrief: dailyBrief)
-                                    .frame(width: UIScreen.main.bounds.width/2-14)
-                                    .id(self.articleContentID)
                             }
                         }
                     }
                 }
-            } else {
-                VStack {
-                    ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
-                        NavigationLink {
-                            DailyBriefArticleView(dailyBrief: dailyBrief)
-                        } label: {
-                            DailyBriefRow(currentBrief: dailyBrief)
-                        }
-                    }
-                }
             }
-            
-            
-        }
-        .padding([.leading, .trailing])
-        .navigationTitle("The world in brief")
-        .onRotate { newOrientation in
-            orientation = newOrientation
-            self.articleContentID = UUID()
-        }
-        .overlay {
-            GeometryReader { geo in
-                Color.clear
-                    .onAppear {
-                        if geo.size.width > geo.size.height {
-                            self.orientation = .landscapeLeft
-                        } else {
-                            self.orientation = .portrait
-                        }
-                    }
+            .padding([.leading, .trailing])
+            .navigationTitle("The world in brief")
+            .onChange(of: geo.size.width, perform: { _ in
+                self.articleContentID = UUID()
+            })
+            .onAppear {
+                print(geo.size.height/geo.size.width)
             }
         }
     }

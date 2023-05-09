@@ -63,7 +63,6 @@ struct MagazineList: View {
     @State private var showSettingView: Bool = false
     // MARK: For Orientation
     @State private var articleContentID: UUID = UUID()
-    @State private var orientation: UIDeviceOrientation = .portrait
     @State private var screenWidth: CGFloat = 0
     @State private var screenHeight: CGFloat = 0
     
@@ -82,6 +81,7 @@ struct MagazineList: View {
             self.magazineList
                 .onChange(of: geo.size.width) { newValue in
                     self.screenWidth = newValue
+                    self.articleContentID = UUID()
                 }
                 .onChange(of: geo.size.height) { newValue in
                     self.screenHeight = newValue
@@ -107,10 +107,6 @@ extension MagazineList {
     private var magazineList: some View {
         VStack(spacing: 0) {
             self.latestTabView
-        }
-        .onRotate { newOrientation in
-            orientation = newOrientation
-            self.articleContentID = UUID()
         }
     }
     
@@ -139,18 +135,32 @@ extension MagazineList {
                     }
                     
                     if UIDevice.isIPad {
-                        LazyVGrid(columns: self.screenWidth > self.screenHeight ? lanscapeGridItemLayoutiPad: portraitGridItemLayoutiPad) {
+                        if self.screenWidth*2 < self.screenHeight {
                             ForEach(self.latestArticlesList) { article in
                                 NavigationLink {
                                     ArticleView(currentArticle: article)
                                         .environmentObject(modelData)
                                 } label: {
                                     ArticleContentRow(currentArticle: article)
-                                        .frame(width: self.screenWidth > self.screenHeight ? self.screenWidth/3-14: self.screenWidth/2-14)
                                         .id(self.articleContentID)
+                                        .frame(width: self.screenWidth-21)
+                                }
+                            }
+                        } else {
+                            LazyVGrid(columns: self.screenWidth > self.screenHeight ? lanscapeGridItemLayoutiPad: portraitGridItemLayoutiPad) {
+                                ForEach(self.latestArticlesList) { article in
+                                    NavigationLink {
+                                        ArticleView(currentArticle: article)
+                                            .environmentObject(modelData)
+                                    } label: {
+                                        ArticleContentRow(currentArticle: article)
+                                            .frame(width: self.screenWidth > self.screenHeight ? self.screenWidth/3-14: self.screenWidth/2-14)
+                                            .id(self.articleContentID)
+                                    }
                                 }
                             }
                         }
+                        
                     } else {
                         ForEach(self.latestArticlesList) { article in
                             NavigationLink {
