@@ -21,6 +21,22 @@ struct Daily_NewsApp: App {
                 .environmentObject(dailyArticleModelData)
                 .environmentObject(dailyBriefModelData)
                 .environmentObject(changeAppIconViewModel)
+//
+//            if UIDevice.isIPad {
+//                MagazineList_iPadOS()
+//                    .environmentObject(modelData)
+//                    .environmentObject(dailyArticleModelData)
+//                    .environmentObject(dailyBriefModelData)
+//                    .environmentObject(changeAppIconViewModel)
+//            } else {
+//                MagazineList()
+//                    .environmentObject(modelData)
+//                    .environmentObject(dailyArticleModelData)
+//                    .environmentObject(dailyBriefModelData)
+//                    .environmentObject(changeAppIconViewModel)
+//            }
+            
+                
         }
     }
 }
