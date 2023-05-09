@@ -55,8 +55,14 @@ struct MagazineList: View {
     
     private let lanscapeGridItemLayout = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
     
+    private let portraitGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    private let lanscapeGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    
     @State private var showMagazineContents: Bool = false
     @State private var showSettingView: Bool = false
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
+    @State private var orientation: UIDeviceOrientation = .portrait
     
     private let thumbnailWidth: CGFloat = 50
     private let thumbnailCornerRadius: CGFloat = 5
@@ -87,6 +93,10 @@ extension MagazineList {
         VStack(spacing: 0) {
             self.latestTabView
         }
+        .onRotate { newOrientation in
+            orientation = newOrientation
+            self.articleContentID = UUID()
+        }
     }
     
     @ViewBuilder
@@ -100,7 +110,6 @@ extension MagazineList {
         } else {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    
                     NavigationLink {
                         DailyBriefList(dailyBriefs: dailyBriefs)
                     } label: {
@@ -109,15 +118,47 @@ extension MagazineList {
                                 .padding(.bottom, 3.5)
                                 .padding(.top, 3.5)
                                 .padding([.leading, .trailing], 7)
+                                .frame(width: UIDevice.isIPad ? UIScreen.main.bounds.width-21: nil)
+                                .id(self.articleContentID)
                         }
                     }
                     
-                    ForEach(self.latestArticlesList) { article in
-                        NavigationLink {
-                            ArticleView(currentArticle: article)
-                                .environmentObject(modelData)
-                        } label: {
-                            ArticleContentRow(currentArticle: article)
+                    if UIDevice.isIPad {
+                        if orientation.isLandscape {
+                            LazyVGrid(columns: lanscapeGridItemLayoutiPad) {
+                                ForEach(self.latestArticlesList) { article in
+                                    NavigationLink {
+                                        ArticleView(currentArticle: article)
+                                            .environmentObject(modelData)
+                                    } label: {
+                                        ArticleContentRow(currentArticle: article)
+                                            .frame(width: UIScreen.main.bounds.width/3-14)
+                                            .id(self.articleContentID)
+                                    }
+                                }
+                            }
+                        } else {
+                            LazyVGrid(columns: portraitGridItemLayoutiPad) {
+                                ForEach(self.latestArticlesList) { article in
+                                    NavigationLink {
+                                        ArticleView(currentArticle: article)
+                                            .environmentObject(modelData)
+                                    } label: {
+                                        ArticleContentRow(currentArticle: article)
+                                            .frame(width: UIScreen.main.bounds.width/2-14)
+                                            .id(self.articleContentID)
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        ForEach(self.latestArticlesList) { article in
+                            NavigationLink {
+                                ArticleView(currentArticle: article)
+                                    .environmentObject(modelData)
+                            } label: {
+                                ArticleContentRow(currentArticle: article)
+                            }
                         }
                     }
                 }
