@@ -298,11 +298,13 @@ extension MagazineList {
 
                         }
                         
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button {
-                                self.showSettingView.toggle()
-                            } label: {
-                                Image(systemName: "gear")
+                        if UIDevice.isIPhone {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button {
+                                    self.showSettingView.toggle()
+                                } label: {
+                                    Image(systemName: "gear")
+                                }
                             }
                         }
                     }
