@@ -39,81 +39,96 @@ struct DailyBriefArticleView: View {
     // MARK: PDF Share
     @State private var pdfURL: URL?
     @State private var showShareSheet: Bool = false
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
     
     var body: some View {
         
-        ScrollView {
-            VStack(alignment: .leading, spacing: 30) {
-                VStack(alignment: .leading, spacing: 7) {
-                    HStack {
-                        DictionaryText("Espresso", color: .hashtagColor)
-                            .modifier(DictionaryTextModifier())
-                            .font(Font.custom("Georgia", size: 17))
-                            .foregroundColor(.hashtagColor)
-                            .textSelection(.enabled)
-                            .contextMenu(ContextMenu(menuItems: {
-                                Button("Translate", action: {
-                                    self.translateText = "Espresso"
-                                })
-                            }))
-                        Spacer()
-                    }
-                    HStack {
-                        DictionaryText(self.dailyBrief.headline ?? "The world in brief")
-                            .modifier(DictionaryTextModifier())
-                            .font(Font.custom("Georgia", size: 30))
-                            .textSelection(.enabled)
-                            .contextMenu(ContextMenu(menuItems: {
-                                Button("Copy", action: {
-                                    let pasteboard = UIPasteboard.general
-                                    pasteboard.string = self.dailyBrief.headline
-                                })
-                                Button("Translate", action: {
-                                    self.translateText = self.dailyBrief.headline
-                                })
-                            }))
-                        Spacer()
-                    }
-                }
-            }
-            .multilineTextAlignment(.leading)
-            .padding()
-            
-            VStack {
-                if let imageURL = self.coverImageURL {
-                    LazyImage(url: imageURL, content: { phase in
-                        switch phase.result {
-                        case .success:
-                            phase.image?
-                                .resizable()
-                                .aspectRatio(1, contentMode: .fit)
-                                .padding(.bottom, 7)
-                                .onTapGesture {
-                                    self.detailImageURL = imageURL
-                                }
-                        case .failure:
-                            Rectangle()
-                                .aspectRatio(1, contentMode: .fit)
-                                .foregroundColor(.secondary)
-                                .padding(.bottom,7)
-                        case .none, .some:
-                            Rectangle()
-                                .aspectRatio(1, contentMode: .fit)
-                                .foregroundColor(.secondary)
-                                .padding(.bottom,7)
+        GeometryReader(content: { geo in
+            ZStack {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 30) {
+                        VStack(alignment: .leading, spacing: 7) {
+                            HStack {
+                                DictionaryText("Espresso", color: .hashtagColor)
+                                    .modifier(DictionaryTextModifier())
+                                    .font(Font.custom("Georgia", size: 17))
+                                    .foregroundColor(.hashtagColor)
+                                    .textSelection(.enabled)
+                                    .contextMenu(ContextMenu(menuItems: {
+                                        Button("Translate", action: {
+                                            self.translateText = "Espresso"
+                                        })
+                                    }))
+                                Spacer()
+                            }
+                            HStack {
+                                DictionaryText(self.dailyBrief.headline ?? "The world in brief")
+                                    .modifier(DictionaryTextModifier())
+                                    .font(Font.custom("Georgia", size: 30))
+                                    .textSelection(.enabled)
+                                    .contextMenu(ContextMenu(menuItems: {
+                                        Button("Copy", action: {
+                                            let pasteboard = UIPasteboard.general
+                                            pasteboard.string = self.dailyBrief.headline
+                                        })
+                                        Button("Translate", action: {
+                                            self.translateText = self.dailyBrief.headline
+                                        })
+                                    }))
+                                Spacer()
+                            }
+                            .frame(maxHeight: .infinity)
                         }
-                    })
+                    }
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: UIDevice.isIPad ? geo.size.width/1.3: .infinity)
+                    .padding()
+                    .id(self.articleContentID)
+                    
+                    VStack {
+                        if let imageURL = self.coverImageURL {
+                            LazyImage(url: imageURL, content: { phase in
+                                switch phase.result {
+                                case .success:
+                                    phase.image?
+                                        .resizable()
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .padding(.bottom, 7)
+                                        .onTapGesture {
+                                            self.detailImageURL = imageURL
+                                        }
+                                case .failure:
+                                    Rectangle()
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .foregroundColor(.secondary)
+                                        .padding(.bottom,7)
+                                case .none, .some:
+                                    Rectangle()
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .foregroundColor(.secondary)
+                                        .padding(.bottom,7)
+                                }
+                            })
+                        }
+                    }
+                    .frame(maxWidth: UIDevice.isIPad ? geo.size.width/1.3: .infinity)
+                    .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
+                    .id(self.articleContentID)
+                    
+                    ForEach(self.dailyBrief.contents, id: \.id) { content in
+                        VStack(alignment: .leading) {
+                            self.transmitToView(content)
+                        }
+                    }
+                    .frame(maxWidth: UIDevice.isIPad ? geo.size.width/1.3: .infinity)
+                    .padding([.leading, .trailing])
+                    .padding(.bottom, 12)
+                    .id(self.articleContentID)
                 }
             }
-            
-            ForEach(self.dailyBrief.contents, id: \.id) { content in
-                VStack(alignment: .leading) {
-                    self.transmitToView(content)
-                }
-            }
-            .padding([.leading, .trailing])
-            .padding(.bottom, 12)
-        }
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+        })
         #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
         .translateSheet($translateText)
@@ -196,6 +211,9 @@ struct DailyBriefArticleView: View {
             if let pdfURL {
                 ShareSheet(urls: [pdfURL])
             }
+        }
+        .onRotate { _ in
+            self.articleContentID = UUID()
         }
     }
     

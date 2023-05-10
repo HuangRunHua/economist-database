@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Content: Identifiable, Codable {
+struct ArticleContent: Identifiable, Codable {
     var id: UUID{
         return UUID()
     }

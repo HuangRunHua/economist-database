@@ -54,9 +54,17 @@ struct MagazineList: View {
     private let gridItemLayout = [GridItem(.flexible())]
     
     private let lanscapeGridItemLayout = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
+    private let lanscapeGridItemLayoutiPadMagazine = [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)]
+    
+    private let portraitGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    private let lanscapeGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
     
     @State private var showMagazineContents: Bool = false
     @State private var showSettingView: Bool = false
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
+    @State private var screenWidth: CGFloat = 0
+    @State private var screenHeight: CGFloat = 0
     
     private let thumbnailWidth: CGFloat = 50
     private let thumbnailCornerRadius: CGFloat = 5
@@ -69,7 +77,20 @@ struct MagazineList: View {
     @State private var selectedTab = Tab.daily
     
     var body: some View {
-        self.magazineList
+        GeometryReader { geo in
+            self.magazineList
+                .onChange(of: geo.size.width) { newValue in
+                    self.screenWidth = newValue
+                    self.articleContentID = UUID()
+                }
+                .onChange(of: geo.size.height) { newValue in
+                    self.screenHeight = newValue
+                }
+                .onAppear {
+                    self.screenWidth = geo.size.width
+                    self.screenHeight = geo.size.height
+                }
+        }
     }
 }
 
@@ -100,7 +121,6 @@ extension MagazineList {
         } else {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    
                     NavigationLink {
                         DailyBriefList(dailyBriefs: dailyBriefs)
                     } label: {
@@ -109,15 +129,46 @@ extension MagazineList {
                                 .padding(.bottom, 3.5)
                                 .padding(.top, 3.5)
                                 .padding([.leading, .trailing], 7)
+                                .frame(width: UIDevice.isIPad ? self.screenWidth-21: nil)
+                                .id(self.articleContentID)
                         }
                     }
                     
-                    ForEach(self.latestArticlesList) { article in
-                        NavigationLink {
-                            ArticleView(currentArticle: article)
-                                .environmentObject(modelData)
-                        } label: {
-                            ArticleContentRow(currentArticle: article)
+                    if UIDevice.isIPad {
+                        if self.screenWidth*1.5 < self.screenHeight {
+                            ForEach(self.latestArticlesList) { article in
+                                NavigationLink {
+                                    ArticleView(currentArticle: article)
+                                        .environmentObject(modelData)
+                                } label: {
+                                    ArticleContentRow(currentArticle: article)
+                                        .id(self.articleContentID)
+                                        .frame(width: self.screenWidth-21)
+                                }
+                            }
+                        } else {
+                            LazyVGrid(columns: self.screenWidth > self.screenHeight ? lanscapeGridItemLayoutiPad: portraitGridItemLayoutiPad) {
+                                ForEach(self.latestArticlesList) { article in
+                                    NavigationLink {
+                                        ArticleView(currentArticle: article)
+                                            .environmentObject(modelData)
+                                    } label: {
+                                        ArticleContentRow(currentArticle: article)
+                                            .frame(width: self.screenWidth > self.screenHeight ? self.screenWidth/3-14: self.screenWidth/2-14)
+                                            .id(self.articleContentID)
+                                    }
+                                }
+                            }
+                        }
+                        
+                    } else {
+                        ForEach(self.latestArticlesList) { article in
+                            NavigationLink {
+                                ArticleView(currentArticle: article)
+                                    .environmentObject(modelData)
+                            } label: {
+                                ArticleContentRow(currentArticle: article)
+                            }
                         }
                     }
                 }
@@ -127,17 +178,32 @@ extension MagazineList {
     
     @ViewBuilder
     private var magazineListRow: some View {
-        LazyVGrid(columns: lanscapeGridItemLayout) {
-            ForEach(magazines, id: \.identityID) { magazine in
-                NavigationLink {
-                    ArticleConetntsList(magazine: magazine)
-                        .environmentObject(modelData)
-                } label: {
-                    MagazineCoverRow(magazine: magazine)
+        if UIDevice.isIPad {
+            LazyVGrid(columns: lanscapeGridItemLayoutiPadMagazine) {
+                ForEach(magazines, id: \.identityID) { magazine in
+                    NavigationLink {
+                        ArticleConetntsList(magazine: magazine)
+                            .environmentObject(modelData)
+                    } label: {
+                        MagazineCoverRow(magazine: magazine)
+                    }
                 }
             }
+            .padding([.leading, .trailing, .bottom])
+        } else {
+            LazyVGrid(columns: lanscapeGridItemLayout) {
+                ForEach(magazines, id: \.identityID) { magazine in
+                    NavigationLink {
+                        ArticleConetntsList(magazine: magazine)
+                            .environmentObject(modelData)
+                    } label: {
+                        MagazineCoverRow(magazine: magazine)
+                    }
+                }
+            }
+            .padding([.leading, .trailing, .bottom])
         }
-        .padding([.leading, .trailing, .bottom])
+        
     }
     
     @ViewBuilder
@@ -240,29 +306,6 @@ extension MagazineList {
                             }
                         }
                     }
-//                    .refreshable {
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-//                            self.dailyBriefModelData.dailyBriefs.removeAll()
-//                            self.modelData.article = nil
-//                            self.modelData.magazineURLs.removeAll()
-//                            self.modelData.magazines.removeAll()
-//                            self.modelData.magazine = nil
-//                            self.modelData.articles.removeAll()
-//                            self.modelData.selectedMagazine = nil
-//                            self.modelData.selectedArticle = nil
-//                            self.modelData.latestMagazineURL.removeAll()
-//                            self.modelData.latestMagazine.removeAll()
-//                            self.modelData.latestArticles.removeAll()
-//
-////                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-////                            self.modelData.fetchAllMagazines()
-////                            self.modelData.fetchLatestMagazine()
-//                            self.dailyBriefModelData.startLoadingBrief(urlString: self.dailyBriefURLString)
-//                            self.modelData.fetchLatestMagazineURLs(urlString: databaseURL)
-//                            self.modelData.fetchLatestEposideMagazineURL(urlString: self.latestMagazineJSONURL)
-//                            self.modelData.fetchLatestMagazine()
-//                        }
-//                    }
                 }
             }
         }

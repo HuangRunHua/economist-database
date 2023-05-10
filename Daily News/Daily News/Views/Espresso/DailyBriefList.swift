@@ -11,20 +11,63 @@ struct DailyBriefList: View {
     
     let dailyBriefs: [DailyBrief]
     
+    private let portraitGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    private let lanscapeGridItemLayoutiPad = [GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5), GridItem(.flexible(), spacing: 3.5)]
+    
+    // MARK: For Orientation
+    @State private var articleContentID: UUID = UUID()
+    
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
-                    NavigationLink {
-                        DailyBriefArticleView(dailyBrief: dailyBrief)
-                    } label: {
-                        DailyBriefRow(currentBrief: dailyBrief)
+        GeometryReader { geo in
+            ScrollView(showsIndicators: false) {
+                
+                if UIDevice.isIPad {
+                    if geo.size.width*1.5 < geo.size.height {
+                        VStack {
+                            ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                                NavigationLink {
+                                    DailyBriefArticleView(dailyBrief: dailyBrief)
+                                } label: {
+                                    DailyBriefRow(currentBrief: dailyBrief)
+                                        .id(self.articleContentID)
+                                        .frame(width: geo.size.width-21)
+                                }
+                            }
+                        }
+                    } else {
+                        LazyVGrid(columns: geo.size.width > geo.size.height ? lanscapeGridItemLayoutiPad: portraitGridItemLayoutiPad) {
+                            ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                                NavigationLink {
+                                    DailyBriefArticleView(dailyBrief: dailyBrief)
+                                } label: {
+                                    DailyBriefRow(currentBrief: dailyBrief)
+                                        .frame(width: geo.size.width > geo.size.height ? geo.size.width/3-14: geo.size.width/2-14)
+                                        .id(self.articleContentID)
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    VStack {
+                        ForEach(self.dailyBriefs, id: \.id) { dailyBrief in
+                            NavigationLink {
+                                DailyBriefArticleView(dailyBrief: dailyBrief)
+                            } label: {
+                                DailyBriefRow(currentBrief: dailyBrief)
+                            }
+                        }
                     }
                 }
             }
+            .padding([.leading, .trailing])
+            .navigationTitle("The world in brief")
+            .onChange(of: geo.size.width, perform: { _ in
+                self.articleContentID = UUID()
+            })
+            .onAppear {
+                print(geo.size.height/geo.size.width)
+            }
         }
-        .padding([.leading, .trailing])
-        .navigationTitle("The world in brief")
     }
 }
 

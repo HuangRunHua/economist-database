@@ -12,7 +12,7 @@ struct Article: Identifiable, Codable {
     var title: String
     var subtitle: String
     var coverImageURL: String?
-    var contents: [Content]
+    var contents: [ArticleContent]
     var coverImageWidth: Double?
     var coverImageHeight: Double?
     var hashTag: String
