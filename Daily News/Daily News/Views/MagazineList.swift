@@ -135,7 +135,7 @@ extension MagazineList {
                     }
                     
                     if UIDevice.isIPad {
-                        if self.screenWidth*2 < self.screenHeight {
+                        if self.screenWidth*1.5 < self.screenHeight {
                             ForEach(self.latestArticlesList) { article in
                                 NavigationLink {
                                     ArticleView(currentArticle: article)
