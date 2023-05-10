@@ -20,7 +20,16 @@ struct Daily_NewsApp: App {
                 .environmentObject(modelData)
                 .environmentObject(dailyArticleModelData)
                 .environmentObject(dailyBriefModelData)
-                .environmentObject(changeAppIconViewModel) 
+                .environmentObject(changeAppIconViewModel)
+                .onAppear {
+                    hideTitleBarOnCatalyst()
+                }
         }
+    }
+    
+    func hideTitleBarOnCatalyst() {
+        #if targetEnvironment(macCatalyst)
+        (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.titlebar?.titleVisibility = .hidden
+        #endif
     }
 }
