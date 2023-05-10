@@ -104,8 +104,9 @@ struct ArticleView: View {
                         .frame(maxHeight: .infinity)
                     }
                 }
-                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: UIDevice.isIPad ? geo.size.width/1.3: .infinity)
+                .multilineTextAlignment(.leading)
                 .padding()
                 .id(self.articleContentID)
                 
