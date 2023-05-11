@@ -58,6 +58,7 @@ struct ArticleView: View {
                                 .modifier(DictionaryTextModifier())
                                 .font(Font.custom("Georgia", size: 17))
                                 .textSelection(.enabled)
+                                #if !targetEnvironment(macCatalyst)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Copy", action: {
                                         let pasteboard = UIPasteboard.general
@@ -67,6 +68,7 @@ struct ArticleView: View {
                                         self.translateText = self.currentArticle.hashTag
                                     })
                                 }))
+                                #endif
                             Spacer()
                         }
                         HStack {
@@ -74,6 +76,7 @@ struct ArticleView: View {
                                 .modifier(DictionaryTextModifier())
                                 .font(Font.custom("Georgia", size: 30))
                                 .textSelection(.enabled)
+                                #if !targetEnvironment(macCatalyst)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Copy", action: {
                                         let pasteboard = UIPasteboard.general
@@ -83,6 +86,7 @@ struct ArticleView: View {
                                         self.translateText = self.currentArticle.title
                                     })
                                 }))
+                                #endif
                             Spacer()
                         }
                         .frame(maxHeight: .infinity)
@@ -93,6 +97,7 @@ struct ArticleView: View {
                                 .modifier(DictionaryTextModifier())
                                 .font(Font.custom("Georgia", size: 20))
                                 .textSelection(.enabled)
+                                #if !targetEnvironment(macCatalyst)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Copy", action: {
                                         let pasteboard = UIPasteboard.general
@@ -102,6 +107,7 @@ struct ArticleView: View {
                                         self.translateText = self.currentArticle.subtitle
                                     })
                                 }))
+                                #endif
                             Spacer()
                         }
                         .frame(maxHeight: .infinity)
@@ -165,6 +171,7 @@ struct ArticleView: View {
                                 .foregroundColor(.gray)
                                 .padding([.bottom])
                                 .padding([.leading, .trailing], 7)
+                                #if !targetEnvironment(macCatalyst)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Translate", action: {
                                         if self.currentArticle.coverImageDescription != "" {
@@ -172,6 +179,7 @@ struct ArticleView: View {
                                         }
                                     })
                                 }))
+                                #endif
                         }
                     }
                 }
@@ -335,6 +343,7 @@ extension ArticleView {
                     .multilineTextAlignment(.leading)
                     .textSelection(.enabled)
                     .lineSpacing(7)
+                    #if !targetEnvironment(macCatalyst)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Copy", action: {
                             let pasteboard = UIPasteboard.general
@@ -344,7 +353,7 @@ extension ArticleView {
                             self.translateText = content.text ?? ""
                         })
                     }))
-
+                    #endif
                 Spacer()
             }
             .frame(maxWidth: self.maxWidth)
@@ -356,6 +365,7 @@ extension ArticleView {
                     .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
                     .textSelection(.enabled)
                     .lineSpacing(7)
+                    #if !targetEnvironment(macCatalyst)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Copy", action: {
                             let pasteboard = UIPasteboard.general
@@ -365,6 +375,7 @@ extension ArticleView {
                             self.translateText = content.text ?? ""
                         })
                     }))
+                    #endif
                     Spacer()
             }
             .frame(maxWidth: self.maxWidth)
@@ -397,6 +408,7 @@ extension ArticleView {
                             .foregroundColor(.gray)
                             .padding([.bottom])
                             .padding([.leading, .trailing], 7)
+                            #if !targetEnvironment(macCatalyst)
                             .contextMenu(ContextMenu(menuItems: {
                                 Button("Translate", action: {
                                     if let imageDescription = content.imageDescription {
@@ -404,6 +416,7 @@ extension ArticleView {
                                     }
                                 })
                             }))
+                            #endif
                     }
                 }
                 
@@ -416,6 +429,7 @@ extension ArticleView {
                     .fontWeight(.bold)
                     .textSelection(.enabled)
                     .lineSpacing(7)
+                    #if !targetEnvironment(macCatalyst)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Copy", action: {
                             let pasteboard = UIPasteboard.general
@@ -425,6 +439,7 @@ extension ArticleView {
                             self.translateText = content.text ?? ""
                         })
                     }))
+                    #endif
                 Spacer()
             }
             .frame(maxWidth: self.maxWidth)
@@ -436,6 +451,7 @@ extension ArticleView {
                     .fontWeight(.bold)
                     .textSelection(.enabled)
                     .lineSpacing(7)
+                    #if !targetEnvironment(macCatalyst)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Copy", action: {
                             let pasteboard = UIPasteboard.general
@@ -445,6 +461,7 @@ extension ArticleView {
                             self.translateText = content.text ?? ""
                         })
                     }))
+                #endif
                 Spacer()
             }
             .frame(maxWidth: self.maxWidth)
