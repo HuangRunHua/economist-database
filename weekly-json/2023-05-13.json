@@ -1,0 +1,282 @@
+{
+    "id": "00000000-0000-0000-0000-000000000018",
+    "date": "May 13th 2023",
+    "coverStory": "Peak China?",
+    "coverImageWidth": 1280,
+    "coverImageHeight": 1684,
+    "coverImageURL": "https://www.economist.com/media-assets/image/20230513_DE_AP.jpg",
+    "articles": [
+        {
+            "id": 0,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/politics.json"
+        },
+        {
+            "id": 1,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/business.json"
+        },
+        {
+            "id": 2,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/kals-cartoon.json"
+        },
+        {
+            "id": 3,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/this-weeks-cover.json"
+        },
+        {
+            "id": 4,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/is-chinese-power-about-to-peak.json"
+        },
+        {
+            "id": 5,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/small-sensible-steps-could-help-ease-americas-border-woes.json"
+        },
+        {
+            "id": 6,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-rehabilitation-of-syrias-dictator-raises-awkward-questions-for-the-west.json"
+        },
+        {
+            "id": 7,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/joe-biden-is-more-responsible-for-high-inflation-than-for-abundant-jobs.json"
+        },
+        {
+            "id": 8,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/what-does-a-leaked-google-memo-reveal-about-the-future-of-ai.json"
+        },
+        {
+            "id": 9,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/letters-to-the-editor.json"
+        },
+        {
+            "id": 10,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-soon-and-at-what-height-will-chinas-economy-peak.json"
+        },
+        {
+            "id": 11,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/china-v-america-how-xi-jinping-plans-to-narrow-the-military-gap.json"
+        },
+        {
+            "id": 12,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-china-measures-national-power.json"
+        },
+        {
+            "id": 13,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-fall-of-empires-preys-on-xi-jinpings-mind.json"
+        },
+        {
+            "id": 14,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/china-learns-to-manage-decline.json"
+        },
+        {
+            "id": 15,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/will-japan-fight.json"
+        },
+        {
+            "id": 16,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/why-south-korean-tattooists-are-being-marked-as-criminals.json"
+        },
+        {
+            "id": 17,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/imran-khans-arrest-brings-pakistan-closer-to-the-edge.json"
+        },
+        {
+            "id": 18,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-indias-states-compete-for-investment.json"
+        },
+        {
+            "id": 19,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/a-winner-has-emerged-in-the-old-rivalry-between-singapore-and-hong-kong.json"
+        },
+        {
+            "id": 20,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/fentanyl-trafficking-tests-americas-foreign-policy.json"
+        },
+        {
+            "id": 21,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/why-chaos-looms-at-the-us-mexico-border.json"
+        },
+        {
+            "id": 22,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/horse-racing-in-america-needs-to-improve-its-odds.json"
+        },
+        {
+            "id": 23,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/what-americas-tiny-banks-do-that-big-ones-dont.json"
+        },
+        {
+            "id": 24,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/chicagos-new-mayor-has-one-of-the-trickiest-jobs-in-politics.json"
+        },
+        {
+            "id": 25,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/donald-trump-has-become-more-dangerous.json"
+        },
+        {
+            "id": 26,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/what-the-west-gets-wrong-about-peacemaking-in-sudan.json"
+        },
+        {
+            "id": 27,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/a-ruling-over-ownership-of-the-benin-bronzes-may-delay-their-return.json"
+        },
+        {
+            "id": 28,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-palestinians-need-new-leaders.json"
+        },
+        {
+            "id": 29,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/mexicos-gangs-are-becoming-criminal-conglomerates.json"
+        },
+        {
+            "id": 30,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-mexican-supreme-court-does-battle-with-amlo.json"
+        },
+        {
+            "id": 31,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/conservatives-dominate-chiles-constitutional-assembly-this-time-around.json"
+        },
+        {
+            "id": 32,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/a-former-bureaucrat-is-giving-erdogan-a-run-for-his-money.json"
+        },
+        {
+            "id": 33,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/european-cannabis-legalisation-moves-into-the-slow-dopey-lane.json"
+        },
+        {
+            "id": 34,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/a-generation-after-germany-reunited-deep-divisions-remain.json"
+        },
+        {
+            "id": 35,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/europe-is-struggling-to-rebuild-its-military-clout.json"
+        },
+        {
+            "id": 36,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/once-russias-best-friend-in-the-west-austria-is-facing-trouble.json"
+        },
+        {
+            "id": 37,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/why-britain-is-updating-its-laws-on-surrogacy-and-gamete-donation.json"
+        },
+        {
+            "id": 38,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/direct-cremations-and-burials-offer-a-different-way-to-mourn.json"
+        },
+        {
+            "id": 39,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/britains-services-exports-are-booming-despite-brexit-why.json"
+        },
+        {
+            "id": 40,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/britain-plays-catch-up-in-a-global-scramble-for-critical-minerals.json"
+        },
+        {
+            "id": 41,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/londons-newest-train-line-is-now-also-its-busiest.json"
+        },
+        {
+            "id": 42,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/labour-makes-striking-gains-in-the-heartland-of-brexit.json"
+        },
+        {
+            "id": 43,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-housing-became-the-new-divide-in-british-politics.json"
+        },
+        {
+            "id": 44,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/after-12-years-of-blood-assads-syria-rejoins-the-arab-league.json"
+        },
+        {
+            "id": 45,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/just-how-good-can-china-get-at-generative-ai.json"
+        },
+        {
+            "id": 46,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-fast-can-european-steelmakers-decarbonise.json"
+        },
+        {
+            "id": 47,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/why-chinese-carmakers-are-eyeing-thailand.json"
+        },
+        {
+            "id": 48,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-to-recruit-with-softer-skills-in-mind.json"
+        },
+        {
+            "id": 49,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/writers-on-strike-beware-hollywood-has-changed-for-ever.json"
+        },
+        {
+            "id": 50,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/your-job-is-probably-safe-from-artificial-intelligence.json"
+        },
+        {
+            "id": 51,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-meaty-mystery-at-the-heart-of-chinas-economic-growth.json"
+        },
+        {
+            "id": 52,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/indias-once-troubled-banks-are-generating-huge-profits.json"
+        },
+        {
+            "id": 53,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/are-americas-regional-banks-out-of-the-worst-of-it.json"
+        },
+        {
+            "id": 54,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/investors-brace-for-a-painful-crash-into-americas-debt-ceiling.json"
+        },
+        {
+            "id": 55,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/a-new-world-order-seeks-to-prioritise-security-and-climate-change.json"
+        },
+        {
+            "id": 56,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-ukrainians-modify-civilian-drones-for-military-use.json"
+        },
+        {
+            "id": 57,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-human-genome-was-always-a-misnomer.json"
+        },
+        {
+            "id": 58,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/how-to-bring-scents-to-the-metaverse.json"
+        },
+        {
+            "id": 59,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/martin-luther-king-was-among-the-greatest-americans-and-the-most-misunderstood.json"
+        },
+        {
+            "id": 60,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/janika-ozas-debut-novel-charts-the-indian-diasporas-struggles.json"
+        },
+        {
+            "id": 61,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/serhii-plokhys-new-book-traces-vladimir-putins-road-to-war.json"
+        },
+        {
+            "id": 62,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-uffizi-is-taking-its-art-to-the-people.json"
+        },
+        {
+            "id": 63,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/famous-names-and-historical-forces-collide-on-the-riviera.json"
+        },
+        {
+            "id": 64,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/the-hazards-of-pronouncing-foreign-names-on-air.json"
+        },
+        {
+            "id": 65,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/economic-data-commodities-and-markets.json"
+        },
+        {
+            "id": 66,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/expensive-energy-may-have-killed-more-europeans-than-covid-19-last-winter.json"
+        },
+        {
+            "id": 67,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2023-05-13/ranajit-guha-revolutionised-the-study-of-indias-past.json"
+        }
+    ]
+}
