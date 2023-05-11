@@ -67,7 +67,6 @@ struct ArticleView: View {
                                         self.translateText = self.currentArticle.hashTag
                                     })
                                 }))
-                                
                             Spacer()
                         }
                         HStack {
