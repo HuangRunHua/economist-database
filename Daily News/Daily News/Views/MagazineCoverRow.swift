@@ -34,7 +34,7 @@ struct MagazineCoverRow: View {
                         .foregroundColor(.secondary)
                 }
             })
-            .priority(.normal)
+            .priority(.high)
             .cornerRadius(7)
             .shadow(radius: 7)
             .padding([.top, .bottom])

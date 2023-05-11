@@ -67,6 +67,7 @@ struct ArticleView: View {
                                         self.translateText = self.currentArticle.hashTag
                                     })
                                 }))
+                                
                             Spacer()
                         }
                         HStack {
@@ -242,11 +243,13 @@ struct ArticleView: View {
             }
             
         }
+        #if !targetEnvironment(macCatalyst)
         .onOpenURL { url in
             if let selectedWord = self.parseURL(url: url) {
                 self.selectedWord = selectedWord
             }
         }
+        #endif
         .onChange(of: self.selectedWord, perform: { newValue in
             if self.selectedWord != "" {
                 self.showingSheet.toggle()
