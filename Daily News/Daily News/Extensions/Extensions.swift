@@ -89,7 +89,7 @@ extension View {
         pdfView.frame = CGRect(x: 0, y: getSafeArea().top, width: size.width, height: size.height)
         
         getRootController().view.insertSubview(pdfView, at: 0)
-        
+        print("size.width = \(size.width), height = \(size.height)")
         let render = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
         do {

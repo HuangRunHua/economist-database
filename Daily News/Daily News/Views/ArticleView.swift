@@ -25,6 +25,9 @@ struct ArticleView: View {
     // MARK: For Orientation
     @State private var articleContentID: UUID = UUID()
     
+    // MARK: For Print
+    @State private var screenWidth: CGFloat? = nil
+    
     var currentArticle: Article
     
     var coverImageURL: URL? {
@@ -185,8 +188,12 @@ struct ArticleView: View {
                 .padding([.leading, .trailing])
                 .padding(.bottom, 12)
                 .id(self.articleContentID)
-                
-                
+            }
+            .onAppear {
+                self.screenWidth = geo.size.width
+            }
+            .onChange(of: geo.size.width) { newValue in
+                self.screenWidth = newValue
             }
         })
         #if !os(macOS)
@@ -219,7 +226,7 @@ struct ArticleView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     exportPDF(title: self.currentArticle.title) {
-                        self
+                        self.printView
                     } completion: { status, url in
                         if let url = url, status {
                             self.pdfURL = url
@@ -461,6 +468,158 @@ struct DeviceRotationViewModifier: ViewModifier {
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                 action(UIDevice.current.orientation)
             }
+    }
+}
+
+
+extension ArticleView {
+    @ViewBuilder
+    var printView: some View {
+        if let screenWidth {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 30) {
+                    VStack(alignment: .leading, spacing: 7) {
+                        HStack {
+                            DictionaryText(self.currentArticle.hashTag, color: .hashtagColor)
+                                .modifier(DictionaryTextModifier())
+                                .font(Font.custom("Georgia", size: 17))
+                                .textSelection(.enabled)
+                                .contextMenu(ContextMenu(menuItems: {
+                                    Button("Copy", action: {
+                                        let pasteboard = UIPasteboard.general
+                                        pasteboard.string = self.currentArticle.hashTag
+                                    })
+                                    Button("Translate", action: {
+                                        self.translateText = self.currentArticle.hashTag
+                                    })
+                                }))
+                            Spacer()
+                        }
+                        HStack {
+                            DictionaryText(self.currentArticle.title)
+                                .modifier(DictionaryTextModifier())
+                                .font(Font.custom("Georgia", size: 30))
+                                .textSelection(.enabled)
+                                .contextMenu(ContextMenu(menuItems: {
+                                    Button("Copy", action: {
+                                        let pasteboard = UIPasteboard.general
+                                        pasteboard.string = self.currentArticle.title
+                                    })
+                                    Button("Translate", action: {
+                                        self.translateText = self.currentArticle.title
+                                    })
+                                }))
+                            Spacer()
+                        }
+                        .frame(maxHeight: .infinity)
+                    }
+                    if self.currentArticle.subtitle != "" {
+                        HStack {
+                            DictionaryText(self.currentArticle.subtitle)
+                                .modifier(DictionaryTextModifier())
+                                .font(Font.custom("Georgia", size: 20))
+                                .textSelection(.enabled)
+                                .contextMenu(ContextMenu(menuItems: {
+                                    Button("Copy", action: {
+                                        let pasteboard = UIPasteboard.general
+                                        pasteboard.string = self.currentArticle.subtitle
+                                    })
+                                    Button("Translate", action: {
+                                        self.translateText = self.currentArticle.subtitle
+                                    })
+                                }))
+                            Spacer()
+                        }
+                        .frame(maxHeight: .infinity)
+                    }
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: UIDevice.isIPad ? screenWidth/1.3: .infinity)
+                .multilineTextAlignment(.leading)
+                .padding()
+                .id(self.articleContentID)
+                
+                Divider()
+                
+                HStack {
+                    Text("By " + self.currentArticle.authorName)
+                        .font(Font.custom("Georgia", size: 15))
+                        .foregroundColor(.gray)
+                    Text("·")
+                    Text(self.currentArticle.publishDate)
+                        .font(Font.custom("Georgia", size: 15))
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+                .frame(maxWidth: UIDevice.isIPad ? screenWidth/1.3: .infinity)
+                .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
+                .id(self.articleContentID)
+                .padding([.leading, .trailing])
+                .padding([.bottom, .top], 7)
+                
+                VStack {
+                    if let imageURL = self.coverImageURL, let coverImageWidth = self.currentArticle.coverImageWidth, let coverImageHeight = self.currentArticle.coverImageHeight {
+                        
+                        LazyImage(url: imageURL, content: { phase in
+                            switch phase.result {
+                            case .success:
+                                phase.image?
+                                    .resizable()
+                                    .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
+                                    .padding(.bottom, 7)
+                                    .onTapGesture {
+                                        self.detailImageURL = imageURL
+                                    }
+                            case .failure:
+                                Rectangle()
+                                    .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
+                                    .foregroundColor(.secondary)
+                                    .padding(.bottom,7)
+                            case .none, .some:
+                                Rectangle()
+                                    .aspectRatio(coverImageWidth/coverImageHeight, contentMode: .fit)
+                                    .foregroundColor(.secondary)
+                                    .padding(.bottom,7)
+                            }
+                        })
+                    }
+                    
+                    if let imageDescription = self.currentArticle.coverImageDescription {
+                        if imageDescription != " " && imageDescription != "" {
+                            Text(imageDescription)
+                                .font(Font.custom("Georgia", size: CGFloat(15 + fontSize)))
+                                .foregroundColor(.gray)
+                                .padding([.bottom])
+                                .padding([.leading, .trailing], 7)
+                                .contextMenu(ContextMenu(menuItems: {
+                                    Button("Translate", action: {
+                                        if self.currentArticle.coverImageDescription != "" {
+                                            self.translateText = self.currentArticle.coverImageDescription
+                                        }
+                                    })
+                                }))
+                        }
+                    }
+                }
+                .frame(maxWidth: UIDevice.isIPad ? screenWidth/1.3: .infinity)
+                .padding(UIDevice.isIPad ? [.leading, .trailing]: [])
+                .id(self.articleContentID)
+                
+                ForEach(self.currentArticle.contents) { content in
+                    VStack(alignment: .leading) {
+                        self.transmitToView(content)
+                    }
+                }
+                .frame(maxWidth: UIDevice.isIPad ? screenWidth/1.3: .infinity)
+                .padding([.leading, .trailing])
+                .padding(.bottom, 12)
+                .id(self.articleContentID)
+                
+                
+            }
+        } else {
+            EmptyView()
+        }
     }
 }
 
