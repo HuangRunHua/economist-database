@@ -2,7 +2,7 @@
 
 This database collects all the articles data of The Economist starting from January 2023. The database is used for my own use and I use this data to develop an app called `The Ecnomist` and the app is shown below.
 
-![](https://github.com/HuangRunHua/economist-database/raw/main/Cover.JPEG)
+![](https://github.com/HuangRunHua/economist-database/raw/main/cover.png)
 
 ## Why Develop
 
