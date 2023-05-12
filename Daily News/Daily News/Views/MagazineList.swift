@@ -121,21 +121,24 @@ extension MagazineList {
         } else {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    NavigationLink {
-                        DailyBriefList(dailyBriefs: dailyBriefs)
-                    } label: {
-                        if !dailyBriefs.isEmpty {
-                            DailyBriefOverView(dailyBriefImagePath: dailyBriefs[1].imageURL)
-                                .padding(.bottom, 3.5)
-                                .padding(.top, 3.5)
-                                .padding([.leading, .trailing], 7)
-                                .frame(width: UIDevice.isIPad ? self.screenWidth-21: nil)
-                                .id(self.articleContentID)
-                        }
-                    }
                     
                     if UIDevice.isIPad {
                         if self.screenWidth*1.5 < self.screenHeight {
+                            
+                            NavigationLink {
+                                DailyBriefList(dailyBriefs: dailyBriefs)
+                            } label: {
+                                if !dailyBriefs.isEmpty {
+                                    DailyBriefOverView(dailyBriefImagePath: dailyBriefs[1].imageURL)
+                                        .padding(.bottom, 3.5)
+                                        .padding(.top, 3.5)
+                                        .padding([.leading, .trailing], 7)
+                                        .frame(width: UIDevice.isIPad ? self.screenWidth-21: nil)
+                                        .id(self.articleContentID)
+                                }
+                            }
+
+                            
                             ForEach(self.latestArticlesList) { article in
                                 NavigationLink {
                                     ArticleView(currentArticle: article)
@@ -148,6 +151,15 @@ extension MagazineList {
                             }
                         } else {
                             LazyVGrid(columns: self.screenWidth > self.screenHeight ? lanscapeGridItemLayoutiPad: portraitGridItemLayoutiPad) {
+                                
+                                NavigationLink {
+                                    DailyBriefList(dailyBriefs: dailyBriefs)
+                                } label: {
+                                    DailyBriefOverView_iPad(dailyBriefImagePath: dailyBriefs[1].imageURL)
+                                        .frame(width: self.screenWidth > self.screenHeight ? self.screenWidth/3-14: self.screenWidth/2-14)
+                                        .id(self.articleContentID)
+                                }
+                                
                                 ForEach(self.latestArticlesList) { article in
                                     NavigationLink {
                                         ArticleView(currentArticle: article)
@@ -162,6 +174,19 @@ extension MagazineList {
                         }
                         
                     } else {
+                        NavigationLink {
+                            DailyBriefList(dailyBriefs: dailyBriefs)
+                        } label: {
+                            if !dailyBriefs.isEmpty {
+                                DailyBriefOverView(dailyBriefImagePath: dailyBriefs[1].imageURL)
+                                    .padding(.bottom, 3.5)
+                                    .padding(.top, 3.5)
+                                    .padding([.leading, .trailing], 7)
+                                    .frame(width: UIDevice.isIPad ? self.screenWidth-21: nil)
+                                    .id(self.articleContentID)
+                            }
+                        }
+                        
                         ForEach(self.latestArticlesList) { article in
                             NavigationLink {
                                 ArticleView(currentArticle: article)

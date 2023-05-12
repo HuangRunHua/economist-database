@@ -46,6 +46,7 @@
 		A9AC8E9B29F3B57B00B06412 /* DictionaryTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9829F3B57A00B06412 /* DictionaryTextModifier.swift */; };
 		A9AC8E9C29F3B57B00B06412 /* DictionarySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */; };
 		A9AC8E9D29F3B57B00B06412 /* DictionaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */; };
+		A9B3D7012A0DFF95004E8E8D /* DailyBriefOverView_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3D7002A0DFF95004E8E8D /* DailyBriefOverView_iPad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		A9AC8E9929F3B57A00B06412 /* DictionarySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySearchViewController.swift; sourceTree = "<group>"; };
 		A9AC8E9A29F3B57B00B06412 /* DictionaryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryText.swift; sourceTree = "<group>"; };
 		A9AC8E9E29F3B59A00B06412 /* Daily-News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Daily-News-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A9B3D7002A0DFF95004E8E8D /* DailyBriefOverView_iPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBriefOverView_iPad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				A931F25B2A0521D200974C6B /* DailyBrief.swift */,
 				A931F25D2A0521D200974C6B /* DailyBriefArticleView.swift */,
+				A9B3D7002A0DFF95004E8E8D /* DailyBriefOverView_iPad.swift */,
 				A931F25E2A0521D300974C6B /* DailyBriefList.swift */,
 				A931F25F2A0521D300974C6B /* DailyBriefOverView.swift */,
 				A931F25C2A0521D200974C6B /* DailyBriefRow.swift */,
@@ -339,6 +342,7 @@
 				A90F853128E3622000DDA5E0 /* Extensions.swift in Sources */,
 				A9291BF428E301F3007F5F77 /* TranslationView.swift in Sources */,
 				A96A15EB29379A4A003BCDD5 /* ArticlePeekView.swift in Sources */,
+				A9B3D7012A0DFF95004E8E8D /* DailyBriefOverView_iPad.swift in Sources */,
 				A93DFF1728E1F59400FC5BAE /* ArticleView.swift in Sources */,
 				A93DFF2B28E1F6DD00FC5BAE /* ModelData.swift in Sources */,
 				A93DFF1528E1F59400FC5BAE /* Daily_NewsApp.swift in Sources */,
@@ -500,7 +504,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily News/Preview Content\"";
 				DEVELOPMENT_TEAM = YRB62S584T;
@@ -524,7 +528,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daily-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -551,7 +555,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Daily News/Preview Content\"";
 				DEVELOPMENT_TEAM = YRB62S584T;
@@ -575,7 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Daily-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
