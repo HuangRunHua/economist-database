@@ -220,7 +220,7 @@ struct ArticleView: View {
                     }
 
                     Button {
-                        if self.fontSize < 7 {
+                        if self.fontSize < 17 {
                             self.fontSize += 1
                         }
                     } label: {
