@@ -128,7 +128,7 @@ extension MagazineList {
                             NavigationLink {
                                 DailyBriefList(dailyBriefs: dailyBriefs)
                             } label: {
-                                if !dailyBriefs.isEmpty {
+                                if dailyBriefs.count >= 2 {
                                     DailyBriefOverView(dailyBriefImagePath: dailyBriefs[1].imageURL)
                                         .padding(.bottom, 3.5)
                                         .padding(.top, 3.5)
@@ -155,9 +155,11 @@ extension MagazineList {
                                 NavigationLink {
                                     DailyBriefList(dailyBriefs: dailyBriefs)
                                 } label: {
-                                    DailyBriefOverView_iPad(dailyBriefImagePath: dailyBriefs[1].imageURL)
-                                        .frame(width: self.screenWidth > self.screenHeight ? self.screenWidth/3-14: self.screenWidth/2-14)
-                                        .id(self.articleContentID)
+                                    if dailyBriefs.count >= 2 {
+                                        DailyBriefOverView_iPad(dailyBriefImagePath: dailyBriefs[1].imageURL)
+                                            .frame(width: self.screenWidth > self.screenHeight ? self.screenWidth/3-14: self.screenWidth/2-14)
+                                            .id(self.articleContentID)
+                                    }
                                 }
                                 
                                 ForEach(self.latestArticlesList) { article in
@@ -177,7 +179,7 @@ extension MagazineList {
                         NavigationLink {
                             DailyBriefList(dailyBriefs: dailyBriefs)
                         } label: {
-                            if !dailyBriefs.isEmpty {
+                            if dailyBriefs.count >= 2 {
                                 DailyBriefOverView(dailyBriefImagePath: dailyBriefs[1].imageURL)
                                     .padding(.bottom, 3.5)
                                     .padding(.top, 3.5)
