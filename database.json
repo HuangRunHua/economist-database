@@ -74,5 +74,9 @@
     {
         "id": 18,
         "magazineURL": "https://github.com/HuangRunHua/economist-database/raw/main/weekly-json/2023-05-13.json"
+    },
+    {
+        "id": 19,
+        "magazineURL": "https://github.com/HuangRunHua/economist-database/raw/main/weekly-json/2023-05-20.json"
     }
 ]
