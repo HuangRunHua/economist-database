@@ -1,1 +1,22 @@
-{"coverImageURL": "https://www.economist.com/media-assets/image/20230516_FLP003.jpg", "coverImageWidth": 1280, "coverImageHeight": 720, "coverImageDescription": "", "title": "Video: insights from the author", "subtitle": "Inside our correspondent\u2019s investigation", "hashTag": "Special report", "authorName": "The Economist", "publishDate": "2023-05-16T12:28:32Z", "contents": [{"role": "body", "text": "Arjun Ramani, The Economist\u2019s global business and economics correspondent, spent months immersed in the world of digital finance. He explored digital revolutions and the disappointments of crypto, and assessed who might be winners and losers in digital payments. Here he talks about his reporting and the lessons he drew from it. "}, {"role": "body", "imageURL": "https://www.youtube.com/embed/EKX2xAGNDF0", "imageWidth": 640.0, "imageHeight": 360.0, "imageDescription": "", "text": ""}], "id": 54}
+{
+    "coverImageURL": "https://www.economist.com/media-assets/image/20230516_FLP003.jpg",
+    "coverImageWidth": 1280,
+    "coverImageHeight": 720,
+    "coverImageDescription": "",
+    "title": "Video: insights from the author",
+    "subtitle": "Inside our correspondent\u2019s investigation",
+    "hashTag": "Special report",
+    "authorName": "The Economist",
+    "publishDate": "2023-05-16T12:28:32Z",
+    "contents": [
+        {
+            "role": "body",
+            "text": "Arjun Ramani, The Economist\u2019s global business and economics correspondent, spent months immersed in the world of digital finance. He explored digital revolutions and the disappointments of crypto, and assessed who might be winners and losers in digital payments. Here he talks about his reporting and the lessons he drew from it. "
+        },
+        {
+            "role": "video",
+            "link": "https://www.youtube.com/watch?v=EKX2xAGNDF0"
+        }
+    ],
+    "id": 54
+}
