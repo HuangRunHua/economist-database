@@ -335,7 +335,7 @@ extension ArticleView {
         switch content.contentRole {
         case .quote:
             HStack {
-                DictionaryText(content.text ?? "")
+                DictionaryText(content.text ?? "", color: .gray)
                     .modifier(DictionaryTextModifier())
                     .font(Font.custom("Georgia", size: CGFloat(17 + fontSize)))
                     .foregroundColor(.gray)
