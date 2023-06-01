@@ -92,9 +92,16 @@ class ArticleParaser(object):
                     if child["name"] == "figure":
                         current_para_json["role"] = "image"
                         current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
-                        current_para_json["imageWidth"] = float(content["children"][0]["children"][0]["attribs"]["width"])
-                        current_para_json["imageHeight"] = float(content["children"][0]["children"][0]["attribs"]["height"])
-                        current_para_json["imageDescription"] = ""
+                        if ("width" in content["children"][0]["children"][0]["attribs"]) and ("height" in content["children"][0]["children"][0]["attribs"]):
+                            current_para_json["imageWidth"] = float(content["children"][0]["children"][0]["attribs"]
+                            ["width"])
+                            current_para_json["imageHeight"] = float(content["children"][0]["children"][0]["attribs"]["height"])
+                            current_para_json["imageDescription"] = ""
+                        else:
+                            current_para_json["imageWidth"] = 1.0
+                            current_para_json["imageHeight"] = 1.0
+                            current_para_json["imageDescription"] = ""
+                            print("Image Bound not include: ", current_para_json["imageURL"])
                     else:
                         if len(child["children"]) > 1:
                             subchild_str = ""
@@ -135,15 +142,27 @@ class ArticleParaser(object):
             elif content["name"] == "figure":
                 if content["children"][0]["name"] == "figure":
                     current_para_json["role"] = "image"
-                    current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
-                    current_para_json["imageWidth"] = float(content["children"][0]["children"][0]["attribs"]["width"])
-                    current_para_json["imageHeight"] = float(content["children"][0]["children"][0]["attribs"]["height"])
+                    if ("width" in content["children"][0]["children"][0]["attribs"]) and ("height" in content["children"][0]["children"][0]["attribs"]): 
+                        current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
+                        current_para_json["imageWidth"] = float(content["children"][0]["children"][0]["attribs"]["width"])
+                        current_para_json["imageHeight"] = float(content["children"][0]["children"][0]["attribs"]["height"])
+                    else:
+                        current_para_json["imageDescription"] = ""
+                        current_para_json["imageWidth"] = 1.0
+                        current_para_json["imageHeight"] = 1.0
+                        print("Image Bound not include: ", current_para_json["imageURL"])
                 elif content["children"][0]["name"] == "img":
                     current_para_json["role"] = "image"
                     current_para_json["imageURL"] = content["children"][0]["attribs"]["src"]
-                    current_para_json["imageWidth"] = float(content["children"][0]["attribs"]["width"])
-                    current_para_json["imageHeight"] = float(content["children"][0]["attribs"]["height"])
-                    current_para_json["imageDescription"] = ""
+                    if ("width" in content["children"][0]["attribs"]) and ("height" in content["children"][0]["attribs"]): 
+                        current_para_json["imageWidth"] = float(content["children"][0]["attribs"]["width"])
+                        current_para_json["imageHeight"] = float(content["children"][0]["attribs"]["height"])
+                        current_para_json["imageDescription"] = ""
+                    else:
+                        current_para_json["imageDescription"] = ""
+                        current_para_json["imageWidth"] = 1.0
+                        current_para_json["imageHeight"] = 1.0
+                        print("Image Bound not include: ", current_para_json["imageURL"])
                 else:
                     print("Name not handled in this version: ", content["children"][0]["name"])
             

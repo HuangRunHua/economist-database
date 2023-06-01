@@ -1,0 +1,29 @@
+{
+    "coverImageURL": "https://www.economist.com/media-assets/image/20230603_WBP502.jpg",
+    "coverImageWidth": 1280,
+    "coverImageHeight": 720,
+    "coverImageDescription": "",
+    "title": "Chief executives cannot shut up about AI",
+    "subtitle": "Earnings calls are overflowing with mentions of it",
+    "hashTag": "Business",
+    "authorName": "The Economist",
+    "publishDate": "2023-06-01T12:58:52Z",
+    "contents": [
+        {
+            "role": "image",
+            "imageURL": "https://www.economist.com/media-assets/image/20230603_WOF365.png",
+            "imageWidth": 1280,
+            "imageHeight": 2841,
+            "imageDescription": ""
+        },
+        {
+            "role": "body",
+            "text": "Since the launch in November of ChatGPT, an artificially intelligent conversationalist, AI is seemingly all anyone can talk about. Corporate bosses, too, cannot shut up about it. So far in the latest quarterly results season, executives at a record 110 companies in the S&P 500 index have brought up AI in their earnings calls. \u25a0"
+        },
+        {
+            "role": "body",
+            "text": "To stay on top of the biggest stories in business and technology, sign up to the Bottom Line, our weekly subscriber-only newsletter."
+        }
+    ],
+    "id": 48
+}
