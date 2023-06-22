@@ -109,8 +109,12 @@ class ArticleParaser(object):
                                 if subchild["type"] == "text":
                                     subchild_str += subchild["data"]
                                 else:
-                                    if "data" in subchild["children"][0]:
-                                        subchild_str += subchild["children"][0]["data"]
+                                    if len(subchild["children"]) > 0:
+                                        if "data" in subchild["children"][0]:
+                                            subchild_str += subchild["children"][0]["data"]
+                                        else:
+                                            print("Article not parased: ", self.article_html)
+                                            break
                                     else:
                                         print("Article not parased: ", self.article_html)
                                         break
