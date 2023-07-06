@@ -135,5 +135,5 @@ class MagazineGenerator(object):
 
 
 if __name__ == "__main__":
-    article_analyzer = MagazineGenerator(folder="2023-07-01")
+    article_analyzer = MagazineGenerator(folder="2023-07-08")
     article_analyzer.generat_jsons()
