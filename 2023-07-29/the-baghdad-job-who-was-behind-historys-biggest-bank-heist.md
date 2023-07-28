@@ -70,7 +70,7 @@ Abdeljabbar told 1843 magazine he was driven by the desire to expose wrongdoing 
 
 Kanber wasn’t finished until October 10th, the eve of the no-confidence vote. In order for the report to have any political heft, it had to be formally presented to the finance ministry in the name of a relevant official. Who could he get to read the report, digest its consequences and agree to sign it in less than 24 hours? Kanber decided to go to the house of Abdul Sattar Hashem Ali Mawla, an official at the tax authority whom he’d known since childhood.
 
-He turned up at Mawla’s home with the report on a <small>USB</small> stick. Mawla’s printer wasn’t working properly, and the two men stood awkwardly beneath the Shia religious texts lining the shelves of his study, as the pages sputtered out. Mawla read them and, after a long pause, scribbled his signature.
+He turned up at Mawla’s home with the report on a USB stick. Mawla’s printer wasn’t working properly, and the two men stood awkwardly beneath the Shia religious texts lining the shelves of his study, as the pages sputtered out. Mawla read them and, after a long pause, scribbled his signature.
 
 > If all the stolen notes were stacked on top of each other, the pile would rise higher than Mount Kilimanjaro
 
@@ -80,7 +80,7 @@ Iraqis were used to scandal, but the scale and brazenness of this theft shocked 
 
 Abdeljabbar lost the vote anyway. Kanber booked a Qatar Airways flight back to Stockholm. He felt tense as he approached Baghdad’s international airport, as he knew that agents allied to Fatah had influence with security there. What if they knew about his role in the investigation and arrested him? In the end he passed through passport control without incident and flew out of the country that his report had left seething.
 
-Nur Zuheir was 41 when he was arrested, but he looked younger. After his picture was splashed in the papers I heard Iraqis liken him to Pablo Escobar. He certainly bore a passing resemblance to the Colombian drug lord: fat, unshaven cheeks, drooping eyes and a self-confident swagger. Kanber’s report named two other businessmen as recipients of the tax authority’s money. But Zuheir was the only one people talked about. (When <i>1843 magazine</i> approached Zuheir for comment on the allegations in this article he said that he was a law-abiding citizen, and vehemently denied them all, adding that he had never indulged in any crime.)
+Nur Zuheir was 41 when he was arrested, but he looked younger. After his picture was splashed in the papers I heard Iraqis liken him to Pablo Escobar. He certainly bore a passing resemblance to the Colombian drug lord: fat, unshaven cheeks, drooping eyes and a self-confident swagger. Kanber’s report named two other businessmen as recipients of the tax authority’s money. But Zuheir was the only one people talked about. (When 1843 magazine approached Zuheir for comment on the allegations in this article he said that he was a law-abiding citizen, and vehemently denied them all, adding that he had never indulged in any crime.)
 
 Zuheir came from Basra, a predominantly Shia province in southern Iraq where much of the country’s oil is produced and exported. A local academic described Zuheir to me as a mukhalas, or fixer: someone who made introductions to the right people to smooth the movement of goods and services. At some point, he moved to Baghdad to deploy these skills on a national level.
 
