@@ -8,6 +8,107 @@
     "coverImageDescription": "",
     "hashTag": "1843 magazine",
     "publishDate": "Jul 27th 2023",
-    "contents": [],
+    "contents": [
+        {
+            "role": "body",
+            "text": "In early 2022 New Yorkers encountered the sight of black trucks driving around Times Square displaying a peculiar billboard. It showed a balding man dressed in a dark business suit, bearing a Dr Evil stare. A columnist for the New York Post wrote, tongue-in-cheek, that \u201cit made me wonder whether this dude was about to assign a hit squad to come to my house.\u201d Beneath the advertisement was a question and a website url. Both asked \u201cWho is Larry Fink?\u201d"
+        },
+        {
+            "role": "body",
+            "text": "Whoislarryfink.com accuses Fink of being enamoured of China and exploiting those in financial misfortune, but it doesn\u2019t mention the most salient facts. He is the 70-year-old chairman and chief executive of BlackRock, the world\u2019s biggest asset manager. It invests trillions of dollars on behalf of its clients, which include pension funds, mutual funds and insurance companies. The firm, with a market value of about $100bn, is the world leader in innovative low-cost investment funds. Its assets under management, valued at $9.4trn, include stakes in about 18,000 listed companies across the Western world. When Fink talks, people listen \u2013 and Fink certainly likes to talk."
+        },
+        {
+            "role": "body",
+            "text": "The advertising trucks were paid for by Consumers\u2019 Research, a group that describes itself as America\u2019s oldest consumer-protection agency. These days though, it looks more like a hit squad for a clique within the Republican Party. Historically, Republicans have allied themselves with business to oppose government regulation and promote free enterprise. But in recent years a faction has remonstrated against firms that speak out on issues like climate change, lgbt rights and other subjects that they consider \u201cwoke\u201d. Ron DeSantis, the governor of Florida and the leading challenger to Donald Trump in next year\u2019s Republican presidential primary contest, is its most prominent advocate."
+        },
+        {
+            "role": "body",
+            "text": "One of the main targets of this vituperative cabal is esg: environmental, social and governance investing. A lot of esg is flim-flam. The theory behind it suggests that you can measure companies\u2019 performance on metrics other than financial returns, though the scoring systems are subjective, inconsistent and often set goals that conflict with each other. Less than 3% of BlackRock\u2019s investments in America are esg-related, but Fink has made himself the face of the movement since 2016, when he began urging the chief executives of the companies in BlackRock\u2019s portfolio, in increasingly strident terms, to make their businesses more sustainable."
+        },
+        {
+            "role": "quote",
+            "text": "With a market value of about $100bn, BlackRock is the world leader in innovative low-cost investment funds"
+        },
+        {
+            "role": "body",
+            "text": "Consumers\u2019 Research and other well-funded right-wing organisations have formed a powerful lobby transmitting the message deep into Republican-governed states that esg is wrecking social norms and dooming fossil-fuel production, on which many rely for jobs and tax revenue. This year alone, Republican lawmakers in 37 states have proposed at least 167 laws targeting esg (most have not passed). Some states have blacklisted firms like BlackRock from handling their investments. Call it defunding the climate police."
+        },
+        {
+            "role": "body",
+            "text": "Fink has become the right wing\u2019s b\u00eate noire. This was made clear last year when Peter Thiel, a venture capitalist and conservative rabble-rouser, attacked esg at a Bitcoin conference in Miami, as Fink\u2019s face stared out of the screen behind him. \u201cesg is just a hate factory,\u201d he said. BlackRock\u2019s attempts to dampen the ire of the right have earned it the wrath of the left \u2013 as it counters criticism that it is doing too much to save the planet, the other side attacks it for doing too little."
+        },
+        {
+            "role": "body",
+            "text": "When I met Fink at his bucolic farm an hour from New York City, he was determined to show that he had put all this furore behind him. He is an ebullient conversationalist, rhapsodising about the catch of a lifetime in March while fly-fishing in Mexico. Yet when I asked him if he would have done anything differently to avoid the backlash, he ducked the issue by questioning the value of counterfactuals. Some in his orbit told me he struggles to admit he is wrong. \u201cEveryone asks me what are the things in life that I would do differently. And I would say nothing,\u201d Fink said."
+        },
+        {
+            "role": "body",
+            "text": "Still, the demonisation has taken a toll. One former colleague, usually in awe of Fink\u2019s energy, was shocked to find him looking \u201csad, tired and older\u201d last year as the campaign against him heated up. Another close observer likens the treatment of Fink to that of Emmanuel Goldstein, the enemy of the state in George Orwell\u2019s \u201c1984\u201d, whose image is shown on a screen and abused by viewers during a daily ritual called the \u201cTwo Minutes Hate\u201d."
+        },
+        {
+            "role": "body",
+            "text": "Fink receives sinister emails every day. Some include death threats, many spew anti-Semitism. \u201cIt\u2019s insane,\u201d he said. Last year, BlackRock\u2019s board authorised the firm to provide him with bodyguards. For safety\u2019s sake, it obliges him to use a private jet (which he frequently did anyway, even as he promoted sustainable investments). Security cameras were installed on the farm where we met."
+        },
+        {
+            "role": "body",
+            "text": "BlackRock\u2019s success has been built on a rigorous approach to risk management \u2013 a lesson Fink learned after a career-defining mishap on Wall Street. The company has built sophisticated computer systems to analyse the exposures of its clients\u2019 assets. You might expect the person who has led such a firm since its founding to be cool, methodical and unemotive. Yet Fink couldn\u2019t be more different. One former employee called him \u201cexceptionally intuitive\u201d. He loves shooting the breeze on the phone \u2013 he calls his wife multiple times a day \u2013 and improvises in meetings with global poobahs. Another former employee once sent Fink a text message saying he\u2019d rather be loved than respected. Fink replied, \u201cWe all would.\u201d"
+        },
+        {
+            "role": "image",
+            "imageURL": "https://www.economist.com/img/b/640/640/90/media-assets/image/1843_20230724_FINK_04.jpg",
+            "imageWidth": 640,
+            "imageHeight": 640
+        },
+        {
+            "role": "image",
+            "imageURL": "https://www.economist.com/img/b/640/427/90/media-assets/image/1843_20230724_FINK_12.jpg",
+            "imageWidth": 640,
+            "imageHeight": 426
+        },
+        {
+            "role": "body",
+            "text": "His yearning for admiration can make him thin-skinned and conscious of his status. In recent years, as he has jetted around the world to chew the fat with corporate clients, prime ministers and central bankers, he seems to have enjoyed his job as much for the platform it gave him as for the money it generates. Raising the banner for esg seemed to offer the opportunity to cement his importance as a financial statesman \u2013 and for BlackRock to make a killing at the same time. Instead, the experience has been chastening. To understand Larry Fink, you need to understand what went wrong."
+        },
+        {
+            "role": "body",
+            "text": "Ifirst spoke to Fink via a video call in February, as he sat in his office in a converted barn on the farm, where he spends the weekends. Even on screen, he is an imposing presence. His voice booms as he expresses his reluctance to be profiled. \u201cMy biggest issue is that I\u2019m overly exposed,\u201d he says. Still, he can barely stop himself talking. I am calling him from Los Angeles, the city where he was born and lived for the first 23 years of his life. Within minutes, he is telling me in vivid detail about growing up in California \u201camid orange groves and tumbleweed\u201d."
+        },
+        {
+            "role": "body",
+            "text": "Fink was born in 1952 to a Jewish family in Van Nuys, a sprawling suburb. His parents were Democrats \u2013 his father ran a shoe shop and his mother was a university professor. He went to state schools, which, he says, made him the person he is. His entrepreneurialism started young. The family would visit the Mojave desert, where Larry would collect snakes (conventional pets were not allowed at home because his mother was allergic to animal hair). He developed a small business dealing in them and would post his haul to collectors across America \u2013 until some slithered out in transit. When he was 12 or 13, the fbi showed up at his parents\u2019 door. Despite the scolding, his passion for snakes continues. He can still identify a venomous one at a glance."
+        },
+        {
+            "role": "body",
+            "text": "Fink imbibed the free-spirited atmosphere of the west coast in the 1960s. He wore his hair long and, he claims, once served George Harrison while working as a waiter during his teens. At university he developed an interest in real estate. To this day he can reel off the square footage of the house and holiday home he grew up in."
+        },
+        {
+            "role": "body",
+            "text": "But in the 1970s, Wall Street offered more excitement than selling property. Michael Milken, an earlier graduate of the same secondary school as Fink, was innovating in risky high-yield bonds. The first private-equity firms were beginning their corporate raids. Fink abandoned his early passion and joined First Boston in New York, an investment bank with a wasp-y reputation. \u201cI was a freak,\u201d he tells me, chuckling at the memory. \u201cI was told I was hired because I was Jewish and Jews were smart. But it was a meritocracy.\u201d"
+        },
+        {
+            "role": "body",
+            "text": "Fink\u2019s property experience landed him a job as a mortgage trader, a much lowlier position than the plummy investment bankers doing mergers and acquisitions. Despite a surge in homeownership during the 1970s, the market in mortgages barely existed, as they had been considered too fiddly and opaque for Wall Street to dabble in."
+        },
+        {
+            "role": "quote",
+            "text": "A former employee once sent Fink a text message saying he\u2019d rather be loved than respected. Fink replied, \u201cWe all would\u201d"
+        },
+        {
+            "role": "body",
+            "text": "But in the early 1980s, trading took off. Fink set his sights on toppling Lewis Ranieri, a bond trader who had worked his way up from the postroom to lead Salomon Brothers to pre-eminence in the mortgage market. Henry Fernandez, ceo of msci, a provider of investment indices, watched in awe from the sidelines as Fink single-handedly sought to dethrone Salomon. \u201cLarry was in his early 30s,\u201d he says. \u201cImagine a guy of that age joining a genteel firm and building its mortgage business from scratch. The partners were bankers, not traders. You can imagine the force of personality he needed.\u201d"
+        },
+        {
+            "role": "body",
+            "text": "As the competition between him and Ranieri brewed, Fink loaded up on mortgages that led to cratering losses when interest rates unexpectedly fell. He went from being the wunderkind who had brought in $1bn in the space of a few years to the pariah blamed for losing $100m in a quarter \u2013 a staggering loss at First Boston. Suddenly he was treated like a \u201cleper\u201d, he recalls. When we talk, it\u2019s clear he still ruminates on his failure."
+        },
+        {
+            "role": "body",
+            "text": "The experience gave him a life-long obsession with risk. Stung by the trading debacle, Fink and seven partners co-founded an asset-management company a year and a half later in 1988. Its main business was investing money from pension funds and other long-term asset holders in bonds. From the inception, Fink put risk management at its core, bringing in mathematical experts and computer whizzkids to calculate the repayment probabilities of individual loans in a bond portfolio and assess how their value would be affected by changes in interest rates. Eventually, the software would be so successful that BlackRock would license it to 130,000 financial-services firms."
+        },
+        {
+            "role": "body",
+            "text": "Initially, the firm was called Blackstone Financial Management since Blackstone, a private-equity firm, took a half-stake in the project. The two firms were united for seven years until Stephen Schwarzman, Blackstone\u2019s co-founder, rebelled after finding out that Fink and the other founders were diluting everyone\u2019s stakes by issuing stock options to new joiners. After a row with Fink, he agreed to sell his shares. The liberated firm was renamed BlackRock."
+        }
+    ],
     "id": 39
 }
