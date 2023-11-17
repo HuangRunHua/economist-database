@@ -1,0 +1,82 @@
+---
+title: Inside a month of America’s school shootings
+subtitle: The hidden impacts of gun crime are devastating and poorly understood
+authorName: The Economist
+coverImageURL: https://www.economist.com/interactive/united-states/2023/11/13/inside-a-month-of-americas-school-shootings/promo.jpg
+coverImageDescription:  
+hashTag: United States
+publishDate: Nov 15th 2023
+---
+
+> Due to the restriction of The Economist, some pictures of the article cannot be obtained.
+
+February 2023 was five years since the high-school massacre in Parkland, Florida, in which a gunman killed 17 students and staff. It was also representative of a typical month of school gun violence.
+
+There were 23 incidents of gun crime on or near school property over 13 days, which ranged from a fourth-grader brandishing a gun in the toilets to a student’s stepfather committing suicide in the school office.
+
+In five shootings, across four days, a victim died.
+
+In eight more someone was injured.
+
+There were also 148 “SWAT hoaxes”, in which false threats of a school shooting were made to police, which can lead to an armed response.
+
+What follows contains images and descriptions of violence some readers may find distressing.
+
+## Williamsburg Charter High School, Brooklyn, New York
+
+> 2.15pm: A 15-year-old and 17-year-old are caught in a fight during dismissal and shot in the legs. A staff member is also injured. The shooter was not a student.
+
+This shooting took place outside the school building, after school, which means it would not be counted as a school shooting in most datasets. Although the government logs every time someone is killed or injured in a car crash in America, there is no federal record of when a gun is fired on school property, and the databases that do exist all define this type of violence differently. Some only include shootings that happen during the school day, while others only count incidents in which someone is killed or injured.
+
+The K-12 School Shooting Database, compiled by David Riedman, a data scientist, includes every time a gun is brandished, fired on or hits school property—or areas outside the school, such as pavements—at any time and for any reason, as these incidents can all cause significant disruption. “Most people think that a school shooting is something where it’s this deranged person who’s coming into the school,” he says. “But really, the most common circumstance for a gun to be fired is a dispute between students, usually taking place in a hallway or parking lot at dismissal.”
+
+The impacts can play out for years. Researchers from Stanford University studied gun violence in Texan schools between 1998 and 2006. They found absences and grade repetition increased after a shooting, while graduation rates decreased. Students whose schools had experienced a shooting earned less by their mid-20s than those from unaffected schools. Another Stanford study found that, nationwide, near schools that experienced a fatal shooting, youth antidepressant prescriptions increased by 21% for two to three years after.
+
+In Brooklyn, the school moved to remote learning for three weeks after the shooting. “There was the lingering question of will this happen again? Am I safe?” says Jahi Bashir, the head of school at the time of the shooting. “It’s very difficult to focus on instruction when you have these thoughts.” Despite extensive mental-health support from the school, 49 students left in the months following—more than three times the drop-out rate of a year earlier. The 15-year-old who was shot did not come back to in-person lessons for the remainder of the school year.
+
+The school spent over $90,000 on metal detectors and new security cameras. Three other schools that experienced shootings in February also invested in added security, at a total cost of around $450,000, including bullet-resistant glass and entry systems. The school-security, or “hardening”, industry in America grew by 57% between 2016 and 2021, when adjusted for inflation, to $1.6bn. But as this spending has increased, so too have shootings. “We’re going in the wrong direction,” says Mr Riedman.
+
+Part of the reason is that, by Mr Riedman’s calculations, more than 70% of shootings take place outside school buildings, which metal detectors and bullet-proof doors will do little to prevent. Ellen Eagen, legal counsel for Williamsburg Charter High School, says the school’s Board of Trustees nevertheless had little choice: “We are desperate to make schools safer, and in the absence of sensible gun regulation, educators have to do whatever they can to improve safety.” But it is not just spending on hardening that appears misplaced. The ways in which schools prepare students for an active shooter can have harmful consequences too.
+
+## Aspen Elementary School, Aspen, Colorado
+
+> 8.30am: The school holds a lockdown drill to prepare students for an active shooter
+
+Lockdown drills are part of life in around 95% of public schools in America. They became widespread after the Columbine mass shooting in Colorado in 1999, as no one who had hidden in a locked room was killed. But there is now a debate about whether these drills are needlessly traumatic given how unlikely children are to be involved in a Columbine-style siege.
+
+There is little guidance about how schools should run drills, or how many are necessary. Massachusetts does not mandate a number of lockdown drills per year, while neighbouring New York requires four. It is down to school districts or even individual schools to determine what these should involve. This has led to reports of schools using role play and fake blood, and children messaging their parents during a drill to say goodbye because they thought they were going to die.
+
+Some of the most comprehensive research into how best to run drills has been done by Jaclyn Schildkraut, who has been studying drills in Syracuse, New York, for five years. There, drills are unscheduled. It is made clear they are not real, and students are given a chance to debrief afterwards. “We don't set schools on fire to practise fire drills,” says Ms Schildkraut. “So it’s really important that we're not simulating active-shooter events to practise a lockdown.” But even in a school in Syracuse, some children seemed unsettled by the drills when The Economist visited.
+
+There are now multiple bills going through state legislatures to reduce drills’ frequency and make them less upsetting, by doing things like announcing a drill before students lock down, and allowing parents the chance to opt their children out.
+
+Ultimately, however, no amount of practice can prepare students, teachers and parents for the terror of a potential shooting.
+
+## Colorado
+> 8.25am-1.45pm: Police across the state receive calls from a man saying he is about to attack local schools
+
+These calls prompted a huge police response. One of the first dispatch centres to receive a call was in Aspen. Just over a minute later officers were in Aspen Elementary School hunting for a gunman. At least 44 officers from five different forces, along with 27 medics, 26 firefighters and nine ambulances, attended the scene. Michael Buglione, the local sheriff, said it was the biggest unplanned emergency response he had seen in his 18-year career. Around 500 children locked down in their classrooms, just as they had practised the day before.
+
+But there was no shooter. This was a hoax call, one of 17 made across Colorado on February 22nd.
+
+These “SWAT hoaxes”, so called as they can require the response of a special weapons and tactics, or SWAT, team, capitalise on fear to cause chaos—and they are increasing. According to The Educator’s School Safety Network, a think-tank, there were around 70 such hoaxes against schools in the 2018 school year, and 450 in 2022. Mr Riedman, who started tracking swatting in 2023, recorded 148 in February alone.
+
+Some of the calls were made from a number with a Florida area code—but they may not have come from there. They were made using a voice over internet protocol service, which, if coupled with the use of a virtual private network (VPN), means they could have come from anywhere. Although the attack was a hoax, the fear felt by people who lived through it was very real.
+
+Jennifer Doebler, a former FBI intelligence analyst, believes these calls are more than just pranks. “It was an intentional plot to create mass chaos,” she says. “I personally believe these are acts of domestic terrorism.” The caller behind the Colorado hoaxes said his name was Nelson, and referred to pipe bombs and an AR-15 rifle on several calls. Keven Hendricks, a cybercrime expert and investigator, says these details suggest these could be copycat attacks, as they are reminiscent of Kya Nelson, a serial swatter who is now in prison. The FBI started tracking SWAT hoaxes in May 2023, and is investigating the Colorado calls, but declined to comment on these cases when contacted by The Economist. (Watch a longer investigation into swatting.)
+
+There is also a financial cost. The Aspen school district spent $6m improving its security following the call in February—$2m over budget—because the police response highlighted shortcomings.
+
+But the real thing can damage communities in ways that cannot so easily be repaired.
+
+## East High School, Denver, Colorado
+
+> 2.30pm: A 16-year-old student named Luis Garcia is shot in his car near the school. He dies 16 days later. Students march on the state capitol two days after his death, demanding change.
+
+The twins’ activism has had some impact: in the months after the shooting state legislators raised the legal age to purchase firearms in Colorado from 18 to 21. The state’s red-flag laws, which allow people to petition for authorities to confiscate an individual’s firearms, were expanded, and a three-day waiting period before firearms purchases can be delivered was introduced. But the shootings continued. On March 22nd a student at East High, Austin Lyle, shot and injured two staff members as they were checking him for weapons at the school’s entrance. He killed himself later that day.
+
+This prompted a dramatic shift within Denver’s public-school system. The school board reintroduced school resource officers (SROs), in effect armed police, to several schools. SROs had been removed in 2020 in the wake of George Floyd’s murder over fears they were disproportionately targeting non-white students. In June the school board voted to make SROs permanent, and as of August 2023 there were at least 14 armed officers in Denver schools paid for by the city. But for many parents this was not the answer they were hoping for, and the community remains deeply divided about the best way to protect its children.
+
+The Denver Public School board issued a new safety plan in June in response to the shootings stating that individual schools could invest in metal detectors, but Mr Katsaros’s remain in a storage unit. He has long campaigned for better safety, but like many parents in Denver, he now feels the problem goes much deeper than security checks. “I thought it was all about guns,” he says, “but I’ve come to find out, it’s the entire discipline structure. Having metal detectors as a deterrent is one solution [...] Having school resource officers is a solution, but there’s no singular solution that can fix this.”
+
+Many parents, teachers and pupils would agree. But a lack of timely and comprehensive data on school shootings is also hindering America's response. Mr Riedman notes that it can take over a year for crime data to be published. “With trends like swatting or shootings at schools, these are things where we need to be adjusting policy in real time,” he says. A clearer understanding of the extent of gun crime in American schools, and the dire consequences, may galvanise authorities and politicians to provide better answers.
