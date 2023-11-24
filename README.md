@@ -12,11 +12,7 @@ The data acquisition of The Economist magazine is realized by `Python`, and the 
 
 ## How to Use
 
-If you want to use the app, you must have **an iPhone with system iOS 16.0+**, **contact me and I will give you TestFlight link**. 
-
 **I will update the database every Friday or Saturday**. If you find that the magazine in the app is not updated, please exit the app in the background and reopen it.
-
-If you would like to read the PDF version of the magazine without using the app, please download the magazine [here](https://github.com/HuangRunHua/the-economist-time-etc).
 
 ## Data Structure
 
