@@ -21,13 +21,16 @@ class ArticleParaser(object):
         index = HTMLFile.read()
         S = BeautifulSoup(index, 'lxml')
         Tag = S.find("script", {"id": "__NEXT_DATA__"})
-        if len(Tag.contents) == 1: # type: ignore
-            all_json_data = json.loads(Tag.next) # type: ignore
-            self.parase_article_metadata(all_json_data)
-        elif len(Tag.contents) == 0: # type: ignore
-            print("No data found in ", self.article_html)
+        if Tag is None: # type: ignore
+            print("Article not parased: ", self.article_html)
         else:
-            print("Find more than one data in ", self.article_html)
+            if len(Tag.contents) == 1: # type: ignore
+                all_json_data = json.loads(Tag.next) # type: ignore
+                self.parase_article_metadata(all_json_data)
+            elif len(Tag.contents) == 0: # type: ignore
+                print("No data found in ", self.article_html)
+            else:
+                print("Find more than one data in ", self.article_html)
 
     def save_source_page(self):
         pd = PageDownloader(page_url=self.page_url, save_file_name="source-html/" + self.article_html)
