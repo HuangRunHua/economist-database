@@ -64,10 +64,11 @@ class MagazineGenerator(object):
             """Fetch the cover image size"""
             if "coverImageURL" in article:
                 # cover_image_size = ImageAnalyzer.get_image_size(url=article["coverImageURL"])
-                imagedownloader = ImageDownloader(image_url=article["coverImageURL"])
-                cover_image_size = imagedownloader.fetch_image() 
-                article["coverImageWidth"] = cover_image_size[0]
-                article["coverImageHeight"] = cover_image_size[1]
+                if article["coverImageURL"] != "":
+                    imagedownloader = ImageDownloader(image_url=article["coverImageURL"])
+                    cover_image_size = imagedownloader.fetch_image() 
+                    article["coverImageWidth"] = cover_image_size[0]
+                    article["coverImageHeight"] = cover_image_size[1]
         """Fetch the content of the article"""
         article["contents"] = []
 
@@ -135,5 +136,5 @@ class MagazineGenerator(object):
 
 
 if __name__ == "__main__":
-    article_analyzer = MagazineGenerator(folder="2023-12-23")
+    article_analyzer = MagazineGenerator(folder="2024-01-13")
     article_analyzer.generat_jsons()
