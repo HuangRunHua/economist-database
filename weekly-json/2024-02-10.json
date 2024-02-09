@@ -1,1 +1,318 @@
-{"id": "00000000-0000-0000-0000-000000000055", "date": "Feb 10th 2024", "coverStory": "Who is in control? Xi v the markets", "coverImageWidth": 1280, "coverImageHeight": 1684, "coverImageURL": "https://www.economist.com/media-assets/image/20240210_DE_AP.jpg", "articles": [{"id": 0, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/politics.json"}, {"id": 1, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/business.json"}, {"id": 2, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/kals-cartoon.json"}, {"id": 3, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/this-weeks-covers.json"}, {"id": 4, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/killer-drones-pioneered-in-ukraine-are-the-weapons-of-the-future.json"}, {"id": 5, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/can-xi-jinping-win-back-the-markets.json"}, {"id": 6, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/house-republicans-are-helping-vladimir-putin.json"}, {"id": 7, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/donald-tusk-tries-to-restore-polands-rule-of-law.json"}, {"id": 8, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-jokowis-inglorious-exit-means-for-indonesia.json"}, {"id": 9, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/letters-to-the-editor.json"}, {"id": 10, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-presidential-candidate-sees-daunting-challenges-at-home-and-abroad.json"}, {"id": 11, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/an-ai-risk-expert-thinks-governments-should-act-to-combat-disinformation.json"}, {"id": 12, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/kyriakos-mitsotakis-on-how-to-escape-the-grip-of-populism.json"}, {"id": 13, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/chinas-well-to-do-are-under-assault-from-every-side.json"}, {"id": 14, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-controversial-general-looks-likely-to-be-indonesias-next-leader.json"}, {"id": 15, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/south-koreas-writers-and-directors-play-squid-game.json"}, {"id": 16, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/izumi-kenta-wants-to-shake-up-japans-opposition.json"}, {"id": 17, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/australias-enthusiasm-for-immigration-is-being-tested.json"}, {"id": 18, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/are-indias-corruption-police-targeting-narendra-modis-critics.json"}, {"id": 19, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/singapore-cracks-down-on-chinese-influence.json"}, {"id": 20, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/can-consumers-rescue-chinas-economy.json"}, {"id": 21, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/protests-are-soaring-as-chinas-workers-demand-their-wages.json"}, {"id": 22, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/an-espionage-case-hurts-chinese-relations-with-australia.json"}, {"id": 23, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/xi-jinpings-chaos-loving-friends.json"}, {"id": 24, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/trumps-lead-over-biden-may-be-smaller-than-it-looks.json"}, {"id": 25, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-the-death-of-americas-border-bill-says-about-toxic-congressional-politics.json"}, {"id": 26, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-court-rejects-donald-trumps-claim-to-absolute-immunity.json"}, {"id": 27, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/congress-might-just-pass-an-astonishingly-sensible-tax-deal.json"}, {"id": 28, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/florida-too-may-have-an-abortion-referendum-in-november.json"}, {"id": 29, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/state-attorneys-general-are-shaping-national-policy.json"}, {"id": 30, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/this-is-not-a-story-about-taylor-swift-and-the-super-bowl.json"}, {"id": 31, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/israel-scorns-americas-unprecedented-peace-plan.json"}, {"id": 32, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/why-iran-is-hard-to-intimidate.json"}, {"id": 33, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/america-is-trying-to-peg-israels-settlers-back.json"}, {"id": 34, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/how-to-house-the-worlds-fastest-growing-population.json"}, {"id": 35, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/democracy-is-under-attack-in-senegal.json"}, {"id": 36, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/after-nayib-bukeles-crushing-unconstitutional-victory-what-next.json"}, {"id": 37, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/mexicos-president-and-his-family-are-fighting-claims-of-corruption.json"}, {"id": 38, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/andres-manuel-lopez-obrador-splashes-out-as-elections-loom.json"}, {"id": 39, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-mounting-crisis-of-confidence-confronts-olaf-scholz.json"}, {"id": 40, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/madrid-is-booming-growing-while-keeping-its-cool-will-be-the-tricky-part.json"}, {"id": 41, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/vladimir-putin-extends-his-crackdown-in-russia.json"}, {"id": 42, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/poland-is-trying-to-restore-the-rule-of-law-without-violating-it.json"}, {"id": 43, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/europe-is-importing-a-solar-boom-good-news-for-nearly-everyone.json"}, {"id": 44, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/how-britain-lost-its-war-on-drugs.json"}, {"id": 45, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-charles-iiis-illness-says-about-monarchs-and-mortality.json"}, {"id": 46, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/britains-economy-will-need-rate-cuts-sooner-rather-than-later.json"}, {"id": 47, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-tiny-right-wing-party-tries-to-menace-britains-conservatives.json"}, {"id": 48, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-controversy-over-britains-planned-holocaust-memorial.json"}, {"id": 49, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/iran-is-targeting-its-opponents-in-britain.json"}, {"id": 50, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-former-prime-minister-who-fascinates-the-labour-party.json"}, {"id": 51, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/americas-economy-is-booming-so-why-are-bosses-worried.json"}, {"id": 52, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/samsungs-boss-avoids-prison-again.json"}, {"id": 53, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/media-companies-club-together-for-a-joint-sport-streamer.json"}, {"id": 54, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/can-giorgia-meloni-reinvigorate-italia-spa.json"}, {"id": 55, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/fairness-the-hidden-currency-of-the-workplace.json"}, {"id": 56, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/vladimir-putin-wants-to-catch-up-with-the-west-in-ai.json"}, {"id": 57, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/musk-v-zuckerberg-whos-winning.json"}, {"id": 58, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/chinas-stockmarket-nightmare-is-nowhere-near-over.json"}, {"id": 59, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-dividend-is-back-are-investors-right-to-be-pleased.json"}, {"id": 60, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/are-nycbs-troubles-the-start-of-another-banking-panic.json"}, {"id": 61, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/bankers-have-reason-to-hope-trump-triumphs.json"}, {"id": 62, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-false-promise-of-indonesias-economy.json"}, {"id": 63, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/universities-are-failing-to-boost-economic-growth.json"}, {"id": 64, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/cheap-racing-drones-offer-precision-warfare-at-scale.json"}, {"id": 65, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/nasas-pace-satellite-will-tackle-the-largest-uncertainty-in-climate-science.json"}, {"id": 66, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-first-endometriosis-drug-in-four-decades-is-on-the-horizon.json"}, {"id": 67, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/ancient-damaged-roman-scrolls-have-been-deciphered-using-ai.json"}, {"id": 68, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/scientists-have-trained-an-ai-through-the-eyes-of-a-baby.json"}, {"id": 69, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/when-is-it-too-soon-to-write-history.json"}, {"id": 70, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/small-but-mighty-how-cuteness-has-taken-over-the-world.json"}, {"id": 71, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/lessons-for-keir-starmer-from-britains-first-labour-government.json"}, {"id": 72, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/chinese-animated-films-are-booming.json"}, {"id": 73, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-meaning-of-the-hysteria-over-taylor-swift.json"}, {"id": 74, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-to-read-about-pakistan.json"}, {"id": 75, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/economic-data-commodities-and-markets.json"}, {"id": 76, "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/rosemary-smith-set-out-to-prove-that-women-drivers-could-do-as-well-as-men.json"}]}
+{
+    "id": "00000000-0000-0000-0000-000000000055",
+    "date": "Feb 10th 2024",
+    "coverStory": "Who is in control? Xi v the markets",
+    "coverImageWidth": 1280,
+    "coverImageHeight": 1684,
+    "coverImageURL": "https://www.economist.com/media-assets/image/20240210_DE_UK.jpg",
+    "articles": [
+        {
+            "id": 0,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/politics.json"
+        },
+        {
+            "id": 1,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/business.json"
+        },
+        {
+            "id": 2,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/kals-cartoon.json"
+        },
+        {
+            "id": 3,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/this-weeks-covers.json"
+        },
+        {
+            "id": 4,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/killer-drones-pioneered-in-ukraine-are-the-weapons-of-the-future.json"
+        },
+        {
+            "id": 5,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/can-xi-jinping-win-back-the-markets.json"
+        },
+        {
+            "id": 6,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/house-republicans-are-helping-vladimir-putin.json"
+        },
+        {
+            "id": 7,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/donald-tusk-tries-to-restore-polands-rule-of-law.json"
+        },
+        {
+            "id": 8,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-jokowis-inglorious-exit-means-for-indonesia.json"
+        },
+        {
+            "id": 9,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/letters-to-the-editor.json"
+        },
+        {
+            "id": 10,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-presidential-candidate-sees-daunting-challenges-at-home-and-abroad.json"
+        },
+        {
+            "id": 11,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/an-ai-risk-expert-thinks-governments-should-act-to-combat-disinformation.json"
+        },
+        {
+            "id": 12,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/kyriakos-mitsotakis-on-how-to-escape-the-grip-of-populism.json"
+        },
+        {
+            "id": 13,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/chinas-well-to-do-are-under-assault-from-every-side.json"
+        },
+        {
+            "id": 14,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-controversial-general-looks-likely-to-be-indonesias-next-leader.json"
+        },
+        {
+            "id": 15,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/south-koreas-writers-and-directors-play-squid-game.json"
+        },
+        {
+            "id": 16,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/izumi-kenta-wants-to-shake-up-japans-opposition.json"
+        },
+        {
+            "id": 17,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/australias-enthusiasm-for-immigration-is-being-tested.json"
+        },
+        {
+            "id": 18,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/are-indias-corruption-police-targeting-narendra-modis-critics.json"
+        },
+        {
+            "id": 19,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/singapore-cracks-down-on-chinese-influence.json"
+        },
+        {
+            "id": 20,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/can-consumers-rescue-chinas-economy.json"
+        },
+        {
+            "id": 21,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/protests-are-soaring-as-chinas-workers-demand-their-wages.json"
+        },
+        {
+            "id": 22,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/an-espionage-case-hurts-chinese-relations-with-australia.json"
+        },
+        {
+            "id": 23,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/xi-jinpings-chaos-loving-friends.json"
+        },
+        {
+            "id": 24,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/trumps-lead-over-biden-may-be-smaller-than-it-looks.json"
+        },
+        {
+            "id": 25,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-the-death-of-americas-border-bill-says-about-toxic-congressional-politics.json"
+        },
+        {
+            "id": 26,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-court-rejects-donald-trumps-claim-to-absolute-immunity.json"
+        },
+        {
+            "id": 27,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/congress-might-just-pass-an-astonishingly-sensible-tax-deal.json"
+        },
+        {
+            "id": 28,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/florida-too-may-have-an-abortion-referendum-in-november.json"
+        },
+        {
+            "id": 29,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/state-attorneys-general-are-shaping-national-policy.json"
+        },
+        {
+            "id": 30,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/this-is-not-a-story-about-taylor-swift-and-the-super-bowl.json"
+        },
+        {
+            "id": 31,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/israel-scorns-americas-unprecedented-peace-plan.json"
+        },
+        {
+            "id": 32,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/why-iran-is-hard-to-intimidate.json"
+        },
+        {
+            "id": 33,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/america-is-trying-to-peg-israels-settlers-back.json"
+        },
+        {
+            "id": 34,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/how-to-house-the-worlds-fastest-growing-population.json"
+        },
+        {
+            "id": 35,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/democracy-is-under-attack-in-senegal.json"
+        },
+        {
+            "id": 36,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/after-nayib-bukeles-crushing-unconstitutional-victory-what-next.json"
+        },
+        {
+            "id": 37,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/mexicos-president-and-his-family-are-fighting-claims-of-corruption.json"
+        },
+        {
+            "id": 38,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/andres-manuel-lopez-obrador-splashes-out-as-elections-loom.json"
+        },
+        {
+            "id": 39,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-mounting-crisis-of-confidence-confronts-olaf-scholz.json"
+        },
+        {
+            "id": 40,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/madrid-is-booming-growing-while-keeping-its-cool-will-be-the-tricky-part.json"
+        },
+        {
+            "id": 41,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/vladimir-putin-extends-his-crackdown-in-russia.json"
+        },
+        {
+            "id": 42,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/poland-is-trying-to-restore-the-rule-of-law-without-violating-it.json"
+        },
+        {
+            "id": 43,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/europe-is-importing-a-solar-boom-good-news-for-nearly-everyone.json"
+        },
+        {
+            "id": 44,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/how-britain-lost-its-war-on-drugs.json"
+        },
+        {
+            "id": 45,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-charles-iiis-illness-says-about-monarchs-and-mortality.json"
+        },
+        {
+            "id": 46,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/britains-economy-will-need-rate-cuts-sooner-rather-than-later.json"
+        },
+        {
+            "id": 47,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/a-tiny-right-wing-party-tries-to-menace-britains-conservatives.json"
+        },
+        {
+            "id": 48,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-controversy-over-britains-planned-holocaust-memorial.json"
+        },
+        {
+            "id": 49,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/iran-is-targeting-its-opponents-in-britain.json"
+        },
+        {
+            "id": 50,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-former-prime-minister-who-fascinates-the-labour-party.json"
+        },
+        {
+            "id": 51,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/americas-economy-is-booming-so-why-are-bosses-worried.json"
+        },
+        {
+            "id": 52,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/samsungs-boss-avoids-prison-again.json"
+        },
+        {
+            "id": 53,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/media-companies-club-together-for-a-joint-sport-streamer.json"
+        },
+        {
+            "id": 54,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/can-giorgia-meloni-reinvigorate-italia-spa.json"
+        },
+        {
+            "id": 55,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/fairness-the-hidden-currency-of-the-workplace.json"
+        },
+        {
+            "id": 56,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/vladimir-putin-wants-to-catch-up-with-the-west-in-ai.json"
+        },
+        {
+            "id": 57,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/musk-v-zuckerberg-whos-winning.json"
+        },
+        {
+            "id": 58,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/chinas-stockmarket-nightmare-is-nowhere-near-over.json"
+        },
+        {
+            "id": 59,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-dividend-is-back-are-investors-right-to-be-pleased.json"
+        },
+        {
+            "id": 60,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/are-nycbs-troubles-the-start-of-another-banking-panic.json"
+        },
+        {
+            "id": 61,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/bankers-have-reason-to-hope-trump-triumphs.json"
+        },
+        {
+            "id": 62,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-false-promise-of-indonesias-economy.json"
+        },
+        {
+            "id": 63,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/universities-are-failing-to-boost-economic-growth.json"
+        },
+        {
+            "id": 64,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/cheap-racing-drones-offer-precision-warfare-at-scale.json"
+        },
+        {
+            "id": 65,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/nasas-pace-satellite-will-tackle-the-largest-uncertainty-in-climate-science.json"
+        },
+        {
+            "id": 66,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-first-endometriosis-drug-in-four-decades-is-on-the-horizon.json"
+        },
+        {
+            "id": 67,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/ancient-damaged-roman-scrolls-have-been-deciphered-using-ai.json"
+        },
+        {
+            "id": 68,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/scientists-have-trained-an-ai-through-the-eyes-of-a-baby.json"
+        },
+        {
+            "id": 69,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/when-is-it-too-soon-to-write-history.json"
+        },
+        {
+            "id": 70,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/small-but-mighty-how-cuteness-has-taken-over-the-world.json"
+        },
+        {
+            "id": 71,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/lessons-for-keir-starmer-from-britains-first-labour-government.json"
+        },
+        {
+            "id": 72,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/chinese-animated-films-are-booming.json"
+        },
+        {
+            "id": 73,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/the-meaning-of-the-hysteria-over-taylor-swift.json"
+        },
+        {
+            "id": 74,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/what-to-read-about-pakistan.json"
+        },
+        {
+            "id": 75,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/economic-data-commodities-and-markets.json"
+        },
+        {
+            "id": 76,
+            "articleURL": "https://github.com/HuangRunHua/economist-database/raw/main/articles/2024-02-10/rosemary-smith-set-out-to-prove-that-women-drivers-could-do-as-well-as-men.json"
+        }
+    ]
+}
