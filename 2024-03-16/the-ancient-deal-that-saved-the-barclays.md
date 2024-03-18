@@ -1,0 +1,9 @@
+---
+title: The secret deal that saved the Barclays
+subtitle: Was the twin brothers' business empire built on an ancient fraud?
+authorName: The Economist
+coverImageURL: https://www.economist.com/interactive/britain/2024/03/14/the-ancient-deal-that-saved-the-barclays/processed-images/1424/20240316_BRD001_hq.jpg
+coverImageDescription:  
+hashTag: Britain
+publishDate: Mar 13th 2024
+---
