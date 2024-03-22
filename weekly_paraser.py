@@ -317,6 +317,10 @@ if __name__ == "__main__":
         {
             "link": "https://www.economist.com/weeklyedition/2024-03-16",
             "id": "00000000-0000-0000-0000-000000000060"
+        },
+        {
+            "link": "https://www.economist.com/weeklyedition/2024-03-23",
+            "id": "00000000-0000-0000-0000-000000000061"
         }
     ]
 
