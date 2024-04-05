@@ -147,7 +147,7 @@ class ArticleParaser(object):
                 current_para_json["text"] = current_para_str
             
             elif content["name"] == "figure":
-                if content["children"][0]["name"] == "figure":
+                if len(content["children"]) > 0 and content["children"][0]["name"] == "figure":
                     current_para_json["role"] = "image"
                     if ("width" in content["children"][0]["children"][0]["attribs"]) and ("height" in content["children"][0]["children"][0]["attribs"]): 
                         current_para_json["imageURL"] = content["children"][0]["children"][0]["attribs"]["src"]
@@ -158,7 +158,7 @@ class ArticleParaser(object):
                         current_para_json["imageWidth"] = 1.0
                         current_para_json["imageHeight"] = 1.0
                         print("Image Bound not include: ", current_para_json["imageURL"])
-                elif content["children"][0]["name"] == "img":
+                elif len(content["children"]) > 0 and content["children"][0]["name"] == "img":
                     current_para_json["role"] = "image"
                     current_para_json["imageURL"] = content["children"][0]["attribs"]["src"]
                     if ("width" in content["children"][0]["attribs"]) and ("height" in content["children"][0]["attribs"]): 
@@ -171,7 +171,10 @@ class ArticleParaser(object):
                         current_para_json["imageHeight"] = 1.0
                         print("Image Bound not include: ", current_para_json["imageURL"])
                 else:
-                    print("Name not handled in this version: ", content["children"][0]["name"])
+                    if len(content["children"]) > 0:
+                        print("Name not handled in this version: ", content["children"][0]["name"])
+                    else:
+                        print("Name not handled in this version")
             
             if current_para_json != {}:
                 article_contents.append(current_para_json)
